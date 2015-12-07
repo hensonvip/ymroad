@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link rel="shortcut icon" href="http://www.adminbuy.cn/favicon.ico">
+<link href="{dede:global.cfg_templets_skin/}/css/index.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.min.js"></script>
+<!--[if IE 6]><script src="{dede:global.cfg_templets_skin/}/js/iepng.js" type="text/javascript"></script
+><script type="text/javascript">EvPNG.fix('div, ul, img, li, input');</script><![endif]-->
+<script language="javascript" type="text/javascript">
+<!--
+function setTab(name,cursel,n){
+ for(i=1;i<=n;i++){
+  var menu=document.getElementById(name+i);
+  var con=document.getElementById("con_"+name+"_"+i);
+  menu.className=i==cursel?"active":"";
+  con.style.display=i==cursel?"block":"none";
+ }
+}
+//-->
+</script>
+
+<script type=text/javascript><!--//--><![CDATA[//><!--
+function menuFix() {
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+ for (var i=0; i<sfEls.length; i++) {
+  sfEls[i].onmouseover=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseDown=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseUp=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+"");
+  }
+ }
+}
+window.onload=menuFix;
+
+//--><!]]></script>
+</head>
+<body>
+{dede:include filename="head.htm"/}
+
+<div class="tijiao">
+	<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="diyid" value="1" />
+<input type="hidden" name="do" value="2" />
+<ul>
+	<li>模板名称：<input type='text' name='mb_name' id='mb_name'  class='intxt' value='' /></li>
+    <li>下载地址：<input type='text' name='mb_down' id='mb_down' class='intxt' value='' /></li>
+    <li>测试截图：<input type='file' name='mb_jietu' id='mb_jietu' /></li>
+    <li>模板介绍：<textarea name="mb_jieshao" rows="8" cols="60"></textarea>
+<script type="text/javascript">//<![CDATA[
+window.CKEDITOR_BASEPATH='/include/ckeditor/';
+//]]></script>
+<script type="text/javascript" src="/include/ckeditor/ckeditor.js?t=B8DJ5M3"></script>
+<script type="text/javascript">//<![CDATA[
+CKEDITOR.replace('mb_jieshao', {"extraPlugins":"dedepage,multipic,addon","toolbar":[["Source","-"],["Cut","Copy","Paste","PasteText","PasteFromWord","-","Print"],["Undo","Redo","-","Find","Replace","-","SelectAll","RemoveFormat"],["Bold","Italic","Underline","Strike","-"],["Table","HorizontalRule"],["Link","Unlink","Image","Anchor"],["Styles","Format","Font","FontSize"],["TextColor","BGColor"]],"height":350,"skin":"kama"});
+//]]></script></li>
+</ul>    
+<input type="hidden" name="dede_fields" value="mb_name,text;mb_jietu,addon;mb_down,text;mb_jieshao,htmltext" />
+<input type="hidden" name="dede_fieldshash" value="8ba8e9c963385539a95d76f36ed3ea21" />
+<div align='center' style='height:30px;padding-top:10px;'>
+<input type="submit" name="submit" value="提 交" class='coolbg' />
+&#160;
+<input type="reset" name="reset" value="重 置" class='coolbg' />
+</div>
+</form>
+
+</div>
+
+<div class="clear"></div>
+
+{dede:include filename="foot.htm"/}
+
+</body>
+</html>
+

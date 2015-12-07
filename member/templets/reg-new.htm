@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta name="author" content="http://www.dede58.com" />
+<title><?php echo $cfg_webname; ?>- 会员注册</title>
+<link href="templets/style/login.css" rel="stylesheet" type="text/css" />
+<script src="templets/js/j.js" language="javascript" type="text/javascript"></script>
+<script src="templets/js/base.js" language="javascript" type="text/javascript"></script>
+<script src='templets/js/CheckPassStrength.js' type="text/javascript" language="javascript"></script>
+<script type="text/javascript" language="javascript" src='templets/js/reg_new.js'></script>
+<script type="text/javascript" language="javascript">
+<!--
+var reMethod = "<?php echo ($cfg_soft_lang == 'utf-8') ? 'POST' : 'GET';?>",pwdmin = <?php echo $cfg_mb_pwdmin; ?>;
+function changeAuthCode() {
+	var num = 	new Date().getTime();
+	var rand = Math.round(Math.random() * 10000);
+	num = num + rand;
+	$('#ver_code').css('visibility','visible');
+	if ($("#vdimgck")[0]) {
+		$("#vdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
+	}
+	return false;	
+}
+
+function hideVc()
+{
+	$('#ver_code').css('visibility','hidden');
+}
+
+
+$(document).ready(function(){ 
+	$("#passwordLevel").removeClass().addClass("rank r0");
+	$("#vdcode").focus(function(){
+	  var leftpos = $("#vdcode").position().left;
+	  var toppos = $("#vdcode").position().top - 42;
+	  $('#ver_code').css('left', leftpos+'px');
+	  $('#ver_code').css('top', toppos+'px');
+	  $('#ver_code').css('visibility','visible');
+	});
+	$("input[type='password']").click(function(){
+	  hideVc()
+	});
+	$("#txtUsername").click(function(){
+	  hideVc()
+	});
+	$("input[type='radio']").focus(function(){
+	  hideVc()
+	});
+})
+
+-->
+</script>
+</head>
+<body>
+<div id="login" class="bor" >
+  <h1>新用户注册</h1><a class="back" href="/">返回首页&gt;&gt;</a>
+  <div class="theme">
+    <form method="post" action="reg.php" id="regUser" name="form2">
+       <input type="hidden" value="regbase" name="dopost"/>
+      <input type="hidden" value="1" name="step"/>
+      <input type="hidden" value="个人" name="mtype"/>
+      <ul>
+        <li><span>用户名：</span>
+          <input type="text" class="intxt w200" id="txtUsername" name="userid"/>
+         <em id="_userid"></em> </li>
+        <li><span>昵称：</span>
+          <input type="text" class="intxt w200" id="uname" name="uname"/>
+         <em id="_userid"></em> </li>
+        <li><span>登陆密码：</span>
+          <input type="password" onkeyup="setPasswordLevel(this, document.getElementById('passwordLevel'));" style="font-family: verdana;" class="intxt w200" id="txtPassword" name="userpwd"/><input id="passwordLevel" class="rank r2" disabled="disabled" name="Input"/>
+        </li>
+        <li><span>确认密码：</span>
+          <input type="password" class="intxt w200" size="20" value="" id="userpwdok" name="userpwdok"/>
+          <em id="_userpwdok"></em> </li>
+          <li><span>电子邮箱：</span>
+            <input type="text" class="intxt w200" id="email" name="email"/> <em id="_email"></em> </li>
+        <li><span>性别：</span>
+        <input type="radio" value="女" name="sex" checked="checked" />女
+        <input type="radio" value="男" name="sex"/>男
+</li>
+          <?php
+            if(preg_match("/1/",$safe_gdopen)){
+          ?>
+          <li><span>验证码：</span>
+            <input type="text" class="intxt w200" style="width: 50px; text-transform: uppercase;" id="vdcode" name="vdcode"/><img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>
+           看不清？ <a href="javascript:void(0)" onclick="changeAuthCode();">点击更换</a></li>
+           <?php }?>
+        <li>
+          <span>&nbsp;</span><button type="submit" id="btnSignCheck" class="reg-btn">确定注册</button><a class="regbt" href="/member/login.php" rel="nofollow">已有账号？</a>
+        </li>
+      </ul>
+
+    </form>
+    </div>
+  <br class="clear"/>
+</div>
+<div class="footer">Copyright &copy; 2004-2011 dede58.com <a href="http://www.dede58.com"><?php echo $cfg_webname; ?></a> 版权所有
+</div>
+</body>
+</html>

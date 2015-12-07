@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body,#wrap,#ys1,#txt,ul{margin: 0;padding: 0; font-family:"微软雅黑"}
+body {background: url(images/bg_1.png) repeat-x #D4D4D4;}
+#wrap{width: 979px;	margin: auto;background: url(images/bg_3b.png) no-repeat left top;}
+#ys1{background: url(images/bg_4b.png) no-repeat left bottom;padding-bottom: 3px;padding-top: 7px;}
+*body #ys1{padding-bottom: 0;} 
+#txt{
+	background: center center url(images/bg_5b.png) repeat-y;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+.tj{background-image: url(images/formbg.jpg);height: 150px;width: 770px;padding-top: 100px;padding-left: 150px;margin: auto;}
+.tj p{
+	display: block;
+	width: 500px;
+	float: left;
+	line-height: 150%;
+	padding: 0px;
+	margin: 0 0 20px 0;
+	font-weight: bold;
+}
+#to{
+	width: 360px;
+	height: 35px;
+	border: 1px solid #333;
+	line-height: 37px;
+	background-image: url(images/input.png);
+	background-repeat: no-repeat;
+}
+.tj span{width: 115px;text-align: right;font-size: 14px;color:#FFF;padding-top: 10px;}
+.tj span,.tj input{float:left;}
+#Submit1{
+	background-image: url(images/an.jpg);
+	height: 48px;
+	width: 124px;
+	border: none;
+	display: block;
+	margin-left: 230px;
+	font-size: 14px;
+	font-weight: bold;
+}
+*body #Submit1{margin-left: 120px;}
+.STYLEzhubiao {text-align: center; FONT-WEIGHT: bold; FONT-SIZE: 35px; COLOR: #FF0000; FONT-FAMILY: "微软雅黑"; margin-bottom:10px;list-style-type :none;}
+.STYLEzhubiao1 {text-align: center; FONT-WEIGHT: bold; FONT-SIZE: 70px; COLOR: #FF0000; FONT-FAMILY: "微软雅黑"; margin-bottom:10px;list-style-type :none;}
+.STYLEzhubiao span{COLOR:#00F; FONT-SIZE: 38px; }

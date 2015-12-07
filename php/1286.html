@@ -1,0 +1,861 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+<title>都找齐了 织梦dede标签:arclist标签使用大全_网站模板下载尽在源码路-</title>
+<meta name="keywords" content="找齐,织梦,dede,标签,arclist,使用,大全,特别" />
+<meta name="description" content="特别提示：arclist是织梦建站系统中最重要的标签，同时也是最基础的标签，希望大家熟练掌握，可以说是学习织梦必备知识。 标签名称：arclist 标记简介：织梦常用标记，也称为自由列表标记，其中imglist、imginfolist、specart、coolart、autolist都是由该标" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/style/css/style.css">
+<script type="text/javascript" src="/style/js/index.js"></script>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script> 
+<script language="javascript" type="text/javascript"> 
+<!-- 
+function CheckLogin(){ 
+var taget_obj = document.getElementById('_userlogin'); 
+myajax = new DedeAjax(taget_obj,false,false,'','',''); 
+myajax.SendGet2("/member/ajax_loginsta.php"); 
+DedeXHTTP = null; 
+} 
+--> 
+</script>
+<!--[if IE 6]>
+<script src="/style/js/DD_belatedPNG_0.0.8a-min.vb4e86b02.js"></script>
+<script> DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+<script language="javascript" type="text/javascript" src="/include/ckeditor/plugins/syntaxhighlight/code.js" ></script>
+<!-- 织梦技术研究中心 http://www.dedejs.com -->
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shThemeDefault.css"/>
+</head>
+<body>
+<script type=text/javascript><!--//--><![CDATA[//><!--
+function menuFix() {
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+ for (var i=0; i<sfEls.length; i++) {
+  sfEls[i].onmouseover=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseDown=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseUp=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+"");
+  }
+ }
+}
+window.onload=menuFix;
+
+//--><!]]></script>
+<div id="topNav">
+  <div class="block clearfix">
+    <div class="topNav1">源码路专注于织梦源码分享、织梦模板、discuz模板、wordpress主题等网站模板，为广大站长提供网站模板以及Discuz插件等素材。</div>
+    <div class="f_r">
+      <div id="_userlogin">
+      <div class="userlogin">
+       <form name="userlogin" action="/member/index_do.php" method="POST">
+        <input type="hidden" name="fmdo" value="login" />
+        <input type="hidden" name="dopost" value="login" />
+        <input type="hidden" name="keeptime" value="604800" />
+        <div class="fb"><span>用户名:</span>
+         <input type="text" name="userid" size="10" class="ipt-txt" />
+        </div>
+        <div class="fb"><span>密码:</span>
+         <input type="password" name="pwd" size="10" class="ipt-txt" />
+        </div>
+        <div class="submit">
+         <button type="submit" class="btn-1">登录</button>
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" class="btn-1">注册</a> <!--<a href="/member/resetpassword.php">忘记密码?</a>--> </div>
+       </form>
+      </div>
+     </div>
+     <!-- /userlogin -->
+     <script language="javascript" type="text/javascript">CheckLogin();</script>
+    
+    </div>
+  </div>
+</div>
+<div class="header_bg">
+  <div class="block clearfix">
+    <h1><a title="织梦模板,模板王" href="/" name="top">织梦源码,模板王</a></h1>
+    <div style="float: right;">
+      <form id="searchForm" action="/plus/search.php" name="formsearch">
+        <input type="hidden" name="kwtype" value="0" />
+        <div class="search_box">
+          <input name="q" type="text" class="B_input" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+        </div>
+        <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
+      </form>
+     <a href="/work/vip.html" target="_blank"><img src="/images/join.jpg" alt="VIP" width="350" height="55"></a>
+    </div>
+  </div>
+</div>
+<div id="mainNav" class="clearfix">
+  <div class="shadow-x shadow-x1 pngfix"></div>
+  <div style="position: relative;" class="block">
+    <div class="meun_in">
+    <a  class="a1" href="/">首页</a>
+    <ul id="nav">
+    	<li><a href="/yuanma/">精品源码</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/vip/">VIP专区</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/sucai/">站长素材</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/web/">Web技术</a>
+            <ul>
+                
+                  <li><a href="/php/">PHP</a></li>
+                  
+                  <li><a href="/linux/">Linux</a></li>
+                  
+                  <li><a href="/mysql/">MySQL</a></li>
+                  
+                  <li><a href="/git/">Git</a></li>
+                  
+                  <li><a href="/sjms/">设计模式</a></li>
+                  
+                  <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                  
+                  <li><a href="/javascript/">JavaScript</a></li>
+                  
+                  <li><a href="/jquery/">jQuery</a></li>
+                  
+            </ul>
+        </li><li><a href="/seo/">站长学院</a>
+            <ul>
+                
+                  <li><a href="/seo/">网站seo</a></li>
+                  
+                  <li><a href="/jianzhan/">建站资讯</a></li>
+                  
+            </ul>
+        </li>
+    </ul>
+    
+     <div class="meun_r" id="nav">
+       <li>
+         <a href="#">加入VIP</a>
+         <ul>
+           <li>
+             <a href="/work/" target="_blank">模板疑问</a>
+           </li>
+           <li>
+             <a href="/work/vip.html" target="_blank">加入VIP</a>
+           </li>
+           <li>
+             <a href="/dingyue/" target="_blank">订阅我们</a>
+           </li>
+         </ul>
+       </li>
+     </div>
+        
+        
+    </div>
+     <div class="category_all" onmouseover="this.className='category_all category_all_on'" onmouseout="this.className='category_all'"><a class="tit" href="#">Web技术</a>
+      <div style="clear: both;"></div>
+      <div class="category_all_box">
+      <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c9"></i>
+            <h2><a class="dt_a1" href="/web/">Web技术</a></h2>
+          </dt>
+        </dl> 
+       
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c1"></i>
+            <h2><a class="dt_a1" href="/php/">PHP</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c2"></i>
+            <h2><a class="dt_a1" href="/linux/">Linux</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c3"></i>
+            <h2><a class="dt_a1" href="/mysql/">MySQL</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c4"></i>
+            <h2><a class="dt_a1" href="/git/">Git</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c5"></i>
+            <h2><a class="dt_a1" href="/sjms/">设计模式</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c6"></i>
+            <h2><a class="dt_a1" href="/html5css3/">HTML5+CSS3</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c7"></i>
+            <h2><a class="dt_a1" href="/javascript/">JavaScript</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c8"></i>
+            <h2><a class="dt_a1" href="/jquery/">jQuery</a></h2>
+          </dt>
+        </dl>
+        
+            
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blank"></div>
+<div class="block clearfix">
+  <div class="box">
+    <div class="box_1">
+      <div class="ur_here">
+        <div style="float: left;"><a href='http://127.0.0.1//'>网站模板</a> > <a href='/web/'>Web技术</a> > <a href='/php/'>PHP</a> > </div>
+        <div class="b_box2"></div>
+      </div>
+    </div>
+    
+ <div class="blank"></div>
+<div class="bd_union2">
+    <div class="bd_union2_right">
+    <script type="text/javascript">
+    /*468*60 创建于 2015-07-28*/
+    var cpro_id = "u2233166";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  	<div class="bd_union2_left">
+    <script type="text/javascript">
+    /*640*60 创建于 2015-07-28*/
+    var cpro_id = "u2233163";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  </div>
+    <div class="blank"></div>
+
+    <div class="AreaL2">
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>Web技术</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/php/">PHP</a></li>
+                 
+                 <li><a href="/linux/">Linux</a></li>
+                 
+                 <li><a href="/mysql/">MySQL</a></li>
+                 
+                 <li><a href="/git/">Git</a></li>
+                 
+                 <li><a href="/sjms/">设计模式</a></li>
+                 
+                 <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                 
+                 <li><a href="/javascript/">JavaScript</a></li>
+                 
+                 <li><a href="/jquery/">jQuery</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>站长学院</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/seo/">网站seo</a></li>
+                 
+                 <li><a href="/jianzhan/">建站资讯</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+
+<div class="box article_z">
+<script type="text/javascript">
+/*200*200 创建于 2015-07-28*/
+var cpro_id = "u2233243";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+<div class="blank5"></div>
+
+    </div>
+    <div class="AreaR2">
+      <div class="box">
+        <div class="box_1">
+          <div class="wzbt">
+            <div class="tc">
+              <h4 class="art_tit">都找齐了 织梦dede标签:arclist标签使用大全</h4>
+              <font class="f3">www.ymroad.com / 2015-07-05</font> </div>
+            <div class="content">
+				<div>
+	特别提示：arclist是织梦建站系统中最重要的标签，同时也是最基础的标签，希望大家熟练掌握，可以说是学习织梦必备知识。</div>
+<div>
+	标签名称：arclist</div>
+<div>
+	标记简介：织梦常用标记，也称为自由列表标记，其中imglist、imginfolist、specart、coolart、autolist都是由该标记所定义的不同属性延伸出来的别名标记。</div>
+<div>
+	功能说明：获取指定文档列表</div>
+<div>
+	适用范围：全局使用</div>
+<div>
+	基本语法：</div>
+<div>
+	{dede:arclist &nbsp;flag=&#39;h&#39; typeid=&#39;&#39; row=&#39;&#39; col=&#39;&#39; titlelen=&#39;&#39; infolen=&#39;&#39; imgwidth=&#39;&#39; imgheight=&#39;&#39; listtype=&#39;&#39; orderby=&#39;&#39; keyword=&#39;&#39; limit=&#39;0,1&#39;}</div>
+<div>
+	&lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/[field:arcurl/]&#39;&gt;[field:title/]&lt;/a&gt;</div>
+<div>
+	{/dede:arclist}</div>
+<div>
+	&nbsp;typeid=&#39;&#39; 栏目ID,在列表模板和档案模板中一般不需要指定，在首页模板中允许用&quot;,&quot;分开表示多个栏目；</div>
+<div>
+	orderby=&#39;sortrank&#39; 文档排序方式</div>
+<div>
+	&sect; orderby=&#39;hot&#39; 或 orderby=&#39;click&#39; 表示按点击数排列</div>
+<div>
+	&sect; orderby=&#39;sortrank&#39; 或 orderby=&#39;pubdate&#39; 按出版时间排列</div>
+<div>
+	&sect; orderby=&#39;near&#39;</div>
+<div>
+	&sect; orderby==&#39;lastpost&#39; 按最后评论时间</div>
+<div>
+	&sect; orderby==&#39;scores&#39; 按得分排序</div>
+<div>
+	&sect; orderby=&#39;id&#39; 按文章ID排序</div>
+<div>
+	&sect; orderby=&#39;rand&#39; 随机获得指定条件的文档列表&nbsp;</div>
+<div>
+	idlist =&#39;&#39; 提取特定文档（文档ID） 调用指定id文档 例子idlist =&#39;4,45,78,237&#39;</div>
+<div>
+	&nbsp;limit=&#39;起始ID,记录数&#39; &nbsp;（起始ID从0开始）表示限定的记录范围（如：limit=&#39;1,2&#39; &nbsp;表示从ID为1的记录开始，取2条记录）</div>
+<div>
+	&nbsp;keyword=&#39;&#39; 含有指定关键字的文档列表，多个关键字用&quot;,&quot;分</div>
+<div>
+	&nbsp;orderway=&#39;desc&#39; 值为 desc 或 asc ，指定排序方式是降序还是顺向排序，默认为降序</div>
+<div>
+	使用实例</div>
+<div>
+	调用推荐文章</div>
+<div>
+	&nbsp;{dede:arclist flag=&quot;c&quot; channelid=&#39;&#39; row=&#39;10&#39; titlelen=&#39;60&#39; orderby=&#39;&#39;}</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/[field:arcurl /]&#39; title=&quot;[field:fulltitle /]&quot;&gt;[field:title /]&lt;/a&gt;&lt;/li&gt;</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{/dede:arclist} &nbsp;</div>
+<div>
+	&nbsp; &nbsp; &nbsp;row=&#39;10&#39; 调用10条, &nbsp;titlelen=&#39;60&#39;标题长度为30汉字 &nbsp;flag=&quot;c&quot; 推荐文章 orderby=&#39;&#39; 默认为按发布时间排序</div>
+<div>
+	&nbsp; &nbsp; &nbsp;flag = &#39;c&#39; 自定义属性值：头条[h] &nbsp;推荐[c] &nbsp;图片[p] &nbsp;幻灯[f] &nbsp;滚动[s] &nbsp;跳转[j] &nbsp;图文[a] &nbsp;加粗</div>
+<div>
+	调用最新文章按发布时间排序</div>
+<div>
+	&nbsp; {dede:arclist &nbsp;channelid=&#39;&#39; row=&#39;10&#39; titlelen=&#39;60&#39;}</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/[field:arcurl /]&#39; title=&quot;[field:fulltitle /]&quot;&gt;[field:title /]&lt;/a&gt;&lt;/li&gt;</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{/dede:arclist} &nbsp; &nbsp; &nbsp; &nbsp;row=&#39;10&#39; 调用10条, &nbsp;titlelen=&#39;60&#39;标题长度为30汉字 &nbsp;&nbsp;</div>
+<div>
+	&nbsp;按ID排序降序排列,从大到小</div>
+<div>
+	&nbsp;{dede:arclist &nbsp;channelid=&#39;&#39; row=&#39;10&#39; titlelen=&#39;60&#39; orderby=&#39;id&#39; }</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/[field:arcurl /]&#39; title=&quot;[field:fulltitle /]&quot;&gt;[field:title /]&lt;/a&gt;&lt;/li&gt;</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{/dede:arclist} &nbsp; &nbsp; &nbsp; &nbsp;row=&#39;10&#39; 调用10条, &nbsp;titlelen=&#39;60&#39;标题长度为30汉字 orderby=&#39;id&#39; &nbsp;按ID,降序排列</div>
+<div>
+	&nbsp;按ID排序顺序排列,从小到大</div>
+<div>
+	&nbsp;{dede:arclist &nbsp;channelid=&#39;&#39; row=&#39;10&#39; titlelen=&#39;60&#39; orderby=&#39;id&#39; orderway=&#39;asc&#39; &nbsp;}</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/[field:arcurl /]&#39; title=&quot;[field:fulltitle /]&quot;&gt;[field:title /]&lt;/a&gt;&lt;/li&gt;</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{/dede:arclist} &nbsp; &nbsp; &nbsp; &nbsp;row=&#39;10&#39; 调用10条, &nbsp;titlelen=&#39;60&#39;标题长度为30汉字 orderby=&#39;id&#39; &nbsp;按ID,orderway=&#39;desc&#39; 值为 desc 或 asc ，指定排序方式是降序还是顺向排序，默认为降序</div>
+<div>
+	&nbsp;</div>
+<div>
+	调用含有缩图的文档</div>
+<div>
+	&nbsp; {dede:arclist flag=&quot;p&quot; row=&#39;10&#39; titlelen=&#39;60&#39;}</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;http://blog.163.com/nicol.bao@126/blog/[field:arcurl /]&quot;&gt;&lt;img src=&quot;http://blog.163.com/nicol.bao@126/blog/[field:litpic/]&quot; border=&quot;0&quot; alt=&quot;[field:fulltitle /]&quot;&gt;&lt;/a&gt;</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span&gt;&lt;a href=&quot;http://blog.163.com/nicol.bao@126/blog/[field:arcurl /]&quot; title=&quot;[field:fulltitle /]&quot;&gt;[field:title /]&lt;/a&gt;&lt;/span&gt;</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{/dede:arclist} &nbsp; &nbsp; &nbsp;flag = &#39;p&#39; 自定义属性值：头条[h] &nbsp;推荐[c] &nbsp;图片[p] &nbsp;幻灯[f] &nbsp;滚动[s] &nbsp;跳转[j] &nbsp;图文[a] &nbsp;加粗</div>
+<div>
+	&nbsp;日期的各种格式</div>
+<div>
+	08 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [field:pubdate function=strftime(&#39;%d&#39;,@me)/]</div>
+<div>
+	08 日 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[field:pubdate function=strftime(&#39;%d日&#39;,@me)/]</div>
+<div>
+	06-08 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[field:pubdate function=strftime(&#39;%m-%d&#39;,@me)/]</div>
+<div>
+	06月08日 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [field:pubdate function=strftime(&#39;%m月%d日&#39;,@me)/]</div>
+<div>
+	09-06-08 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [field:pubdate function=strftime(&#39;%y-%m-%d&#39;,@me)/]</div>
+<div>
+	2009-06-08 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [field:pubdate function=strftime(&#39;%Y-%m-%d&#39;,@me)/]</div>
+<div>
+	09年06月08日 &nbsp; &nbsp; &nbsp; &nbsp; [field:pubdate function=strftime(&#39;%y年%m月%d日&#39;,@me)/]</div>
+<div>
+	2009年06月08日 &nbsp; &nbsp; &nbsp; [field:pubdate function=strftime(&#39;%Y年%m月%d日&#39;,@me)/]</div>
+<div>
+	2009-06-08 &nbsp;13:28 &nbsp; &nbsp;[field:pubdate function=strftime(&#39;%Y-%m-%d %H:%M&#39;,@me)/]</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;底层字段</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> <span class="Apple-tab-span" style="white-space:pre"> </span></div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:id /]<span class="Apple-tab-span" style="white-space:pre"> </span> 文章的ID,对应dede_archives 的ID字段</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:typeid /]<span class="Apple-tab-span" style="white-space:pre"> </span> 文章所在栏目的ID</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:title/]<span class="Apple-tab-span" style="white-space:pre"> </span> 文章标题(控制条件包括titlelen=&#39;&#39;字节数,后台发布文档时所选的标题颜色,加粗)</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:fulltitle/]<span class="Apple-tab-span" style="white-space:pre"> </span> 文章标题(标题完整,无样式)</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:click /]<span class="Apple-tab-span" style="white-space:pre"> </span> 点击数</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:shorttitle /]<span class="Apple-tab-span" style="white-space:pre"> </span> 短标题</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:writer /]<span class="Apple-tab-span" style="white-space:pre"> </span> 作者</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:source /]<span class="Apple-tab-span" style="white-space:pre"> </span> 来源</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:litpic /]<span class="Apple-tab-span" style="white-space:pre"> </span> 缩图地址 与 [field:picname /]相同</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:picname /]<span class="Apple-tab-span" style="white-space:pre"> </span> 缩图地址 与[field:litpic /]相同</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:pubdate /]<span class="Apple-tab-span" style="white-space:pre"> </span> 发布日期</div>
+<div>
+	08 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[field:pubdate function=strftime(&#39;%d&#39;,@me)/]</div>
+<div>
+	08 日 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [field:pubdate function=strftime(&#39;%d日&#39;,@me)/]</div>
+<div>
+	06-08 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [field:pubdate function=strftime(&#39;%m-%d&#39;,@me)/]</div>
+<div>
+	06月08日 &nbsp; &nbsp; &nbsp; &nbsp;[field:pubdate function=strftime(&#39;%m月%d日&#39;,@me)/]</div>
+<div>
+	09-06-08 &nbsp; &nbsp; &nbsp; &nbsp;[field:pubdate function=strftime(&#39;%y-%m-%d&#39;,@me)/]</div>
+<div>
+	2009-06-08 &nbsp; &nbsp; &nbsp;[field:pubdate function=strftime(&#39;%Y-%m-%d&#39;,@me)/]</div>
+<div>
+	09年06月08日 &nbsp; &nbsp;[field:pubdate function=strftime(&#39;%y年%m月%d日&#39;,@me)/]</div>
+<div>
+	2009年06月08日 &nbsp;[field:pubdate function=strftime(&#39;%Y年%m月%d日&#39;,@me)/]</div>
+<div>
+	2009-06-08 &nbsp;13:28[field:pubdate function=strftime(&#39;%Y-%m-%d %H:%M&#39;,@me)/]</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:lastpost /]<span class="Apple-tab-span" style="white-space:pre"> </span> 最后评论时间 用法同 [field:pubdate /]</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:scores /]<span class="Apple-tab-span" style="white-space:pre"> </span> 评论得分</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:goodpost /]<span class="Apple-tab-span" style="white-space:pre"> </span> 好评</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:badpost/]<span class="Apple-tab-span" style="white-space:pre"> </span> 差评</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:description /]<span class="Apple-tab-span" style="white-space:pre"> </span> 简介 等同于 [field:info /] ,[field:infos /]&nbsp;</div>
+<div>
+	&nbsp;字数控制 &nbsp;[field:description &nbsp; function=&quot;cn_substr(@me,120)&quot;/] 60汉字</div>
+<div>
+	infolen=&#39;160&#39; 表示内容简介长度 等同于infolength（只控制infos，并不控制description的内容）</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:info /]<span class="Apple-tab-span" style="white-space:pre"> </span> 简介 等同于 [field:description /] ,[field:infos /]&nbsp;</div>
+<div>
+	&nbsp;字数控制 &nbsp;[field:info &nbsp;function=&quot;cn_substr(@me,120)&quot;/] 60汉字</div>
+<div>
+	infolen=&#39;160&#39; 表示内容简介长度 等同于infolength（只控制infos，并不控制description的内容）</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:infos /] <span class="Apple-tab-span" style="white-space:pre"> </span> 简介 等同于 [field:info /] ,[field:description /]&nbsp;</div>
+<div>
+	&nbsp;字数控制 &nbsp;[field:infos &nbsp; function=&quot;cn_substr(@me,120)&quot;/] 60汉字</div>
+<div>
+	infolen=&#39;160&#39; 表示内容简介长度 等同于infolength（只控制infos，并不控制description的内容）</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:filename /] <span class="Apple-tab-span" style="white-space:pre"> </span> 文章连接地址 等同于[field:arcurl /]&nbsp;</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:arcurl /] <span class="Apple-tab-span" style="white-space:pre"> </span> 文章链接地址 等同于[field:filename /]&nbsp;</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:textlink /] <span class="Apple-tab-span" style="white-space:pre"> </span> 文章标题+地址 等同于&lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/[field:arcurl /] &#39;&gt;[field:title/]&lt;/a&gt;</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:litpic /] <span class="Apple-tab-span" style="white-space:pre"> </span> 缩图地址 等同于 &nbsp;[field:picname /]&nbsp;</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:picname /] <span class="Apple-tab-span" style="white-space:pre"> </span> 缩图地址 等同于 &nbsp;[field:litpic /]&nbsp;</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:image /] <span class="Apple-tab-span" style="white-space:pre"> </span>等同于 &lt;img src=&#39;http://blog.163.com/nicol.bao@126/blog/[field:litpic /]&#39; border=&#39;0&#39; width=&#39;imgwidth&#39; height=&#39;imgheight&#39; alt=&#39;[field:fulltitle /]&#39;&gt;</div>
+<div>
+	imgwidth=&#39;120&#39; 缩略图宽度</div>
+<div>
+	imgheight=&#39;90&#39; 缩略图高度</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:imglink /] <span class="Apple-tab-span" style="white-space:pre"> </span> 等同于imglink = &lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/ [field:arcurl /]&#39;&gt;[field:image /]&lt;/a&gt;</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:typename /] &nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> 栏目标题</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:typeurl /] <span class="Apple-tab-span" style="white-space:pre"> </span> 栏目地址</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:typelink /] <span class="Apple-tab-span" style="white-space:pre"> </span> 等同于 &nbsp;&lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/[field:typeurl /]&#39;&gt;[field:typename /]&lt;/a&gt;</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:plusurl /] &nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> pius文件夹地址 等同于 [field:global name=plusurl/]</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:memberurl /] &nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> 会员文件夹地址 等同于 [field:global name=memberurl/]</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> [field:templeturl /] &nbsp; <span class="Apple-tab-span" style="white-space:pre"> </span> 模板文文件夹地址 等同于 [field:global name=templeturl /]</div>
+<div>
+	&nbsp;*<span class="Apple-tab-span" style="white-space:pre"> </span> [field:global name=autoindex/]<span class="Apple-tab-span" style="white-space:pre"> </span> 最常用的底层标签,生成顺序数字1,2,3,4,5,6,7.....</div>
+<div>
+	&nbsp;可CSS控制可做成各种样式效果,比如隔行换色, 列表前加入1-10数字序号,每隔几行换行等等</div>
+<div>
+	于PHP搭配,可制作出各种效果,为DEDE最重要代码之一</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span> <span class="Apple-tab-span" style="white-space:pre"> </span></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	相关函数：</div>
+<div>
+	文件\include\taglib\arclist.lib.php第7行</div>
+<div>
+	function lib_arclist(&amp;$ctag,&amp;$refObj)</div>
+<div>
+	参数说明：</div>
+<div>
+	col=&#39;&#39; 分多少列显示（默认为单列），5.3版中本属性可以通过多种方式进行多行显示</div>
+<div>
+	如果col=&#39;1&#39;要多列显示的可用div+css实现</div>
+<div>
+	以下为通过div+css实现多列的示例：</div>
+<div>
+	&lt;style type=text/css&gt;</div>
+<div>
+	div{width:400px;float:left;}</div>
+<div>
+	&lt;/style&gt;</div>
+<div>
+	{dede:arclist row=&#39;10&#39; titlelen=&#39;24&#39; orderby=&#39;pubdate&#39; idlist=&#39;&#39; col=&#39;2&#39;}</div>
+<div>
+	?[field:textlink/]([field:pubdate function=MyDate(&#39;m-d&#39;,@me)/])&lt;br/&gt;</div>
+<div>
+	{/dede:arclist}</div>
+<div>
+	当col&gt;1将使用原来的table多列方式显示</div>
+<div>
+	row=&#39;10&#39; 返回文档列表总数</div>
+<div>
+	typeid=&#39;&#39; 栏目ID,在列表模板和档案模板中一般不需要指定，在首页模板中允许用&quot;,&quot;分开表示多个栏目；</div>
+<div>
+	getall=&#39;1&#39; 在没有指定这属性的情况下,在栏目页、文章页模板,不会获取以&quot;,&quot;分开的多个栏目的下级子类</div>
+<div>
+	titlelen = &#39;30&#39; 标题长度 等同于titlelength</div>
+<div>
+	infolen=&#39;160&#39; 表示内容简介长度 等同于infolength（只控制infos，并不控制description的内容）</div>
+<div>
+	imgwidth=&#39;120&#39; 缩略图宽度</div>
+<div>
+	imgheight=&#39;90&#39; 缩略图高度</div>
+<div>
+	listtype=&#39;all&#39; 栏目类型 image含有缩略图 commend推荐</div>
+<div>
+	orderby=&#39;sortrank&#39; 文档排序方式</div>
+<div>
+	&sect; orderby=&#39;hot&#39; 或 orderby=&#39;click&#39; 表示按点击数排列</div>
+<div>
+	&sect; orderby=&#39;sortrank&#39; 或 orderby=&#39;pubdate&#39; 按出版时间排列</div>
+<div>
+	&sect; orderby=&#39;near&#39;</div>
+<div>
+	&sect; orderby==&#39;lastpost&#39; 按最后评论时间</div>
+<div>
+	&sect; orderby==&#39;scores&#39; 按得分排序</div>
+<div>
+	&sect; orderby=&#39;id&#39; 按文章ID排序</div>
+<div>
+	&sect; orderby=&#39;rand&#39; 随机获得指定条件的文档列表</div>
+<div>
+	keyword=&#39;&#39; 含有指定关键字的文档列表，多个关键字用&quot;,&quot;分</div>
+<div>
+	innertext = &#39;&#39; 单条记录样式</div>
+<div>
+	aid=&#39;&#39; 指定文档ID</div>
+<div>
+	idlist =&#39;&#39; 提取特定文档（文档ID）</div>
+<div>
+	channelid 频道ID</div>
+<div>
+	limit=&#39;起始ID,记录数&#39; &nbsp;（起始ID从0开始）表示限定的记录范围（如：limit=&#39;1,2&#39; &nbsp;表示从ID为1的记录开始，取2条记录）</div>
+<div>
+	flag = &#39;h&#39; 自定义属性值：头条[h]推荐[c]图片[p]幻灯[f]滚动[s]跳转[j]图文[a]加粗</div>
+<div>
+	noflag = &#39;&#39; 同flag，但这里是表示不包含这些属性</div>
+<div>
+	orderway=&#39;desc&#39; 值为 desc 或 asc ，指定排序方式是降序还是顺向排序，默认为降序</div>
+<div>
+	subday=&#39;天数&#39; 表示在多少天以内的文档</div>
+<div>
+	&nbsp;</div>
+<div>
+	用arclist调用于附加表字段的方法：</div>
+<div>
+	&nbsp;</div>
+<div>
+	要获取附加表内容，必须符合两个条件</div>
+<div>
+	1、指定 channelid 属性</div>
+<div>
+	2、指定要获得的字段 addfields=&#39;字段1,字段&#39;</div>
+<div>
+	如：</div>
+<div>
+	{dede:arclist addfields=&#39;filetype,language,softtype&#39; row=&#39;8&#39; channelid=&#39;3&#39;}</div>
+<div>
+	[field:textlink /] - [field:softtype /]&lt;br /&gt;</div>
+<div>
+	{/dede:arclist}</div>
+<div>
+	&nbsp;</div>
+<div>
+	底层模板字段：</div>
+<div>
+	ID(同 id),typeid,sortrank,flag,ismake,channel,arcrank,click,money,title,shorttitle,color,writer,</div>
+<div>
+	source,litpic(同picname),pubdate,senddate,mid, lastpost,scores,goodpost,badpost,notpost,</div>
+<div>
+	description(同infos),filename, image, imglink, fulltitle, textlink, typelink,plusurl, memberurl, templeturl,</div>
+<div>
+	stime(pubdate 的&quot;0000-00-00&quot;格式)</div>
+<div>
+	其中：</div>
+<div>
+	textlink = &lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/arcurl&#39;&gt;title&lt;/a&gt;</div>
+<div>
+	typelink = &lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/typeurl&#39;&gt;typename&lt;/a&gt;</div>
+<div>
+	imglink = &lt;a href=&#39;http://blog.163.com/nicol.bao@126/blog/arcurl&#39;&gt;&lt;img src=&#39;http://blog.163.com/nicol.bao@126/blog/picname&#39; border=&#39;0&#39; width=&#39;imgwidth&#39; height=&#39;imgheight&#39;&gt;&lt;/a&gt;</div>
+<div>
+	image = &lt;img src=&#39;http://blog.163.com/nicol.bao@126/blog/picname&#39; border=&#39;0&#39; width=&#39;imgwidth&#39; height=&#39;imgheight&#39; alt=&rsquo;titile&rsquo;&gt;</div>
+<div>
+	字段调用方法：[field:varname/]</div>
+<div>
+	如：</div>
+<div>
+	{dede:arclist infolen=&#39;100&#39;}</div>
+<div>
+	[field:textlink/]</div>
+<div>
+	&lt;br&gt;</div>
+<div>
+	[field:infos/]</div>
+<div>
+	&lt;br&gt;</div>
+<div>
+	{/dede:arclist}</div>
+<div>
+	注：底层模板里的Field实现也是织梦标记的一种形式，因此支持使用PHP语法，Function扩展等功能。</div>
+<div>
+	如： 给当天发布的内容加上 (new) 标志</div>
+<div>
+	[field:senddate runphp=&#39;yes&#39;]</div>
+<div>
+	$ntime = time();</div>
+<div>
+	$oneday = 3600 * 24;</div>
+<div>
+	if(($ntime - @me)&lt;$oneday) @me = &quot;&lt;font color=&#39;red&#39;&gt;(new)&lt;/font&gt;&quot;;</div>
+<div>
+	else @me = &quot;&quot;;</div>
+<div>
+	[/field:senddate]<br />
+	&nbsp;</div>
+
+            </div>
+            <div class="blank5"></div>
+            <div class="blank5"></div>
+            <div class="art_bottom"  >
+              <div style="float:left">上一篇：<a href='/php/1285.html'>织梦DedeCMS百度编辑器上传图片无水印的解决办法</a> </div>
+              <div style="float:right">下一篇：<a href='/php/1287.html'>织梦上传图片弹出提示302的解决办法</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blank5"></div>
+    <div class="jogger"> </div>
+    <div class="blank5"></div>
+    <div class="blank5"></div>
+  </div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="blank"></div>
+<div class="footer_box">
+<div class="block">
+  <div class="box">
+    <div class="helpTitBg  ">
+      <dl class="dl1">
+        <dt><span></span>Web技术</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/dedecmsjc/" title="织梦教程">TMD9教程</a></dd>
+        <dd><a href="/discuzjc/" title="Discuz教程">Discuz教程</a></dd>
+        <dd><a href="/wordpressjc/" title="wordpress教程">wordpress教程</a></dd>
+        <dd><a href="/ecshopjc/" title="ecshop教程">ecshop教程</a></dd>
+      </dl>
+      <dl class="dl2">
+        <dt><span></span>站长学院</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/ems/" title="网站seo">网站seo</a></dd>
+        <dd><a href="/jianzhan/" title="建站资讯">建站资讯</a></dd>
+      </dl>
+      <dl class="dl3">
+        <dt><span></span>常见问题</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/work/vip.html" title="如何加入VIP">如何加入VIP</a></dd>
+      </dl>
+      <dl class="dl4">
+        <dt><span></span>服务支持</dt>
+        <div style=" clear:both"></div>
+        <dd>QQ：249411513</dd>
+        <dd>E-mail：249411513@qq.com</dd>
+        <dd>Web：Www.YmRoad.Com</dd>
+      </dl>
+     <img width="100" height="103" alt="" src="/style/images/footer_img.gif"></div>
+  </div>
+</div>
+
+<div id="footer">
+<div class="text">
+  Copyright 2015-2015 All Rights Reserved Theme by 源码路www.ymroad.com
+  <br />
+  <a href="http://www.ymroad.com/" target="_blank" rel="nofollow">浙ICP备11047180号-6</a>
+  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=249411513&site=qq&menu=yes">
+    <img border="0" src="http://wpa.qq.com/pa?p=2:249411513:51" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+  </a>
+  <br />
+  <a href="http://www.ymroad.com" target="_blank">站长资源</a>
+  <a href="/sitemap.xml" target="_blank">网站地图</a>
+</div>
+</div>
+</div>
+<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=1256403958&web_id=12539238" language="JavaScript"></script></div>
+
+<script>
+$(function(){
+	$("#aFloatTools_Hide").click(function(){
+	
+		$('#divFloatToolsView').animate({
+		width: 'hide', opacity: 'hide'
+		}, 
+		'normal',
+		function(){
+			 $('#divFloatToolsView').hide();
+		})
+		$('#aFloatTools_Show').attr('style','display:block');
+		$('#aFloatTools_Hide').attr('style','display:none');
+	})
+	$("#aFloatTools_Show").click(function(){
+	
+		$('#divFloatToolsView').animate({
+			width: 'show', opacity: 'show'
+			},
+			'normal',
+			function(){ 
+				$('#divFloatToolsView').show();
+		})
+		$('#aFloatTools_Show').attr('style','display:none');
+		$('#aFloatTools_Hide').attr('style','display:block');
+	})
+	
+})
+</script>
+<!-- <div id="floatTools" class="float0831">
+  <div class="floatL"> <a id="aFloatTools_Show" class="btnOpen"  rel="nofollow"  style="DISPLAY: none" title="查看在线客服" href="javascript:void(0);">展开</a> <a id="aFloatTools_Hide" class="btnCtn"  rel="nofollow"   title="关闭在线客服" href="javascript:void(0);">收缩</a> </div>
+  <div id="divFloatToolsView" class="floatR" style="display:blcok">
+    <div class="tp"></div>
+    <div class="cn">
+      <ul>
+        <li class="top">
+          <h3 class="titZx"></h3>
+        </li>
+        <li><a class="icoTc" title="加入VIP" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=23&site=qq&menu=yes">加入VIP</a> </li>
+        <li><a class="icoTc" title="仿站咨询" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=942389&site=qq&menu=yes">仿站咨询</a> </li>
+        <li><a class="icoTc" title="织梦后台定制" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=94230489&site=qq&menu=yes">织梦后台定制</a> </li>
+      </ul>
+      
+    </div>
+  </div>
+</div> -->
+
+<script language="javascript"> 
+(function(){
+        var res = GetRequest();
+        var par = res['index'];
+        if(par!='gfan'){
+                var ua=navigator.userAgent.toLowerCase();
+                var contains=function (a, b){
+                        if(a.indexOf(b)!=-1){return true;}
+                };
+//将下面的http://m.baidu.com改成你的wap手机版地址        
+                var toMobileVertion = function(){
+                        window.location.href = 'http://www.ymroad.com/m/'
+                }
+
+                if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+                if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+        ||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+        }
+})();
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs.split("=")[0]]=unescape(strs.split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+</script>
+</body>
+</html>

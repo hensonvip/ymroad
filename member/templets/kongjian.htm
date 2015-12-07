@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>空间设置 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src='templets/js/main.js'></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+</head>
+<body>
+<?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main"> 
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">空间设置</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+     <div class="ucright">
+      <div class="listnav">
+        <ul class="navclass">
+          <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="kj.php" class="selected">空间设置</a></li>
+        </ul>
+      </div>
+      <!--listnav end-->
+      <ul class="classnav">
+        <li><a href="fl.php">分类管理</a></li>
+         <li><a href="kj.php" class="selected"><span>空间设置</span></a></li>
+          <li><a href="fg.php">风格选择</a></li>
+  </ul>
+   
+   
+   <div class="extend" style="">
+     <div class="uccontact" style=""> 
+         <span class="ltitle1">空间设置</span>
+        <span class="ltbg"></span>
+      <form action="kj.php" method="post" enctype="multipart/form-data" name="form1">
+          <input type="hidden" name="dopost" value="save" />
+ 
+       <dl class="uclist">
+      <dt><span class="tsinfo"></span></dt> 
+ 
+ <dd>
+    <span class="dlleft">空间名称<b></b></span>
+    <span class="dlright"> <input name="spacename" type="text" id="spacename" value="<?php echo $spacename; ?>" maxlength="100" class="linput"/></span>
+    </dd>
+
+
+ <dd>
+    <span class="dlleft">每页文档数<b></b></span>
+    <span class="dlright"> <input name="pagesize" type="text" id="pagesize" value="<?php echo $pagesize; ?>" maxlength="100" class="linput"/></span>
+    </dd>
+     
+    <dd>
+    <span class="dlleft">个人签名<b>*</b><br>少于50中文字</span>
+    <span class="dlright"><textarea name="sign" id="sign" cols="15" rows="10" class="ltextarea"><?php echo $sign; ?></textarea></span>
+    </dd>
+    
+ <dd>
+    <span class="dlleft">空间背景上传<b>*</b></span>
+    <span class="dlright">
+     <a href="javascript:void(0)" class="zfgo" id="up1" rel="upA" data-rel="" style="position: relative; opacity: 1;"> 
+         <input name="oldspacelogo" type="hidden" value="<?php echo $spacelogo; ?>" />
+            <input style="opacity:0; position:absolute; left:0; top:0; cursor:pointer; height:31px; width:103px"  name="spacelogo" type="file" id="spacelogo" maxlength="100" class="intxt" />
+            
+            选择图片</a>
+    <cite id="show1"></cite>
+    <cite>缩略图尺寸200*150像素</cite>
+     <div class="upview" id="upw1"></div> 
+    </span>
+    </dd>
+    
+       <dd>
+    <span class="dlleft">原有背景</span>
+    <span class="dlright"> <?php
+      			if($spacelogo!='') $logo = $spacelogo;
+     		    else $logo = 'templets/images/mylogo.jpg';
+      			echo "<img src='$logo' style='margin-top:5px;width:200px;height: 50px;'/>";
+      		?></span>
+    </dd>         
+         
+          
+       
+         <dd>  <span class="dlleft">空间公告</span>
+             <span class="dlright"> <textarea name="spacenews" id="spacenews" cols="15" rows="10" class="ltextarea"><?php echo $spacenews; ?></textarea>
+          </span>
+    </dd>        
+     
+      <dd>
+    <span class="dlleft"> </span>
+    <span class="dlright"> <button class="zfgo" type="submit">更新</button>
+            <button class="zfgo" type="reset">重设</button></span>
+    </dd>
+     
+    </dl>
+       </form>
+      <!--主操作区域 -->
+    </div>
+  </div></div></div></div>
+  
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+ </body>
+</html>
+

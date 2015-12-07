@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.title/}_网站模板下载尽在源码路-www.adminbuy.cn</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link rel="shortcut icon" href="http://www.adminbuy.cn/favicon.ico">
+<link href="{dede:global.cfg_templets_skin/}/css/index.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.min.js"></script>
+<!--[if IE 6]><script src="{dede:global.cfg_templets_skin/}/js/iepng.js" type="text/javascript"></script>
+<script type="text/javascript">EvPNG.fix('div, ul, img, li, input');</script><![endif]-->
+<link href="{dede:global.cfg_templets_skin/}/css/kefu.css" rel="stylesheet" type="text/css"/>
+<script>
+$(function() {
+	// 悬浮窗口
+	$(".yb_conct").hover(function() {
+		$(".yb_conct").css("right", "0px");
+		$(".yb_bar .yb_ercode").css('height', '200px');
+	}, function() {
+		$(".yb_conct").css("right", "-127px");
+		$(".yb_bar .yb_ercode").css('height', '53px');
+	});
+	// 返回顶部
+	$(".yb_top").click(function() {
+		$("html,body").animate({
+			'scrollTop': '0px'
+		}, 300)
+	});
+});
+</script>
+
+</head>
+<body>
+
+{dede:include filename="head.htm"/}
+
+ 
+<div class="con">
+  <div class="softmore MT10">
+    <div class="weizhi">
+      <h2>当前位置：{dede:field.position/}</h2>
+    </div>
+    <div class="soft_arj">
+      <div class="soft_arj_l"><img src='{dede:field.litpic/}' /></div>
+      <div class="soft_arj_r">
+        <h1>{dede:field.title/}</h1>
+        <div class="soft1">
+         <ul class="soft2">
+          <li>语言编码：{dede:field.bianma/}</li>
+          <li>模板颜色：{dede:field.yanse/}</li>
+          <li>适用站点：{dede:field.zhandian/}</li>
+          <li class="yss">下载用户：免费下载</li>
+         
+         </ul>
+         <ul class="soft3">
+          <div class="sp-singleAct">
+          
+        </div>
+         </ul>
+        </div>
+        <div class="soft4">
+        	<div class="soft4_r">
+            	<script src='/plus/ad_js.php?aid=22' language='javascript'></script>
+            	
+            </div>
+            
+			<div class="soft4_l">
+            	<script src='/plus/ad_js.php?aid=23' language='javascript'></script>
+            </div>
+        </div>
+         <div class="down">
+           <li style="width:180px" ><a style="width:180px" rel="nofollow" href="{dede:field.pan2/}" target="_blank">下载一 <font style="font-size:14px;font-style:normal;color:#323232">提取码：{dede:field.bd/}</font></a></li>
+           
+           <li style="width:180px" class="qi"><a style="width:180px" rel="nofollow" href="{dede:field.pan/}" target="_blank">下载二 <font style="font-size:14px;font-style:normal;color:#323232">提取码：{dede:field.bendi/}</font></a></li>
+             <li style="width: 130px; height: 45px;  line-height: 45px;  font-size: 18px;  font-weight: normal;  background: #ef9904;  border-radius: 4px;  color: #fff;">
+{dede:field name='yanshi' runphp='yes'}
+if(@me == "") @me = "无演示";else @me = "<a href=".@me." target=_blank>演示地址</a>"; 
+{/dede:field}
+</li>
+          <p><a href="http://www.adminbuy.cn/work/" target="_blank">下载地址失效？</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="con">
+  <div class="softarcr"> 
+    <div class="soft_con">
+      <div class="soft_t">
+        <ul id="Hd">
+          <li class="active">
+            <h3>模板介绍</h3>
+          </li>       
+        </ul>
+      </div>
+      <div class="arc" id="HdC0">
+        
+        <div class="content">
+          {dede:field.body/}
+        </div>
+        <div class="fenxiang">
+          
+          <div class="fx_r"> 编辑：<a href="http://www.adminbuy.cn/">织梦模板</a> </div>
+        </div>
+        <div class="fanpian">
+          <p>{dede:prenext get='pre'/} </p>
+          <p>{dede:prenext get='next'/} </p>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+  <div class="nr l">
+
+ <div class="softr_design l MT10">
+   <script type="text/javascript">
+    /*246*250 创建于 2015-03-21*/
+    var cpro_id = "u2001710";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+
+
+    </div>
+    <div class="softr_arc l">
+      <div class="softr_arc_t">
+        <h2>常见问题</h2>
+        <a href="/cms/" target="_blank"><span>更多</span></a></div>
+      <ul>
+      {dede:arclist pagesize='11' titlelen='36' typeid='4,5,13,14,18,19'}
+       <li><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></li>
+      {/dede:arclist}
+      </ul>
+    </div>
+    <div class="softr_design l MT10">
+    <script type="text/javascript">
+var sogou_ad_id=382805;
+var sogou_ad_height=250;
+var sogou_ad_width=246;
+</script>
+<script type='text/javascript' src='http://images.sohu.com/cs/jsfile/js/l.js'></script>
+
+    </div>
+    <div class="softr_link l MT10">
+      <div class="softr_arc_t">
+        <h2>相关模板下载</h2>
+      </div>
+
+
+ {dede:arclist pagesize='3' titlelen='50'}
+      <dl>
+        <dt><a href="[field:arcurl/]" title="[field:title/]"><img alt="[field:title/]" src="[field:litpic/]" /></a></dt>
+        <dd><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></dd>
+      </dl>
+      {/dede:arclist}
+
+
+ </div>
+    
+  </div>
+</div>
+
+
+{dede:include filename="foot.htm"/}
+
+
+
+</body>
+</html>

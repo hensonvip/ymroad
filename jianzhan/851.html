@@ -1,0 +1,640 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+<title>UI设计中图形设计详解_网站模板下载尽在源码路-</title>
+<meta name="keywords" content="设计,图形设计,详解,色彩,设计,美学,相关,知识,构成,平" />
+<meta name="description" content="1、色彩设计： 美学相关的知识（色彩构成、平面构成等等）我就不再赘述了，相信从事此类行业的人员无人不知无人不晓了。这里简要说说WebApp设计中，色彩以及构图的特别之处吧。 首先是色彩。从事过广告和印刷业设计工作的人员应该都接触过一种东西，那就是标" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/style/css/style.css">
+<script type="text/javascript" src="/style/js/index.js"></script>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script> 
+<script language="javascript" type="text/javascript"> 
+<!-- 
+function CheckLogin(){ 
+var taget_obj = document.getElementById('_userlogin'); 
+myajax = new DedeAjax(taget_obj,false,false,'','',''); 
+myajax.SendGet2("/member/ajax_loginsta.php"); 
+DedeXHTTP = null; 
+} 
+--> 
+</script>
+<!--[if IE 6]>
+<script src="/style/js/DD_belatedPNG_0.0.8a-min.vb4e86b02.js"></script>
+<script> DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+<script language="javascript" type="text/javascript" src="/include/ckeditor/plugins/syntaxhighlight/code.js" ></script>
+<!-- 织梦技术研究中心 http://www.dedejs.com -->
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shThemeDefault.css"/>
+</head>
+<body>
+<script type=text/javascript><!--//--><![CDATA[//><!--
+function menuFix() {
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+ for (var i=0; i<sfEls.length; i++) {
+  sfEls[i].onmouseover=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseDown=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseUp=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+"");
+  }
+ }
+}
+window.onload=menuFix;
+
+//--><!]]></script>
+<div id="topNav">
+  <div class="block clearfix">
+    <div class="topNav1">源码路专注于织梦源码分享、织梦模板、discuz模板、wordpress主题等网站模板，为广大站长提供网站模板以及Discuz插件等素材。</div>
+    <div class="f_r">
+      <div id="_userlogin">
+      <div class="userlogin">
+       <form name="userlogin" action="/member/index_do.php" method="POST">
+        <input type="hidden" name="fmdo" value="login" />
+        <input type="hidden" name="dopost" value="login" />
+        <input type="hidden" name="keeptime" value="604800" />
+        <div class="fb"><span>用户名:</span>
+         <input type="text" name="userid" size="10" class="ipt-txt" />
+        </div>
+        <div class="fb"><span>密码:</span>
+         <input type="password" name="pwd" size="10" class="ipt-txt" />
+        </div>
+        <div class="submit">
+         <button type="submit" class="btn-1">登录</button>
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" class="btn-1">注册</a> <!--<a href="/member/resetpassword.php">忘记密码?</a>--> </div>
+       </form>
+      </div>
+     </div>
+     <!-- /userlogin -->
+     <script language="javascript" type="text/javascript">CheckLogin();</script>
+    
+    </div>
+  </div>
+</div>
+<div class="header_bg">
+  <div class="block clearfix">
+    <h1><a title="织梦模板,模板王" href="/" name="top">织梦源码,模板王</a></h1>
+    <div style="float: right;">
+      <form id="searchForm" action="/plus/search.php" name="formsearch">
+        <input type="hidden" name="kwtype" value="0" />
+        <div class="search_box">
+          <input name="q" type="text" class="B_input" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+        </div>
+        <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
+      </form>
+     <a href="/work/vip.html" target="_blank"><img src="/images/join.jpg" alt="VIP" width="350" height="55"></a>
+    </div>
+  </div>
+</div>
+<div id="mainNav" class="clearfix">
+  <div class="shadow-x shadow-x1 pngfix"></div>
+  <div style="position: relative;" class="block">
+    <div class="meun_in">
+    <a  class="a1" href="/">首页</a>
+    <ul id="nav">
+    	<li><a href="/yuanma/">精品源码</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/vip/">VIP专区</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/sucai/">站长素材</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/web/">Web技术</a>
+            <ul>
+                
+                  <li><a href="/php/">PHP</a></li>
+                  
+                  <li><a href="/linux/">Linux</a></li>
+                  
+                  <li><a href="/mysql/">MySQL</a></li>
+                  
+                  <li><a href="/git/">Git</a></li>
+                  
+                  <li><a href="/sjms/">设计模式</a></li>
+                  
+                  <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                  
+                  <li><a href="/javascript/">JavaScript</a></li>
+                  
+                  <li><a href="/jquery/">jQuery</a></li>
+                  
+            </ul>
+        </li><li><a href="/seo/">站长学院</a>
+            <ul>
+                
+                  <li><a href="/seo/">网站seo</a></li>
+                  
+                  <li><a href="/jianzhan/">建站资讯</a></li>
+                  
+            </ul>
+        </li>
+    </ul>
+    
+     <div class="meun_r" id="nav">
+       <li>
+         <a href="#">加入VIP</a>
+         <ul>
+           <li>
+             <a href="/work/" target="_blank">模板疑问</a>
+           </li>
+           <li>
+             <a href="/work/vip.html" target="_blank">加入VIP</a>
+           </li>
+           <li>
+             <a href="/dingyue/" target="_blank">订阅我们</a>
+           </li>
+         </ul>
+       </li>
+     </div>
+        
+        
+    </div>
+     <div class="category_all" onmouseover="this.className='category_all category_all_on'" onmouseout="this.className='category_all'"><a class="tit" href="#">Web技术</a>
+      <div style="clear: both;"></div>
+      <div class="category_all_box">
+      <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c9"></i>
+            <h2><a class="dt_a1" href="/web/">Web技术</a></h2>
+          </dt>
+        </dl> 
+       
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c1"></i>
+            <h2><a class="dt_a1" href="/php/">PHP</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c2"></i>
+            <h2><a class="dt_a1" href="/linux/">Linux</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c3"></i>
+            <h2><a class="dt_a1" href="/mysql/">MySQL</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c4"></i>
+            <h2><a class="dt_a1" href="/git/">Git</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c5"></i>
+            <h2><a class="dt_a1" href="/sjms/">设计模式</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c6"></i>
+            <h2><a class="dt_a1" href="/html5css3/">HTML5+CSS3</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c7"></i>
+            <h2><a class="dt_a1" href="/javascript/">JavaScript</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c8"></i>
+            <h2><a class="dt_a1" href="/jquery/">jQuery</a></h2>
+          </dt>
+        </dl>
+        
+            
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blank"></div>
+<div class="block clearfix">
+  <div class="box">
+    <div class="box_1">
+      <div class="ur_here">
+        <div style="float: left;"><a href='http://127.0.0.1//'>网站模板</a> > <a href='/seo/'>站长学院</a> > <a href='/jianzhan/'>建站资讯</a> > </div>
+        <div class="b_box2"></div>
+      </div>
+    </div>
+    
+ <div class="blank"></div>
+<div class="bd_union2">
+    <div class="bd_union2_right">
+    <script type="text/javascript">
+    /*468*60 创建于 2015-07-28*/
+    var cpro_id = "u2233166";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  	<div class="bd_union2_left">
+    <script type="text/javascript">
+    /*640*60 创建于 2015-07-28*/
+    var cpro_id = "u2233163";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  </div>
+    <div class="blank"></div>
+
+    <div class="AreaL2">
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>Web技术</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/php/">PHP</a></li>
+                 
+                 <li><a href="/linux/">Linux</a></li>
+                 
+                 <li><a href="/mysql/">MySQL</a></li>
+                 
+                 <li><a href="/git/">Git</a></li>
+                 
+                 <li><a href="/sjms/">设计模式</a></li>
+                 
+                 <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                 
+                 <li><a href="/javascript/">JavaScript</a></li>
+                 
+                 <li><a href="/jquery/">jQuery</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>站长学院</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/seo/">网站seo</a></li>
+                 
+                 <li><a href="/jianzhan/">建站资讯</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+
+<div class="box article_z">
+<script type="text/javascript">
+/*200*200 创建于 2015-07-28*/
+var cpro_id = "u2233243";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+<div class="blank5"></div>
+
+    </div>
+    <div class="AreaR2">
+      <div class="box">
+        <div class="box_1">
+          <div class="wzbt">
+            <div class="tc">
+              <h4 class="art_tit">UI设计中图形设计详解</h4>
+              <font class="f3">www.ymroad.com / 2015-03-02</font> </div>
+            <div class="content">
+				<div>
+	<strong>1、色彩设计：</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	美学相关的知识（色彩构成、平面构成等等）我就不再赘述了，相信从事此类行业的人员无人不知无人不晓了。这里简要说说WebApp设计中，色彩以及构图的特别之处吧。</div>
+<div>
+	&nbsp;</div>
+<div>
+	首先是色彩。从事过广告和印刷业设计工作的人员应该都接触过一种东西，那就是标准色板。颜色是什么？你所看到的未必就是真的，反言之，真的你未必会看得到，呵呵，说的有些抽象了。还是举个实际例子吧，#f0f0f0这个很浅的灰色，目前80%的客户都已经升级到LCD显示器了，而大部分LCD显示器是无法正确显示这个的，即使显示了，各款显示器也会有很大的差异，为什么会这样？源于LCD的面板类型，LCD面板大概分为以下几种类型：NT、VA、IPS。VA和IPS面板的显示能力都可与CRT媲美了，虽然价格比较高，但其超大的可视角度（178）和完全的色彩还原，实为设计师们抛弃CRT的一剂强心剂（当然，大多数专业的图形设计师，这辈子都无法舍弃钻石珑CRT，呵呵，不一样就是不一样）。</div>
+<div>
+	&nbsp;</div>
+<div>
+	而NT面板占当前市场的绝大部分，原因就是它响应速度快，造价低廉。22寸的LCD只卖2000元不到，不用看都知道其采用的一定是造价低廉的NT面板，NT面板由于其固有的技术限制，其显示能力仅仅是16.2M色（目前的16.7M色NT面板应该是采用震荡模拟的方式实现的），颜色是设计师的命根子，缺颜色，就意味着你苦心打造的设计很可能到了客户那里完全走了样。我曾见过很多界面，选用的都是这些浅浅的灰色，看起来倒是很淡雅，但是，你真的考虑到了用户实际工作环境么？假如他用的恰好是一款不怎么出彩的廉价LCD，那你的设计岂不是要让人嗤之以鼻了？</div>
+<div>
+	&nbsp;</div>
+<div>
+	综上所述，首先，设计师必须保证自己的设计有很好的易曲性&mdash;&mdash;在各种复杂环境下都要保证&ldquo;可用&rdquo;且不出现严重的视觉干扰。你需要至少在CRT和NT面板的LCD上检查自己设计，看看是否有因为缺色而导致的布局异常和视觉干扰，在这里，我不得不BS一下Microsoft的live mail，在缺色的NT面板下，完全走了样，既看不出边框，也没有了底色，这绝对是失败的视觉设计，相比之下，Yahoo!mail的设计就要好上百倍了（包括二者的Portal也同样如此）。</div>
+<div>
+	&nbsp;</div>
+<div>
+	除了使用环境的硬件差异，还有一点就是色彩设置的差异（甚至有时候是显卡太差导致的），那种只支持增强16位色的PCI插口显卡基本已经绝种了，要知道，那可是奔腾MMX时代的经典之作。目前最底端的显卡，也支持至少24位真彩色了，而支持32位色的显卡更是遍地都是。但是，仍然有人在不知情（&ldquo;不会&rdquo;使用电脑的软件用户真不占少数）的情况下使用了16位增强色的设置，带来的后果呢，自然是难看的等高线和恶心的色彩搭配。</div>
+<div>
+	&nbsp;</div>
+<div>
+	综上所述，因为WebUI的受众十分广泛且不确定，而由于技术架构的特点，我们不能也不想对最终用户要求什么（如果要求人家装这改那的，还不如做个Setup来得实际）。</div>
+<div>
+	&nbsp;</div>
+<div>
+	因此，充分保证你的设计的易曲性，是每一名WebUI设计师在作视觉设计时首先应该把握好的一个尺度。桌面应用由于其硬件环境的可控性，是可以超前和华丽的，但是，Web设计，尤其是基于Web的企业级应用的用户界面设计，就必须要让自己随时保持清醒的头脑。</div>
+<div>
+	&nbsp;</div>
+<div>
+	看看Javaeye的界面，它很朴素但很美观，我相信，没有人会对他特别的喜欢或者特别的厌恶，如果搞一个投票，相信80%的人都会表示接受，而另外20%的人应该会表示无所谓。这就是UI视觉设计中追求的80/20原则，我们不需要特别华丽的外观，只要80%以上的人满意。</div>
+<div>
+	&nbsp;</div>
+<div>
+	这里再提一下Ext，扪心自问，有多少人是被他的外观吸引的呢？外观的喜好会让人产生强烈的先入为主的观念，这也正是为什么大多数应用软件都喜欢在外观上求突破做概念的原因了（好多软件版本升级最大的改进便是外观）。</div>
+<div>
+	&nbsp;</div>
+<div>
+	但是，行业软件绝对不是以外观的华丽来取胜的，或者说，当前国内市场上，行业软件尚未达到那种只能在外观上寻求突破的高度。因此，作为应用软件领域的UI设计师，你可以去做做概念，吸引一下人们的眼球，来获取一席之地。但行业软件的UI设计师绝对不应该把自己主要的精力放在视觉设计上，这不仅会让你迷失方向，也会让你们的产品迷失方向。</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>2、构图和视觉风格设计：</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	我们只讨论以下三类常见的应用，至于3D界面和虚拟现实暂不讨论了，它们是：Web应用、桌面应用、移动设备。</div>
+<div>
+	&nbsp;</div>
+<div>
+	首先我们来看一下桌面应用，可以这样说，操作系统是桌面用户界面设计的领头军，换言之，UI设计师在进行桌面UI设计时，首先应该考虑的就是操作系统环境。</div>
+<div>
+	&nbsp;</div>
+<div>
+	而往往，某个特定软件环境下的桌面应用，UI也是有诸多限制的，这个限制，就是系统固有的交互风格设定。</div>
+<div>
+	&nbsp;</div>
+<div>
+	举例来说，我们经常会在看到某一软件界面后这样说&ldquo;哇，还是Mac风格的好看！&rdquo;&ldquo;这个是用.Net开发的吧&rdquo;&ldquo;Swing做的破东西太难看了，还贼慢&rdquo;，为什么会出现这样的情况呢？因为，大多数情况下，我们在某个操作系统环境下进行软件的设计与开发，其组件和控件必然会不可避免的使用操作系统自身提供的UI API，也就是说，无论你做什么样的软件，都需要遵从相关操作系统用户界面的开发规范。</div>
+<div>
+	&nbsp;</div>
+<div>
+	Windows有个Offcial Reference，在MSDN上。同样的，Apple，Java乃至Nokia，他们都有相应的长篇累牍的API文档和开发规范。那么，这里又不得不提到了Ext，Ext的API文档是什么？呵呵，它与以上这些操作系统的GUI规范无异，它的API文档就是它的开发规范。</div>
+<div>
+	&nbsp;</div>
+<div>
+	所以，我曾经这样讲&ldquo;Ext再怎么折腾，也是Ext&rdquo;，现在各位应该真正了解我的意思了吧。Ext在我看来，已经不是Web UI了，我更倾向于把它归结为桌面UI的Windows系列内。桌面UI有个最基本的衡量标准WIMP（window、icon、menu、pointer），很明显的，Ext是桌面UI风格。而它的交互方式和Windows如出一辙，因此，我把它定位为基于浏览器的、Windows风格的桌面UI库。</div>
+<div>
+	&nbsp;</div>
+<div>
+	总结一下，桌面应用的常见布局，就是：多为框架结构，由Grid、Toolbar、Menu、Form、Icon等控件构成。</div>
+<div>
+	&nbsp;</div>
+<div>
+	再来看一下Web应用，我曾不止一次的提到这样一个观点，那就是，Web是自由且开放的。正因为其开放性，才有了今天的Ext、Ajax以及Thin Client和Rich Client之争。</div>
+<div>
+	&nbsp;</div>
+<div>
+	Web设计到底应该是怎样的？这个没有定论，因为Web是大家的Web，存在即合理。Web设计，最应该考虑的就是&ldquo;设计的上下文&rdquo;，在一个完全开放的平台上进行设计，就如同在一张白纸上作画。</div>
+<div>
+	&nbsp;</div>
+<div>
+	最大的限制不是技术，而是设计师本身。只有设计师能够决定自己的设计究竟该如何去做，同样，也只有他的能力会限制自己的设计。结合上下文关系，如果你开发的是Web mail程序，对于多年使用Outlook已经形成根深蒂固的使用习惯的用户来说，你要如何做这样的界面设计？开发一个全新的无人触及的新奇东东么？不，那背离了设计的人本本质，所以，满足用户最简单的办法就是，在Web上设计开发一个与Outlook风格和外观类似的应用，让用户完全没有压力，在熟悉地环境下高效的开展自己的工作。</div>
+<div>
+	&nbsp;</div>
+<div>
+	那么，如果你要开发的是一个新闻发布系统，自然就要符合用户对于Web的既定认识和习惯，把应用设计得如同报纸、杂志一般，并且提供良好的内容分类和搜索，以期让用户很容易的找到自己想要的资源，在最短的时间内获取更多有价值的信息（RSS和Portal都是因此而产生的）。</div>
+<div>
+	&nbsp;</div>
+<div>
+	再比如，你要设计开发的是一款信息管理系统，那么，很可能高效方便的增删改功能和强大的报表、查询系统，才是UI设计首先需要考虑的（桌面风格的UI很适合做此类应用）。又或者，你要开发一个体现出业务流程性的庞大复杂的行业应用，那么，体现出行业解决方案的高度概念性和软件对于业务流程的规范和指导作用，这是在设计UI时主要需要考虑的。而所有这些，在Web上统统可以实现，这要归功于Ajax，归功于全世界的开发者和设计师的共同努力。</div>
+<div>
+	&nbsp;</div>
+<div>
+	总结一下，Web界面的常用布局&mdash;&mdash;如果说到传统，那么，自然是平板式的文本流（Web在设计之初就是为了研究人员之间文档的共享和查看）。但是，Web发展到今天，我真的不知道该如何去总结它的布局风格了。只能说，常见的有：Banner-navi-content布局（多见于网站和多数Web应用），左右框架式布局（常见于基于内容和数据维护的Web应用）、Portal布局（企业Portal或门户）等等。</div>
+<div>
+	&nbsp;</div>
+<div>
+	最后，说一下移动设备的用户界面。典型的就是手机上的应用软件，颜色和尺寸以及图形处理性能是其最主要的限制。基本上，在各个平台上开发应用程序，都要遵从平台的开发指南和规范，而风格大致也都是与操作系统本身一致的，再此不作赘述了。其实，之所以单独提一下移动设备，是因为某些行业软件还需要考虑PDA和手机用户的需要，这也成为我们在设计风格定位和技术选型上的一个制约条件。</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>3、图标、CSS、结构与表现分离：</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	图标按其创作风格，大致可分为两种：矢量图标和像素图标。在没有Alpha通道的几年前，图标几乎都是像素风格的，生硬而简洁（例如windows2000的图标），但是十分耐看。</div>
+<div>
+	&nbsp;</div>
+<div>
+	近年来，随着Alpha通道逐渐普及，图标开始变得越来越绚丽（主要归功于Apple），越来越写实，设计师们为了创造出更加绚丽的图标，逐渐改用矢量设计软件来进行创作。WindowsXP风格的图标就是矢量图标。绘制图标几乎成了所有UI设计师的看家本事，也是衡量一名UI设计师在GUI设计方面能力水平的标尺。方寸之地方显英雄本色。</div>
+<div>
+	&nbsp;</div>
+<div>
+	那么，图标除了好看以外，还有别的什么功能么？其实，图标在图形用户界面的主要作用是辅助识别，每个人在成长过程中，最先认识事物是通过对其轮廓的识别，而不是靠文字。</div>
+<div>
+	&nbsp;</div>
+<div>
+	因此，图标多会采用最为简洁的方式表现出事物的功能和特点：比如，突起的东西表示它应该是可以点击的，小信封表示这是一封邮件，放大镜表示这里是搜索。</div>
+<div>
+	&nbsp;</div>
+<div>
+	一直以来，图标都在尽可能的贴近实际，但是，并不是所有的Web上的事物都可以找到现实中的存在。学习能力是人类与生俱来的一种能力，初遇Web的人类开始不断的学习和了解这个世界，他们知道了什么是鼠标指针，什么叫光标，什么是链接，什么又是滚动条。</div>
+<div>
+	&nbsp;</div>
+<div>
+	正是人类不断的认知，促成了习惯，也就形成了如今的各类用户界面风格。最早的Web是没有图标的，或者说，在Web上，图标的概念和桌面UI完全不同。WebUI中，图标的作用往往是辅助说明，而非&ldquo;点击&rdquo;，这与桌面UI中图标的功能大相径庭。因此，大家可以仔细看一下，大部分传统的WebUI中，是绝对不会出现可以点击的图标的（论坛的表情符号除外。。）。WebUI更习惯以文本的方式来展示信息，以带有下划线的文本来表示此处是链接可点击。</div>
+<div>
+	&nbsp;</div>
+<div>
+	综上所述，WebUI中的图标和桌面应用的图标有着固有的本质区别，因此，照搬桌面UI的设计往往会将用户引入错误的习惯当中，使用户想当然的认为WebUI就应该那样去做，这对Web是不公平的，对WebUI设计更是极大的讽刺。要知道，Toolbar和Menu根本就不是WebUI的必需品&mdash;&mdash;包括图标在内。</div>
+<div>
+	&nbsp;</div>
+<div>
+	再来看看CSS，CSS是什么？最早，它是出现在印刷业当中的，后来才被引入Web，用来对文档格式化。提到CSS，就不得不提到结构与表现分离。说到这个，可能有人就会想到了，网站的裸奔节，呵呵。对于结构与表现到底怎么个分离法，我相信各位都有自己的见解。</div>
+<div>
+	&nbsp;</div>
+<div>
+	我对此的理解是，Web不仅仅是CSS+HTML，还有各种服务器端技术呢。其实，与其让HTML和CSS做到结构与表现分离倒不如让开发人员在编码的时候，做到结构与表现分离。我并不是结构与表现分离这种思想的坚决拥护者，我会在必要的时候用Table去做布局，即使HTML代码增多了，那又如何，我换来的是良好的兼容性，再也不用特别去关注各个浏览器在CSS解析和渲染上的微小差异，这么做值得。</div>
+<div>
+	&nbsp;</div>
+<div>
+	只要通过某种方式，让开发人员只需要书写简单的Tag就可以开发页面，谁还会去关注HTML和CSS的结构与表现分离呢？当然，tag的封装不止是这么一个原因而已，稍后的章节我会详细论述。</div>
+<div>
+	&nbsp;</div>
+<div>
+	每一个UI设计师，都是从处理图片开始职业生涯的，慢慢的，他们发现，为什么每一次自己的设计都会让开发人员眉头紧锁说无法实现或十分困难呢？技术到底是怎样的呢？后来，UI设计师们学会了HTML，哦~ 原来HTML是这样地，他们的设计开始变得更加实际了，他们不仅能够处理和设计图片，同时也能够为开发人员提供必要的HTML支持了。再后来，他们发现，为什么自己的设计加载速度总是那么的慢，而别人的设计加载起来这么快呢？后来，他们慢慢懂得了切图，懂得了CSS。</div>
+<div>
+	&nbsp;</div>
+<div>
+	后来的后来，他们不仅懂得HTML和CSS，而且还能够考虑到性能和兼容性，并开始注意编码的艺术，知道了什么叫做设计模式，什么叫做抽象和封装。至此，他们才真正的把自己提升到了WebUI设计师的高度。他们发现自己越来越懒，宁可通过CSS复杂的编码来实现一个特效，也不愿去花时间绘制一个图片（比如阴影）。他们写的代码越来越少，CSS越来越多，慢慢的，结构与表现分离了，HTML变成了通篇的DIV和UL，CSS文件如天书一般洋洋洒洒数十kb。</div>
+<div>
+	&nbsp;</div>
+<div>
+	因此，结构与表现分离是一个思想上的自然演变过程。我看到今天，有那么多的设计师以此为准则、以此为规范，不禁感慨，WebUI不是那样的，Table无罪。当你因为无法用DIV+CSS实现某种布局转而引入大量的JS或干脆换个设计的时候，这么做值得么？</div>
+<div>
+	&nbsp;</div>
+<div>
+	总结一下，CSS无疑给了WebUI设计师更大的发展空间，它是WebUI设计师的一把利剑，当然它同样也是一把双刃剑。过份依赖CSS只会让你的设计越来越简洁、越来越无趣，这就是CSS下的迷失。图片不是罪，如果你不想自己的灵感一点点的枯竭，那么，重新拾起图片吧，你会发现设计原来可以更美的（参见Vista相关网站，设计可以更美的）。这里再小小的提一下Ext，虽然它自带主题的支持，但是，它真能够做到让设计师随心所欲么？想随心所欲又要付出多大的代价呢？</div>
+<div>
+	&nbsp;</div>
+<div>
+	本章结论，WebUI的图形设计，其自由度是由交互风格和技术架构双重作用决定的。限制了交互风格和技术架构，就等于限制了图形设计风格，也就相当于限制了UI设计师的发挥。因此，让UI设计师来选择和决定交互风格和技术架构是UI设计不可或缺的关键一步。只有真正从用户业务的角度出发，合理的定位交互风格和技术架构，才有可能做出真正符合用户习惯和需求的界面。设计师真正需要驾驭的不是技术而是设计本身。因此，在这里，我想说：永远不要在技术面前迷失了方向。是设计去选择技术，而不应该让技术来决定设计。</div>
+
+            </div>
+            <div class="blank5"></div>
+            <div class="blank5"></div>
+            <div class="art_bottom"  >
+              <div style="float:left">上一篇：<a href='/jianzhan/850.html'>大型网站设计思路剖析</a> </div>
+              <div style="float:right">下一篇：<a href='/jianzhan/852.html'>UI设计师具备四大维度能力剖析</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blank5"></div>
+    <div class="jogger"> </div>
+    <div class="blank5"></div>
+    <div class="blank5"></div>
+  </div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="blank"></div>
+<div class="footer_box">
+<div class="block">
+  <div class="box">
+    <div class="helpTitBg  ">
+      <dl class="dl1">
+        <dt><span></span>Web技术</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/dedecmsjc/" title="织梦教程">TMD9教程</a></dd>
+        <dd><a href="/discuzjc/" title="Discuz教程">Discuz教程</a></dd>
+        <dd><a href="/wordpressjc/" title="wordpress教程">wordpress教程</a></dd>
+        <dd><a href="/ecshopjc/" title="ecshop教程">ecshop教程</a></dd>
+      </dl>
+      <dl class="dl2">
+        <dt><span></span>站长学院</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/ems/" title="网站seo">网站seo</a></dd>
+        <dd><a href="/jianzhan/" title="建站资讯">建站资讯</a></dd>
+      </dl>
+      <dl class="dl3">
+        <dt><span></span>常见问题</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/work/vip.html" title="如何加入VIP">如何加入VIP</a></dd>
+      </dl>
+      <dl class="dl4">
+        <dt><span></span>服务支持</dt>
+        <div style=" clear:both"></div>
+        <dd>QQ：249411513</dd>
+        <dd>E-mail：249411513@qq.com</dd>
+        <dd>Web：Www.YmRoad.Com</dd>
+      </dl>
+     <img width="100" height="103" alt="" src="/style/images/footer_img.gif"></div>
+  </div>
+</div>
+
+<div id="footer">
+<div class="text">
+  Copyright 2015-2015 All Rights Reserved Theme by 源码路www.ymroad.com
+  <br />
+  <a href="http://www.ymroad.com/" target="_blank" rel="nofollow">浙ICP备11047180号-6</a>
+  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=249411513&site=qq&menu=yes">
+    <img border="0" src="http://wpa.qq.com/pa?p=2:249411513:51" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+  </a>
+  <br />
+  <a href="http://www.ymroad.com" target="_blank">站长资源</a>
+  <a href="/sitemap.xml" target="_blank">网站地图</a>
+</div>
+</div>
+</div>
+<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=1256403958&web_id=12539238" language="JavaScript"></script></div>
+
+<script>
+$(function(){
+	$("#aFloatTools_Hide").click(function(){
+	
+		$('#divFloatToolsView').animate({
+		width: 'hide', opacity: 'hide'
+		}, 
+		'normal',
+		function(){
+			 $('#divFloatToolsView').hide();
+		})
+		$('#aFloatTools_Show').attr('style','display:block');
+		$('#aFloatTools_Hide').attr('style','display:none');
+	})
+	$("#aFloatTools_Show").click(function(){
+	
+		$('#divFloatToolsView').animate({
+			width: 'show', opacity: 'show'
+			},
+			'normal',
+			function(){ 
+				$('#divFloatToolsView').show();
+		})
+		$('#aFloatTools_Show').attr('style','display:none');
+		$('#aFloatTools_Hide').attr('style','display:block');
+	})
+	
+})
+</script>
+<!-- <div id="floatTools" class="float0831">
+  <div class="floatL"> <a id="aFloatTools_Show" class="btnOpen"  rel="nofollow"  style="DISPLAY: none" title="查看在线客服" href="javascript:void(0);">展开</a> <a id="aFloatTools_Hide" class="btnCtn"  rel="nofollow"   title="关闭在线客服" href="javascript:void(0);">收缩</a> </div>
+  <div id="divFloatToolsView" class="floatR" style="display:blcok">
+    <div class="tp"></div>
+    <div class="cn">
+      <ul>
+        <li class="top">
+          <h3 class="titZx"></h3>
+        </li>
+        <li><a class="icoTc" title="加入VIP" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=23&site=qq&menu=yes">加入VIP</a> </li>
+        <li><a class="icoTc" title="仿站咨询" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=942389&site=qq&menu=yes">仿站咨询</a> </li>
+        <li><a class="icoTc" title="织梦后台定制" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=94230489&site=qq&menu=yes">织梦后台定制</a> </li>
+      </ul>
+      
+    </div>
+  </div>
+</div> -->
+
+<script language="javascript"> 
+(function(){
+        var res = GetRequest();
+        var par = res['index'];
+        if(par!='gfan'){
+                var ua=navigator.userAgent.toLowerCase();
+                var contains=function (a, b){
+                        if(a.indexOf(b)!=-1){return true;}
+                };
+//将下面的http://m.baidu.com改成你的wap手机版地址        
+                var toMobileVertion = function(){
+                        window.location.href = 'http://www.ymroad.com/m/'
+                }
+
+                if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+                if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+        ||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+        }
+})();
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs.split("=")[0]]=unescape(strs.split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+<title>discuz教程：全局变量$_G详解_网站模板下载尽在源码路-</title>
+<meta name="keywords" content="discuz,教程,全局,变量,详解,保存,Discuz,中" />
+<meta name="description" content="$_G 保存了 Discuz! 中所有的预处理数据 缓存能够很好的提高程序的性能，一些配置数据没必要每次都查询数据库，只要在修改了的时候更新下缓存即可。 Discuz! 中所有的缓存保存在 $_G[cache] 中 $_G[member] 会员信息数据 $_G[uid] 用户 uid $_G[username] 用" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/style/css/style.css">
+<script type="text/javascript" src="/style/js/index.js"></script>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script> 
+<script language="javascript" type="text/javascript"> 
+<!-- 
+function CheckLogin(){ 
+var taget_obj = document.getElementById('_userlogin'); 
+myajax = new DedeAjax(taget_obj,false,false,'','',''); 
+myajax.SendGet2("/member/ajax_loginsta.php"); 
+DedeXHTTP = null; 
+} 
+--> 
+</script>
+<!--[if IE 6]>
+<script src="/style/js/DD_belatedPNG_0.0.8a-min.vb4e86b02.js"></script>
+<script> DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+<script language="javascript" type="text/javascript" src="/include/ckeditor/plugins/syntaxhighlight/code.js" ></script>
+<!-- 织梦技术研究中心 http://www.dedejs.com -->
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shThemeDefault.css"/>
+</head>
+<body>
+<script type=text/javascript><!--//--><![CDATA[//><!--
+function menuFix() {
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+ for (var i=0; i<sfEls.length; i++) {
+  sfEls[i].onmouseover=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseDown=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseUp=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+"");
+  }
+ }
+}
+window.onload=menuFix;
+
+//--><!]]></script>
+<div id="topNav">
+  <div class="block clearfix">
+    <div class="topNav1">源码路专注于织梦源码分享、织梦模板、discuz模板、wordpress主题等网站模板，为广大站长提供网站模板以及Discuz插件等素材。</div>
+    <div class="f_r">
+      <div id="_userlogin">
+      <div class="userlogin">
+       <form name="userlogin" action="/member/index_do.php" method="POST">
+        <input type="hidden" name="fmdo" value="login" />
+        <input type="hidden" name="dopost" value="login" />
+        <input type="hidden" name="keeptime" value="604800" />
+        <div class="fb"><span>用户名:</span>
+         <input type="text" name="userid" size="10" class="ipt-txt" />
+        </div>
+        <div class="fb"><span>密码:</span>
+         <input type="password" name="pwd" size="10" class="ipt-txt" />
+        </div>
+        <div class="submit">
+         <button type="submit" class="btn-1">登录</button>
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" class="btn-1">注册</a> <!--<a href="/member/resetpassword.php">忘记密码?</a>--> </div>
+       </form>
+      </div>
+     </div>
+     <!-- /userlogin -->
+     <script language="javascript" type="text/javascript">CheckLogin();</script>
+    
+    </div>
+  </div>
+</div>
+<div class="header_bg">
+  <div class="block clearfix">
+    <h1><a title="织梦模板,模板王" href="/" name="top">织梦源码,模板王</a></h1>
+    <div style="float: right;">
+      <form id="searchForm" action="/plus/search.php" name="formsearch">
+        <input type="hidden" name="kwtype" value="0" />
+        <div class="search_box">
+          <input name="q" type="text" class="B_input" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+        </div>
+        <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
+      </form>
+     <a href="/work/vip.html" target="_blank"><img src="/images/join.jpg" alt="VIP" width="350" height="55"></a>
+    </div>
+  </div>
+</div>
+<div id="mainNav" class="clearfix">
+  <div class="shadow-x shadow-x1 pngfix"></div>
+  <div style="position: relative;" class="block">
+    <div class="meun_in">
+    <a  class="a1" href="/">首页</a>
+    <ul id="nav">
+    	<li><a href="/yuanma/">精品源码</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/vip/">VIP专区</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/sucai/">站长素材</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/web/">Web技术</a>
+            <ul>
+                
+                  <li><a href="/php/">PHP</a></li>
+                  
+                  <li><a href="/linux/">Linux</a></li>
+                  
+                  <li><a href="/mysql/">MySQL</a></li>
+                  
+                  <li><a href="/git/">Git</a></li>
+                  
+                  <li><a href="/sjms/">设计模式</a></li>
+                  
+                  <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                  
+                  <li><a href="/javascript/">JavaScript</a></li>
+                  
+                  <li><a href="/jquery/">jQuery</a></li>
+                  
+            </ul>
+        </li><li><a href="/seo/">站长学院</a>
+            <ul>
+                
+                  <li><a href="/seo/">网站seo</a></li>
+                  
+                  <li><a href="/jianzhan/">建站资讯</a></li>
+                  
+            </ul>
+        </li>
+    </ul>
+    
+     <div class="meun_r" id="nav">
+       <li>
+         <a href="#">加入VIP</a>
+         <ul>
+           <li>
+             <a href="/work/" target="_blank">模板疑问</a>
+           </li>
+           <li>
+             <a href="/work/vip.html" target="_blank">加入VIP</a>
+           </li>
+           <li>
+             <a href="/dingyue/" target="_blank">订阅我们</a>
+           </li>
+         </ul>
+       </li>
+     </div>
+        
+        
+    </div>
+     <div class="category_all" onmouseover="this.className='category_all category_all_on'" onmouseout="this.className='category_all'"><a class="tit" href="#">Web技术</a>
+      <div style="clear: both;"></div>
+      <div class="category_all_box">
+      <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c9"></i>
+            <h2><a class="dt_a1" href="/web/">Web技术</a></h2>
+          </dt>
+        </dl> 
+       
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c1"></i>
+            <h2><a class="dt_a1" href="/php/">PHP</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c2"></i>
+            <h2><a class="dt_a1" href="/linux/">Linux</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c3"></i>
+            <h2><a class="dt_a1" href="/mysql/">MySQL</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c4"></i>
+            <h2><a class="dt_a1" href="/git/">Git</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c5"></i>
+            <h2><a class="dt_a1" href="/sjms/">设计模式</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c6"></i>
+            <h2><a class="dt_a1" href="/html5css3/">HTML5+CSS3</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c7"></i>
+            <h2><a class="dt_a1" href="/javascript/">JavaScript</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c8"></i>
+            <h2><a class="dt_a1" href="/jquery/">jQuery</a></h2>
+          </dt>
+        </dl>
+        
+            
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blank"></div>
+<div class="block clearfix">
+  <div class="box">
+    <div class="box_1">
+      <div class="ur_here">
+        <div style="float: left;"><a href='http://127.0.0.1//'>网站模板</a> > <a href='/web/'>Web技术</a> > <a href='/linux/'>Linux</a> > </div>
+        <div class="b_box2"></div>
+      </div>
+    </div>
+    
+ <div class="blank"></div>
+<div class="bd_union2">
+    <div class="bd_union2_right">
+    <script type="text/javascript">
+    /*468*60 创建于 2015-07-28*/
+    var cpro_id = "u2233166";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  	<div class="bd_union2_left">
+    <script type="text/javascript">
+    /*640*60 创建于 2015-07-28*/
+    var cpro_id = "u2233163";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  </div>
+    <div class="blank"></div>
+
+    <div class="AreaL2">
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>Web技术</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/php/">PHP</a></li>
+                 
+                 <li><a href="/linux/">Linux</a></li>
+                 
+                 <li><a href="/mysql/">MySQL</a></li>
+                 
+                 <li><a href="/git/">Git</a></li>
+                 
+                 <li><a href="/sjms/">设计模式</a></li>
+                 
+                 <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                 
+                 <li><a href="/javascript/">JavaScript</a></li>
+                 
+                 <li><a href="/jquery/">jQuery</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>站长学院</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/seo/">网站seo</a></li>
+                 
+                 <li><a href="/jianzhan/">建站资讯</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+
+<div class="box article_z">
+<script type="text/javascript">
+/*200*200 创建于 2015-07-28*/
+var cpro_id = "u2233243";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+<div class="blank5"></div>
+
+    </div>
+    <div class="AreaR2">
+      <div class="box">
+        <div class="box_1">
+          <div class="wzbt">
+            <div class="tc">
+              <h4 class="art_tit">discuz教程：全局变量$_G详解</h4>
+              <font class="f3">www.ymroad.com / 2015-01-05</font> </div>
+            <div class="content">
+				<div>
+	$_G 保存了 Discuz! 中所有的预处理数据</div>
+<div>
+	缓存能够很好的提高程序的性能，一些配置数据没必要每次都查询数据库，只要在修改了的时候更新下缓存即可。</div>
+<div>
+	Discuz! 中所有的缓存保存在 $_G[cache] 中</div>
+<div>
+	$_G[member]<span class="Apple-tab-span" style="white-space:pre"> </span>会员信息数据</div>
+<div>
+	$_G[uid]<span class="Apple-tab-span" style="white-space:pre"> </span>用户 uid</div>
+<div>
+	$_G[username]<span class="Apple-tab-span" style="white-space:pre"> </span>用户名</div>
+<div>
+	$_G[adminid]<span class="Apple-tab-span" style="white-space:pre"> </span>用户管理组 id</div>
+<div>
+	$_G[groupid]<span class="Apple-tab-span" style="white-space:pre"> </span>用户用户组 id</div>
+<div>
+	$_G[settting]<span class="Apple-tab-span" style="white-space:pre"> </span>设置数据</div>
+<div>
+	$_G[cache]<span class="Apple-tab-span" style="white-space:pre"> </span>系统缓存</div>
+<div>
+	$_G[cache][plugin]<span class="Apple-tab-span" style="white-space:pre"> </span>插件缓存</div>
+<div>
+	载入缓存可以使用 loadcache() 函数，将缓存载入到 $_G[cache] 数组中</div>
+<div>
+	&nbsp;</div>
+<div>
+	(1) 全局变量系统篇</div>
+<div>
+	$_G[&#39;uid&#39;] =&gt; 当前登录UID&nbsp;</div>
+<div>
+	$_G[&#39;username&#39;] =&gt; 当前登录用户名&nbsp;</div>
+<div>
+	$_G[&#39;adminid&#39;] =&gt; 当前登录ID管理组ID&nbsp;</div>
+<div>
+	$_G[&#39;groupid&#39;] =&gt; 当前登录ID用户组ID</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;cookie&#39;] =&gt; 客户端cookie&nbsp;</div>
+<div>
+	$_G[&#39;formhash&#39;] =&gt; 当前登录ID的【FORMHASH】 主要用于表单提交</div>
+<div>
+	$_G[&#39;timestamp&#39;] =&gt; 当前活动时间</div>
+<div>
+	$_G[&#39;starttime&#39;] =&gt; 1317042440.3242</div>
+<div>
+	$_G[&#39;clientip&#39;] =&gt; 当前访问者IP地址&nbsp;</div>
+<div>
+	$_G[&#39;referer&#39;] =&gt; 当前请求的地址，主要用户表单提交</div>
+<div>
+	$_G[&#39;charset&#39;] =&gt; 程序编码</div>
+<div>
+	$_G[&#39;PHP_SELF&#39;] =&gt; 当前访问页面的相对地址&nbsp;</div>
+<div>
+	$_G[&#39;siteurl&#39;] =&gt; 程序访问地址&nbsp;</div>
+<div>
+	$_G[&#39;siteroot&#39;] =&gt; 程序所在域名的相对目录</div>
+<div>
+	$_G[&#39;fid&#39;] =&gt; 当前版块id【主题列表页、帖子页】出现&nbsp;</div>
+<div>
+	$_G[&#39;tid&#39;] =&gt; 当前帖子ID【帖子页】出现&nbsp;</div>
+<div>
+	$_G[&#39;basescript&#39;] =&gt; 当前页面所在频道</div>
+<div>
+	$_G[&#39;basefilename&#39;] =&gt; 当前页面php文件名&nbsp;</div>
+<div>
+	$_G[&#39;staticurl&#39;] =&gt; 程序附件目录&nbsp;</div>
+<div>
+	$_G[&#39;mod&#39;] =&gt; 当前页面的MOD值【例如：forum.php?mod=xxx】</div>
+<div>
+	$_G[&#39;inajax&#39;] =&gt; 当前ajax请求的值【无-0 有-1】</div>
+<div>
+	$_G[&#39;page&#39;] =&gt; 当前分页ID</div>
+<div>
+	$_G[&#39;tpp&#39;] =&gt; 当前分页每页显示数量</div>
+<div>
+	$_G[&#39;seokeywords&#39;] =&gt; 当前页面seo关键词</div>
+<div>
+	$_G[&#39;seodescription&#39;] =&gt; 当前页面seo介绍</div>
+<div>
+	$_G[&#39;timenow&#39;] =&gt; Array</div>
+<div>
+	(</div>
+<div>
+	[time] =&gt; 2011-9-26 21:07 当前服务器时间</div>
+<div>
+	[offset] =&gt; +8 当前服务器时区</div>
+<div>
+	)&nbsp;</div>
+<div>
+	$_G[&#39;config&#39;] =&gt; Array(</div>
+<div>
+	&nbsp; &nbsp; $_G[&#39;config&#39;][db] =&gt; Array(&nbsp;</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; $_G[&#39;config&#39;][db][1] =&gt; Array(</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_G[&#39;config&#39;][db][1][dbhost] =&gt; localhost 数据库连接地址</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_G[&#39;config&#39;][db][1][dbuser] =&gt; root 数据库用户名</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_G[&#39;config&#39;][db][1][dbpw] =&gt; 123456 数据库密码</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_G[&#39;config&#39;][db][1][dbcharset] =&gt; utf8 数据库编码</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_G[&#39;config&#39;][db][1][pconnect] =&gt; 0</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_G[&#39;config&#39;][db][1][dbname] =&gt; dxutf 数据库名</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_G[&#39;config&#39;][db][1][tablepre] =&gt; pre_ 数据表前缀</div>
+<div>
+	&nbsp; &nbsp; &nbsp; &nbsp; )</div>
+<div>
+	&nbsp; &nbsp; )</div>
+<div>
+	)</div>
+<div>
+	&nbsp;</div>
+<div>
+	(2) 全局后台各项设置篇</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][sitename] =&gt; 全局-站点信息-网站名称</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][siteurl] =&gt; 全局-站点信息-网站URL</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][regname] =&gt; 全局-注册访问-注册-注册地址</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][reglinkname] =&gt; 全局-注册访问-注册-注册链接文字</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][regverify] =&gt; 全局-注册访问-注册-新用户注册验证</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][icp] =&gt; 全局-站点信息-网站备案信息代码</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][imagelib] =&gt; 全局-上传设置-基本设置-图片处理库类型</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][extcredits] =&gt; 积分情况 自行打印</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][creditsformula] =&gt; 全局-积分设置-基本设置-总积分计算公式</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][cacheindexlife] =&gt; 全局-性能优化-论坛页面缓存设置-缓存论坛首页有效期</div>
+<div>
+	$_G[&#39;setting&#39;][cachethreaddir] =&gt; 全局-性能优化-论坛页面缓存设置-缓存目录</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][cachethreadlife] =&gt; 全局-性能优化-论坛页面缓存设置-缓存帖子有效期</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][bbrulestxt] =&gt; 全局-注册访问-注册-网站服务条款</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][bbname] =&gt; 全局-站点信息-站点名称</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][attachurl] =&gt; 全局-上传设置-基本设置-本地附件URL地址</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][attachdir] =&gt; 全局-上传设置-基本设置-本地附件保存位置</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][anonymoustext] =&gt; 界面-界面设置-全局-匿名用户的昵称</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][threadsticky] =&gt; 界面-界面设置-主题列表-置顶主题的标识</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][defaultindex] =&gt; 默认首页文件名forum.php</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][verify] =&gt; 用户-认证设置</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][rewriterule] =&gt; 后台伪静态规则情况</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][ucenterurl] =&gt; UCenter地址</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][plugins] =&gt; 后台插件设置与启用情况</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][navlogos] =&gt; 后台界面设置-导航设置-内置导航的logo组</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][navmn] =&gt; 后台设置的导航情况，主要用于导航判断</div>
+<div>
+	$_G[&#39;setting&#39;][navs] =&gt; 页头导航数组，可参考此数组进行页头导航重写</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][footernavs] =&gt; 页尾导航</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][spacenavs] =&gt; 家园模块左侧导航</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][mynavs] =&gt; 页头导航右边快捷导航按钮内容</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][topnavs] =&gt; 页头顶部导航内容</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][forumpicstyle] =&gt; Array 版块主题封面</div>
+<div>
+	(</div>
+<div>
+	$_G[&#39;setting&#39;][forumpicstyle][thumbwidth] =&gt; 主题封面宽度</div>
+<div>
+	$_G[&#39;setting&#39;][forumpicstyle][thumbheight] =&gt; 主题封面高度</div>
+<div>
+	)</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][activityfield] =&gt; 全局-站点功能-活动主题-发起者必填信息</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][activityextnum] =&gt; 全局-站点功能-活动主题-扩展资料项数量</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][activitypp] =&gt; 全局-站点功能-活动主题-用户列表每页显示参与活动的人数</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][activitycredit] =&gt; 全局-站点功能-活动主题-使用积分</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][activitytype] =&gt; 全局-站点功能-活动主题-内置类型</div>
+<div>
+	&nbsp;</div>
+<div>
+	$_G[&#39;setting&#39;][adminemail] =&gt; 全局-站点信息-管理员邮箱</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	(3)全局当前登录者信息篇</div>
+<div>
+	$_G[&#39;member&#39;] =&gt; Array 当前登录用户个人信息</div>
+<div>
+	(</div>
+<div>
+	$_G[&#39;member&#39;][uid] =&gt; UID</div>
+<div>
+	$_G[&#39;member&#39;][email] =&gt; 邮箱地址</div>
+<div>
+	$_G[&#39;member&#39;][username] =&gt; 用户名</div>
+<div>
+	$_G[&#39;member&#39;][password] =&gt; 经过MD5后的密码（别乱输出！！！切记）$_G[&#39;member&#39;][status] =&gt; 用户是否已经删除</div>
+<div>
+	$_G[&#39;member&#39;][emailstatus] =&gt; 邮箱验证状态 0未验证 1验证通过</div>
+<div>
+	$_G[&#39;member&#39;][avatarstatus] =&gt; 头像上传状态 0未上传 1已上传</div>
+<div>
+	$_G[&#39;member&#39;][videophotostatus] =&gt; 视频认证 0未认证 1已认证</div>
+<div>
+	$_G[&#39;member&#39;][adminid] =&gt; 所在管理组ID</div>
+<div>
+	$_G[&#39;member&#39;][groupid] =&gt; 所在用户组ID</div>
+<div>
+	$_G[&#39;member&#39;][groupexpiry] =&gt; 所在用户组有效期</div>
+<div>
+	$_G[&#39;member&#39;][extgroupids] =&gt; 扩展用户组</div>
+<div>
+	$_G[&#39;member&#39;][regdate] =&gt; 注册时间</div>
+<div>
+	$_G[&#39;member&#39;][credits] =&gt; 214 现有总积分</div>
+<div>
+	$_G[&#39;member&#39;][notifysound] =&gt; 短消息声音</div>
+<div>
+	$_G[&#39;member&#39;][timeoffset] =&gt; 所在时区</div>
+<div>
+	$_G[&#39;member&#39;][newpm] =&gt; 新短消息数量</div>
+<div>
+	$_G[&#39;member&#39;][newprompt] =&gt; 新提醒数量</div>
+<div>
+	$_G[&#39;member&#39;][accessmasks] =&gt; 这个貌似访问权限，不确定</div>
+<div>
+	$_G[&#39;member&#39;][allowadmincp] =&gt; 是否拥有管理面板权限 0否 1是</div>
+<div>
+	$_G[&#39;member&#39;][onlyacceptfriendpm] =&gt; 是否只接受好友短消息 0否 1是</div>
+<div>
+	$_G[&#39;member&#39;][conisbind] =&gt; 是否绑定QQ 0否 1是</div>
+<div>
+	$_G[&#39;member&#39;][lastvisit] =&gt; 上次访问时间</div>
+<div>
+	);</div>
+<div>
+	&nbsp;</div>
+<div>
+	(4)风格变量篇</div>
+<div>
+	$_G[&#39;style&#39;] =&gt; Array(</div>
+<div>
+	$_G[&#39;style&#39;][styleid] =&gt; 当前风格ID</div>
+<div>
+	$_G[&#39;style&#39;][name] =&gt; 当前风格名</div>
+<div>
+	$_G[&#39;style&#39;][templateid] =&gt; 当前模板体系</div>
+<div>
+	$_G[&#39;style&#39;][tpldir] =&gt; 当前模板目录</div>
+<div>
+	$_G[&#39;style&#39;][menuhoverbgcolor] =&gt; 导航菜单高亮背景颜色</div>
+<div>
+	$_G[&#39;style&#39;][lightlink] =&gt; 浅色链接颜色</div>
+<div>
+	$_G[&#39;style&#39;][floatbgcolor] =&gt; 弹出窗口背景属性</div>
+<div>
+	$_G[&#39;style&#39;][dropmenubgcolor] =&gt; 下拉菜单背景属性$_G[&#39;style&#39;][floatmaskbgcolor] =&gt; 弹出窗口边框颜色属性</div>
+<div>
+	$_G[&#39;style&#39;][dropmenuborder] =&gt; 下拉菜单边框色</div>
+<div>
+	$_G[&#39;style&#39;][specialbg] =&gt; 彩色区域背景色(帖子用户信息栏、需强调的表头等)</div>
+<div>
+	$_G[&#39;style&#39;][specialborder] =&gt; 彩色区域边框</div>
+<div>
+	$_G[&#39;style&#39;][commonbg] =&gt; 通用显示区域背景颜色</div>
+<div>
+	$_G[&#39;style&#39;][commonborder] =&gt; 通用边框颜色</div>
+<div>
+	$_G[&#39;style&#39;][inputbg] =&gt; 输入框背景色</div>
+<div>
+	$_G[&#39;style&#39;][inputborderdarkcolor] =&gt; 输入框边框深色</div>
+<div>
+	$_G[&#39;style&#39;][headerbgcolor] =&gt; 页头背景</div>
+<div>
+	$_G[&#39;style&#39;][headerborder] =&gt; 页头分割线高度</div>
+<div>
+	$_G[&#39;style&#39;][sidebgcolor] =&gt; 家园侧边背景</div>
+<div>
+	$_G[&#39;style&#39;][msgfontsize] =&gt; 帖子内容字号</div>
+<div>
+	$_G[&#39;style&#39;][bgcolor] =&gt; 页面背景</div>
+<div>
+	$_G[&#39;style&#39;][noticetext] =&gt; 提示信息颜色</div>
+<div>
+	$_G[&#39;style&#39;][highlightlink] =&gt; 高亮链接颜色</div>
+<div>
+	$_G[&#39;style&#39;][link] =&gt; 链接文字颜色</div>
+<div>
+	$_G[&#39;style&#39;][lighttext] =&gt; 浅色文字</div>
+<div>
+	$_G[&#39;style&#39;][midtext] =&gt; 中等文本颜色</div>
+<div>
+	$_G[&#39;style&#39;][tabletext] =&gt; 普通文本颜色</div>
+<div>
+	$_G[&#39;style&#39;][smfontsize] =&gt; 小号字体大小</div>
+<div>
+	$_G[&#39;style&#39;][threadtitlefont] =&gt; 主题列表字体</div>
+<div>
+	$_G[&#39;style&#39;][threadtitlefontsize] =&gt; 主题列表字体大小</div>
+<div>
+	$_G[&#39;style&#39;][smfont] =&gt; 小号字体</div>
+<div>
+	$_G[&#39;style&#39;][titlebgcolor] =&gt; 版块列表标题字体颜色$_G[&#39;style&#39;][fontsize] =&gt; 正常字体大小</div>
+<div>
+	$_G[&#39;style&#39;][font] =&gt; 正常字体</div>
+<div>
+	$_G[&#39;style&#39;][styleimgdir] =&gt; 扩展图片目录</div>
+<div>
+	$_G[&#39;style&#39;][imgdir] =&gt; 界面基础图片目录</div>
+<div>
+	$_G[&#39;style&#39;][boardimg] =&gt; logo所在路径</div>
+<div>
+	$_G[&#39;style&#39;][headertext] =&gt; 页头文字颜色</div>
+<div>
+	$_G[&#39;style&#39;][footertext] =&gt; 页脚文字颜色</div>
+<div>
+	$_G[&#39;style&#39;][menubgcolor] =&gt; 导航菜单背景颜色</div>
+<div>
+	$_G[&#39;style&#39;][menutext] =&gt; 导航菜单文字颜色</div>
+<div>
+	$_G[&#39;style&#39;][menuhovertext] =&gt; 导航菜单高亮文字颜色</div>
+<div>
+	$_G[&#39;style&#39;][wrapbg] =&gt; 主体表格背景色</div>
+<div>
+	$_G[&#39;style&#39;][wrapbordercolor] =&gt; 主体表格边框色</div>
+<div>
+	$_G[&#39;style&#39;][contentwidth] =&gt; 阅读区域宽度</div>
+<div>
+	$_G[&#39;style&#39;][contentseparate] =&gt; 帖子间隔颜色</div>
+<div>
+	$_G[&#39;style&#39;][inputborder] =&gt; 输入框边框浅色</div>
+<div>
+	$_G[&#39;style&#39;][menuhoverbgcode] =&gt; 导航菜单高亮背景</div>
+<div>
+	$_G[&#39;style&#39;][floatbgcode] =&gt; 弹出窗口背景色</div>
+<div>
+	$_G[&#39;style&#39;][dropmenubgcode] =&gt; 下拉菜单背景色</div>
+<div>
+	$_G[&#39;style&#39;][floatmaskbgcode] =&gt; 弹出窗口边框颜色</div>
+<div>
+	$_G[&#39;style&#39;][headerbgcode] =&gt; 页头背景</div>
+<div>
+	$_G[&#39;style&#39;][sidebgcode] =&gt; 家园侧边栏背景属性</div>
+<div>
+	$_G[&#39;style&#39;][bgcode] =&gt; 全局背景属性属性</div>
+<div>
+	$_G[&#39;style&#39;][titlebgcode] =&gt; 版块列表标题背景$_G[&#39;style&#39;][menubgcode] =&gt; 导航菜单背景属性</div>
+<div>
+	$_G[&#39;style&#39;][boardlogo] =&gt; LOGO img代码</div>
+<div>
+	)</div>
+
+            </div>
+            <div class="blank5"></div>
+            <div class="blank5"></div>
+            <div class="art_bottom"  >
+              <div style="float:left">上一篇：<a href='/linux/653.html'>discuz教程：插件开发经验之如何运用 C::t 方法</a> </div>
+              <div style="float:right">下一篇：<a href='/linux/720.html'>Discuz! X3.2新版邮箱重置密码失败解决方法</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blank5"></div>
+    <div class="jogger"> </div>
+    <div class="blank5"></div>
+    <div class="blank5"></div>
+  </div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="blank"></div>
+<div class="footer_box">
+<div class="block">
+  <div class="box">
+    <div class="helpTitBg  ">
+      <dl class="dl1">
+        <dt><span></span>Web技术</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/dedecmsjc/" title="织梦教程">TMD9教程</a></dd>
+        <dd><a href="/discuzjc/" title="Discuz教程">Discuz教程</a></dd>
+        <dd><a href="/wordpressjc/" title="wordpress教程">wordpress教程</a></dd>
+        <dd><a href="/ecshopjc/" title="ecshop教程">ecshop教程</a></dd>
+      </dl>
+      <dl class="dl2">
+        <dt><span></span>站长学院</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/ems/" title="网站seo">网站seo</a></dd>
+        <dd><a href="/jianzhan/" title="建站资讯">建站资讯</a></dd>
+      </dl>
+      <dl class="dl3">
+        <dt><span></span>常见问题</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/work/vip.html" title="如何加入VIP">如何加入VIP</a></dd>
+      </dl>
+      <dl class="dl4">
+        <dt><span></span>服务支持</dt>
+        <div style=" clear:both"></div>
+        <dd>QQ：249411513</dd>
+        <dd>E-mail：249411513@qq.com</dd>
+        <dd>Web：Www.YmRoad.Com</dd>
+      </dl>
+     <img width="100" height="103" alt="" src="/style/images/footer_img.gif"></div>
+  </div>
+</div>
+
+<div id="footer">
+<div class="text">
+  Copyright 2015-2015 All Rights Reserved Theme by 源码路www.ymroad.com
+  <br />
+  <a href="http://www.ymroad.com/" target="_blank" rel="nofollow">浙ICP备11047180号-6</a>
+  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=249411513&site=qq&menu=yes">
+    <img border="0" src="http://wpa.qq.com/pa?p=2:249411513:51" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+  </a>
+  <br />
+  <a href="http://www.ymroad.com" target="_blank">站长资源</a>
+  <a href="/sitemap.xml" target="_blank">网站地图</a>
+</div>
+</div>
+</div>
+<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=1256403958&web_id=12539238" language="JavaScript"></script></div>
+
+<script>
+$(function(){
+	$("#aFloatTools_Hide").click(function(){
+	
+		$('#divFloatToolsView').animate({
+		width: 'hide', opacity: 'hide'
+		}, 
+		'normal',
+		function(){
+			 $('#divFloatToolsView').hide();
+		})
+		$('#aFloatTools_Show').attr('style','display:block');
+		$('#aFloatTools_Hide').attr('style','display:none');
+	})
+	$("#aFloatTools_Show").click(function(){
+	
+		$('#divFloatToolsView').animate({
+			width: 'show', opacity: 'show'
+			},
+			'normal',
+			function(){ 
+				$('#divFloatToolsView').show();
+		})
+		$('#aFloatTools_Show').attr('style','display:none');
+		$('#aFloatTools_Hide').attr('style','display:block');
+	})
+	
+})
+</script>
+<!-- <div id="floatTools" class="float0831">
+  <div class="floatL"> <a id="aFloatTools_Show" class="btnOpen"  rel="nofollow"  style="DISPLAY: none" title="查看在线客服" href="javascript:void(0);">展开</a> <a id="aFloatTools_Hide" class="btnCtn"  rel="nofollow"   title="关闭在线客服" href="javascript:void(0);">收缩</a> </div>
+  <div id="divFloatToolsView" class="floatR" style="display:blcok">
+    <div class="tp"></div>
+    <div class="cn">
+      <ul>
+        <li class="top">
+          <h3 class="titZx"></h3>
+        </li>
+        <li><a class="icoTc" title="加入VIP" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=23&site=qq&menu=yes">加入VIP</a> </li>
+        <li><a class="icoTc" title="仿站咨询" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=942389&site=qq&menu=yes">仿站咨询</a> </li>
+        <li><a class="icoTc" title="织梦后台定制" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=94230489&site=qq&menu=yes">织梦后台定制</a> </li>
+      </ul>
+      
+    </div>
+  </div>
+</div> -->
+
+<script language="javascript"> 
+(function(){
+        var res = GetRequest();
+        var par = res['index'];
+        if(par!='gfan'){
+                var ua=navigator.userAgent.toLowerCase();
+                var contains=function (a, b){
+                        if(a.indexOf(b)!=-1){return true;}
+                };
+//将下面的http://m.baidu.com改成你的wap手机版地址        
+                var toMobileVertion = function(){
+                        window.location.href = 'http://www.ymroad.com/m/'
+                }
+
+                if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+                if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+        ||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+        }
+})();
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs.split("=")[0]]=unescape(strs.split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+</script>
+</body>
+</html>

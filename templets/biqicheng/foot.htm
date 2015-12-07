@@ -1,0 +1,129 @@
+<div class="footer_box">
+<div class="block">
+  <div class="box">
+    <div class="helpTitBg  ">
+      <dl class="dl1">
+        <dt><span></span>Web技术</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/dedecmsjc/" title="织梦教程">TMD9教程</a></dd>
+        <dd><a href="/discuzjc/" title="Discuz教程">Discuz教程</a></dd>
+        <dd><a href="/wordpressjc/" title="wordpress教程">wordpress教程</a></dd>
+        <dd><a href="/ecshopjc/" title="ecshop教程">ecshop教程</a></dd>
+      </dl>
+      <dl class="dl2">
+        <dt><span></span>站长学院</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/ems/" title="网站seo">网站seo</a></dd>
+        <dd><a href="/jianzhan/" title="建站资讯">建站资讯</a></dd>
+      </dl>
+      <dl class="dl3">
+        <dt><span></span>常见问题</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/work/vip.html" title="如何加入VIP">如何加入VIP</a></dd>
+      </dl>
+      <dl class="dl4">
+        <dt><span></span>服务支持</dt>
+        <div style=" clear:both"></div>
+        <dd>QQ：249411513</dd>
+        <dd>E-mail：249411513@qq.com</dd>
+        <dd>Web：Www.YmRoad.Com</dd>
+      </dl>
+     <img width="100" height="103" alt="" src="/style/images/footer_img.gif"></div>
+  </div>
+</div>
+
+<div id="footer">
+<div class="text">
+  Copyright 2015-2015 All Rights Reserved Theme by 源码路www.ymroad.com
+  <br />
+  <a href="http://www.ymroad.com/" target="_blank" rel="nofollow">浙ICP备11047180号-6</a>
+  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=249411513&site=qq&menu=yes">
+    <img border="0" src="http://wpa.qq.com/pa?p=2:249411513:51" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+  </a>
+  <br />
+  <a href="http://www.ymroad.com" target="_blank">站长资源</a>
+  <a href="/sitemap.xml" target="_blank">网站地图</a>
+</div>
+</div>
+</div>
+<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=1256403958&web_id=12539238" language="JavaScript"></script></div>
+
+<script>
+$(function(){
+	$("#aFloatTools_Hide").click(function(){
+	
+		$('#divFloatToolsView').animate({
+		width: 'hide', opacity: 'hide'
+		}, 
+		'normal',
+		function(){
+			 $('#divFloatToolsView').hide();
+		})
+		$('#aFloatTools_Show').attr('style','display:block');
+		$('#aFloatTools_Hide').attr('style','display:none');
+	})
+	$("#aFloatTools_Show").click(function(){
+	
+		$('#divFloatToolsView').animate({
+			width: 'show', opacity: 'show'
+			},
+			'normal',
+			function(){ 
+				$('#divFloatToolsView').show();
+		})
+		$('#aFloatTools_Show').attr('style','display:none');
+		$('#aFloatTools_Hide').attr('style','display:block');
+	})
+	
+})
+</script>
+<!-- <div id="floatTools" class="float0831">
+  <div class="floatL"> <a id="aFloatTools_Show" class="btnOpen"  rel="nofollow"  style="DISPLAY: none" title="查看在线客服" href="javascript:void(0);">展开</a> <a id="aFloatTools_Hide" class="btnCtn"  rel="nofollow"   title="关闭在线客服" href="javascript:void(0);">收缩</a> </div>
+  <div id="divFloatToolsView" class="floatR" style="display:blcok">
+    <div class="tp"></div>
+    <div class="cn">
+      <ul>
+        <li class="top">
+          <h3 class="titZx"></h3>
+        </li>
+        <li><a class="icoTc" title="加入VIP" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=23&site=qq&menu=yes">加入VIP</a> </li>
+        <li><a class="icoTc" title="仿站咨询" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=942389&site=qq&menu=yes">仿站咨询</a> </li>
+        <li><a class="icoTc" title="织梦后台定制" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=94230489&site=qq&menu=yes">织梦后台定制</a> </li>
+      </ul>
+      
+    </div>
+  </div>
+</div> -->
+
+<script language="javascript"> 
+(function(){
+        var res = GetRequest();
+        var par = res['index'];
+        if(par!='gfan'){
+                var ua=navigator.userAgent.toLowerCase();
+                var contains=function (a, b){
+                        if(a.indexOf(b)!=-1){return true;}
+                };
+//将下面的http://m.baidu.com改成你的wap手机版地址        
+                var toMobileVertion = function(){
+                        window.location.href = 'http://www.ymroad.com/m/'
+                }
+
+                if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+                if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+        ||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+        }
+})();
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs.split("=")[0]]=unescape(strs.split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+</script>

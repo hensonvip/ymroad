@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>文档管理 - 会员中心 -<?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/table_function.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+<script type="text/javascript">
+  function viewArc(aid){
+	  window.open("{dede:global.cfg_phpurl /}/view.php?aid="+aid);
+  }
+  function editArc(aid,channelid){
+	  location = "archives_do.php?dopost=edit&channelid="+channelid+"&aid="+aid;
+  }
+  function delArc(aid){
+	  if(window.confirm('你确定要删除这篇文档吗?')) location="archives_do.php?aid="+aid+"&dopost=delArc";
+  }
+</script>
+</head>
+<body>
+<?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main">
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">文档管理</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+    <div class="ucright">
+      <div class="listnav">
+        <ul class="navclass">
+          <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="operation.php" class="selected">文档管理</a></li>
+        </ul>
+      </div>
+      <!--listnav end-->
+      <ul class="classnav">
+        <li><a href="content_list.php?channelid=<?php echo $channelid;?>" <?php echo ($arcrank=='')? "class='selected'" : "";?>><span>全部</span></a></li>
+        <li><a href="content_list.php?channelid=<?php echo $channelid;?>&arcrank=1" <?php echo ($arcrank=='1')? "class='selected'" : "";?>><span>已审核</span></a></li>
+        <li><a href="content_list.php?channelid=<?php echo $channelid;?>&arcrank=-1" <?php echo ($arcrank=='-1')? "class='selected'" : "";?>><span>未审核</span></a></li>
+        <li><a href="content_list.php?channelid=<?php echo $channelid;?>&arcrank=-2" <?php echo ($arcrank=='-2')? "class='selected'" : "";?>><span>被退回</span></a></li>
+      </ul>
+      <div class="release"><a href="article_add.php">发布</a></div>
+      <dl class="zpadmin">
+        <dd>
+          <ul class="list">
+            <?php $autoi = 1; ?>
+            {dede:datalist}
+            <?php
+    //print_r($fields);
+    if($fields['litpic']){
+    	$thisurl = $fields['litpic'];
+    }else{
+    	$thisurl = 'templets/images/nopic.jpg';
+    }
+    ?>
+            <li> <span class="listpic"><a href='<?php echo $cfg_phpurl; ?>/view.php?aid=<?php echo $fields['id']; ?>' target='_blank'><img src="<?php echo $thisurl; ?>" width="200" height="150" alt="<?php echo $fields['title']; ?>" /></a></span>
+              <div class="listcount"> <span class="view"><?php echo $fields['click']; ?></span> <span class="comment">
+                <?php $rowBB = $dsql->GetOne("Select count(id) as c from `#@__feedback` where aid=".$fields['id']); echo $rowBB['c']; ?>
+                </span> <span class="love"><?php echo $fields['goodpost']; ?></span> </div>
+              <h2><a href="<?php echo $cfg_phpurl; ?>/view.php?aid=<?php echo $fields['id']; ?>" target="_blank"><?php echo $fields['title']; ?></a></h2>
+              <div class="ucedit">
+                <?php
+if($fields['arcrank']<0 || $dtime - $fields['senddate'] < $maxtime)
+{
+?>
+                 <a href="javascript:editArc(<?php echo $fields['id']?>,<?php echo $fields['channel']?>);" target="_blank">编辑</a> <a href="javascript:delArc(<?php echo $fields['id']?>);">删除</a>
+                <?php
+}
+else
+{
+	echo "<font color='#aaa' style='text-decoration:line-through'>改删</font>";
+}
+?>
+                <a href="javascript:viewArc(<?php echo $fields['id']; ?>);">预览</a> 
+                 <?php //echo $fields['typename']; ?>
+                <?php
+    if($fields['arcrank']>=0) echo "<font style='float:right'>已审核</font>";
+    else if($fields['arcrank']==-2) echo "<font color='blue' style='float:right'>被退回</font>";
+    else echo "<font color='red' style='float:right'>未审核</font>";
+    ?>
+              </div>
+            </li>
+            <?php $autoi++; ?>
+            <?php if($autoi==5||$autoi==9||$autoi==13||$autoi==17){echo '</ul></dd><dd><ul class="list">';}?>
+            {/dede:datalist}
+          </ul>
+        </dd>
+      </dl>
+      <div class="pagebox">
+        <div class="page1">
+          <ul class="pagelist">
+            {dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+          </ul>
+        </div>
+        <!--page end--> 
+        
+      </div>
+      <?php if($autoi==1){?>
+      <div class="noneinfo"> <span><img src="templets/images/um01.png" alt="您还没有发布作品" /></span>
+        <div class="umbg">
+          <h2>哎哟，您还没有发布<?php echo $positionname; ?>呢！</h2>
+          <p>发布教程可以得金币哦！赶紧吧~</p>
+          <a href="article_add.php">我要发布<?php echo $positionname; ?></a> </div>
+      </div>
+      <style>
+	.zpadmin,.pagebox{display:none}
+	</style>
+      <?php }?>
+    </div>
+    <!--urright end--> 
+    
+  </div>
+  <!--ucbox end--> 
+  
+</div>
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+</body>
+</html>
+

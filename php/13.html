@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+<title>织梦dedecms源码安装方法_网站模板下载尽在源码路-</title>
+<meta name="keywords" content="织梦,dedecms,源码,安装,方法,第一步,上传,所有," />
+<meta name="description" content="第一步： 上传所有文件到服务器,并设置根目录有写入权限, 第二步： 打开IE 输入 http://你的网址/install/ 当打开安装页面的时候，你就会看到以下页面 如果没有出现该页面，而是出现了一个空白页面写着 dir 那么 请 删除 install 文件夹中的 install.lock.tx" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/style/css/style.css">
+<script type="text/javascript" src="/style/js/index.js"></script>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script> 
+<script language="javascript" type="text/javascript"> 
+<!-- 
+function CheckLogin(){ 
+var taget_obj = document.getElementById('_userlogin'); 
+myajax = new DedeAjax(taget_obj,false,false,'','',''); 
+myajax.SendGet2("/member/ajax_loginsta.php"); 
+DedeXHTTP = null; 
+} 
+--> 
+</script>
+<!--[if IE 6]>
+<script src="/style/js/DD_belatedPNG_0.0.8a-min.vb4e86b02.js"></script>
+<script> DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+<script language="javascript" type="text/javascript" src="/include/ckeditor/plugins/syntaxhighlight/code.js" ></script>
+<!-- 织梦技术研究中心 http://www.dedejs.com -->
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shThemeDefault.css"/>
+</head>
+<body>
+<script type=text/javascript><!--//--><![CDATA[//><!--
+function menuFix() {
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+ for (var i=0; i<sfEls.length; i++) {
+  sfEls[i].onmouseover=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseDown=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseUp=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+"");
+  }
+ }
+}
+window.onload=menuFix;
+
+//--><!]]></script>
+<div id="topNav">
+  <div class="block clearfix">
+    <div class="topNav1">源码路专注于织梦源码分享、织梦模板、discuz模板、wordpress主题等网站模板，为广大站长提供网站模板以及Discuz插件等素材。</div>
+    <div class="f_r">
+      <div id="_userlogin">
+      <div class="userlogin">
+       <form name="userlogin" action="/member/index_do.php" method="POST">
+        <input type="hidden" name="fmdo" value="login" />
+        <input type="hidden" name="dopost" value="login" />
+        <input type="hidden" name="keeptime" value="604800" />
+        <div class="fb"><span>用户名:</span>
+         <input type="text" name="userid" size="10" class="ipt-txt" />
+        </div>
+        <div class="fb"><span>密码:</span>
+         <input type="password" name="pwd" size="10" class="ipt-txt" />
+        </div>
+        <div class="submit">
+         <button type="submit" class="btn-1">登录</button>
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" class="btn-1">注册</a> <!--<a href="/member/resetpassword.php">忘记密码?</a>--> </div>
+       </form>
+      </div>
+     </div>
+     <!-- /userlogin -->
+     <script language="javascript" type="text/javascript">CheckLogin();</script>
+    
+    </div>
+  </div>
+</div>
+<div class="header_bg">
+  <div class="block clearfix">
+    <h1><a title="织梦模板,模板王" href="/" name="top">织梦源码,模板王</a></h1>
+    <div style="float: right;">
+      <form id="searchForm" action="/plus/search.php" name="formsearch">
+        <input type="hidden" name="kwtype" value="0" />
+        <div class="search_box">
+          <input name="q" type="text" class="B_input" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+        </div>
+        <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
+      </form>
+     <a href="/work/vip.html" target="_blank"><img src="/images/join.jpg" alt="VIP" width="350" height="55"></a>
+    </div>
+  </div>
+</div>
+<div id="mainNav" class="clearfix">
+  <div class="shadow-x shadow-x1 pngfix"></div>
+  <div style="position: relative;" class="block">
+    <div class="meun_in">
+    <a  class="a1" href="/">首页</a>
+    <ul id="nav">
+    	<li><a href="/yuanma/">精品源码</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/vip/">VIP专区</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/sucai/">站长素材</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/web/">Web技术</a>
+            <ul>
+                
+                  <li><a href="/php/">PHP</a></li>
+                  
+                  <li><a href="/linux/">Linux</a></li>
+                  
+                  <li><a href="/mysql/">MySQL</a></li>
+                  
+                  <li><a href="/git/">Git</a></li>
+                  
+                  <li><a href="/sjms/">设计模式</a></li>
+                  
+                  <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                  
+                  <li><a href="/javascript/">JavaScript</a></li>
+                  
+                  <li><a href="/jquery/">jQuery</a></li>
+                  
+            </ul>
+        </li><li><a href="/seo/">站长学院</a>
+            <ul>
+                
+                  <li><a href="/seo/">网站seo</a></li>
+                  
+                  <li><a href="/jianzhan/">建站资讯</a></li>
+                  
+            </ul>
+        </li>
+    </ul>
+    
+     <div class="meun_r" id="nav">
+       <li>
+         <a href="#">加入VIP</a>
+         <ul>
+           <li>
+             <a href="/work/" target="_blank">模板疑问</a>
+           </li>
+           <li>
+             <a href="/work/vip.html" target="_blank">加入VIP</a>
+           </li>
+           <li>
+             <a href="/dingyue/" target="_blank">订阅我们</a>
+           </li>
+         </ul>
+       </li>
+     </div>
+        
+        
+    </div>
+     <div class="category_all" onmouseover="this.className='category_all category_all_on'" onmouseout="this.className='category_all'"><a class="tit" href="#">Web技术</a>
+      <div style="clear: both;"></div>
+      <div class="category_all_box">
+      <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c9"></i>
+            <h2><a class="dt_a1" href="/web/">Web技术</a></h2>
+          </dt>
+        </dl> 
+       
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c1"></i>
+            <h2><a class="dt_a1" href="/php/">PHP</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c2"></i>
+            <h2><a class="dt_a1" href="/linux/">Linux</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c3"></i>
+            <h2><a class="dt_a1" href="/mysql/">MySQL</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c4"></i>
+            <h2><a class="dt_a1" href="/git/">Git</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c5"></i>
+            <h2><a class="dt_a1" href="/sjms/">设计模式</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c6"></i>
+            <h2><a class="dt_a1" href="/html5css3/">HTML5+CSS3</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c7"></i>
+            <h2><a class="dt_a1" href="/javascript/">JavaScript</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c8"></i>
+            <h2><a class="dt_a1" href="/jquery/">jQuery</a></h2>
+          </dt>
+        </dl>
+        
+            
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blank"></div>
+<div class="block clearfix">
+  <div class="box">
+    <div class="box_1">
+      <div class="ur_here">
+        <div style="float: left;"><a href='http://127.0.0.1//'>网站模板</a> > <a href='/web/'>Web技术</a> > <a href='/php/'>PHP</a> > </div>
+        <div class="b_box2"></div>
+      </div>
+    </div>
+    
+ <div class="blank"></div>
+<div class="bd_union2">
+    <div class="bd_union2_right">
+    <script type="text/javascript">
+    /*468*60 创建于 2015-07-28*/
+    var cpro_id = "u2233166";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  	<div class="bd_union2_left">
+    <script type="text/javascript">
+    /*640*60 创建于 2015-07-28*/
+    var cpro_id = "u2233163";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  </div>
+    <div class="blank"></div>
+
+    <div class="AreaL2">
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>Web技术</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/php/">PHP</a></li>
+                 
+                 <li><a href="/linux/">Linux</a></li>
+                 
+                 <li><a href="/mysql/">MySQL</a></li>
+                 
+                 <li><a href="/git/">Git</a></li>
+                 
+                 <li><a href="/sjms/">设计模式</a></li>
+                 
+                 <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                 
+                 <li><a href="/javascript/">JavaScript</a></li>
+                 
+                 <li><a href="/jquery/">jQuery</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>站长学院</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/seo/">网站seo</a></li>
+                 
+                 <li><a href="/jianzhan/">建站资讯</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+
+<div class="box article_z">
+<script type="text/javascript">
+/*200*200 创建于 2015-07-28*/
+var cpro_id = "u2233243";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+<div class="blank5"></div>
+
+    </div>
+    <div class="AreaR2">
+      <div class="box">
+        <div class="box_1">
+          <div class="wzbt">
+            <div class="tc">
+              <h4 class="art_tit">织梦dedecms源码安装方法</h4>
+              <font class="f3">www.ymroad.com / 2015-02-08</font> </div>
+            <div class="content">
+				<div align="left" style="word-wrap: break-word; padding: 0px; margin: 0px; color: rgb(85, 85, 85); font-family: 微软雅黑, Arial; font-size: 14px; line-height: 24px;">
+	<span style="word-wrap: break-word; font-weight: 700;"><font face="微软雅黑" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;"><font color="red" style="word-wrap: break-word;">第一步： 上传所有文件到空间<br />
+	注意：（</font></font></font></span><span style="color:#008080;"><strong><span style="font-size:14px;"><span style="font-family: Arial, Verdana, sans-serif;">由于有很多人反应安装后首页样式都乱的，所以强烈要求安装到根目录，如：127.0.0.1 / www.xxx.com，或者二级域名也可以，但不要安装到二级目录：</span><span style="font-weight: 700; font-family: Arial, Verdana, sans-serif;">127.0.0.1/web/</span></span></strong></span><span style="color: red; font-size: large; font-family: 微软雅黑; font-weight: 700;">）</span></div>
+<br style="word-wrap: break-word; color: rgb(85, 85, 85); font-family: 微软雅黑, Arial; font-size: 14px; line-height: 24px;" />
+<div align="left" style="word-wrap: break-word; padding: 0px; margin: 0px; color: rgb(85, 85, 85); font-family: 微软雅黑, Arial; font-size: 14px; line-height: 24px;">
+	<font face="微软雅黑" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;"><font color="#000000" style="word-wrap: break-word;">第二步： 打开IE 输入</font><font color="#0000ff" style="word-wrap: break-word;">http://你的网址/install/index.php &nbsp;如果出现</font><strong><span style="color:#ff0000;"><font style="word-wrap: break-word;">Dir</font></span></strong><span style="color:#0000cd;"><font style="word-wrap: break-word;">或者</font></span><strong><span style="color:#ff0000;"><font style="word-wrap: break-word;">错误页面</font></span></strong><font color="#0000ff" style="word-wrap: break-word;">，请往下看。</font></font></font></div>
+<br style="word-wrap: break-word; color: rgb(85, 85, 85); font-family: 微软雅黑, Arial; font-size: 14px; line-height: 24px;" />
+<font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px; line-height: 24px;"><font color="#000000" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;">当打开安装页面的时候，你就会看到以下页面</font></font></font><br />
+<br />
+<div style="text-align: center;">
+	<font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px; line-height: 24px;"><font color="#000000" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;"><img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2191G25M.jpg" style="width: 700px; height: 399px;" /></font></font></font><br />
+	&nbsp;</div>
+<div>
+	<font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px; line-height: 24px;"><font color="#000000" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;"><font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px;"><font size="4" style="word-wrap: break-word;">如果没有出现该页面，而是出现了一个空白页面写着</font><font size="4" style="word-wrap: break-word;"><span style="word-wrap: break-word; font-weight: 700;">dir &nbsp;或者是一个 错误页面&nbsp;</span></font></font><br style="word-wrap: break-word; color: rgb(85, 85, 85); font-family: 微软雅黑, Arial; font-size: 14px;" />
+	<font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px;"><font size="4" style="word-wrap: break-word;"><font color="#696969" style="word-wrap: break-word;">那么</font></font><font size="4" style="word-wrap: break-word;">请</font><span style="word-wrap: break-word; font-weight: 700;"><font color="darkred" style="word-wrap: break-word;">删除</font><font color="blue" style="word-wrap: break-word;">install</font></span><font size="4" style="word-wrap: break-word;">文件夹中的</font><font color="red" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;">&nbsp;<span style="word-wrap: break-word; font-weight: 700;">install.lock.txt</span>&nbsp; &nbsp;</font></font><font size="4" style="word-wrap: break-word;">并且把</font><span style="word-wrap: break-word; font-weight: 700;"><font color="sienna" style="word-wrap: break-word;">index.php.bak</font></span><font size="4" style="word-wrap: break-word;">改成</font><font color="sienna" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;">index.php</font></font></font><br style="word-wrap: break-word; color: rgb(85, 85, 85); font-family: 微软雅黑, Arial; font-size: 14px;" />
+	<font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px;"><font color="sienna" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;">然后输入：</font></font></font><font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px;"><font size="4" style="word-wrap: break-word;"><font color="#4b0082" style="word-wrap: break-word;">http://你的网址/install/index.php</font></font></font><br style="word-wrap: break-word;" />
+	<br style="word-wrap: break-word;" />
+	<font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px;"><font size="4" style="word-wrap: break-word;">同意协议勾上，然后点继续,之后会出现以下页面</font></font></font></font></font><br />
+	&nbsp;</div>
+<div style="text-align: center;">
+	<img alt="再继续。。下步讲进入填写数据库的步骤。  这个数据库是什么大家应该知道了吧。。 织梦程序所需要的是 php空间 和 mysql数据库  接上一步骤后。我们进入第三步，  第三步： 你将看到以下页面。按照图示，填写相应的内容即可。" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2191933560.jpg" style="width: 700px; height: 351px;" /></div>
+<div>
+	<br />
+	<font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px; line-height: 24px;"><font style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;"><font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px;"><font size="4" style="word-wrap: break-word;"><font face="微软雅黑" style="word-wrap: break-word; font-size: 14px;"><font color="#000000" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;">再继续。。下步讲进入填写数据库的步骤。</font></font><br style="word-wrap: break-word;" />
+	<br style="word-wrap: break-word;" />
+	<font color="#000000" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;">这个数据库是什么大家应该知道了吧。。 织梦程序所需要的是 php空间 和 mysql数据库</font></font><br style="word-wrap: break-word;" />
+	<br style="word-wrap: break-word;" />
+	<font color="#000000" style="word-wrap: break-word;"><font size="4" style="word-wrap: break-word;">接上一步骤后。我们进入第三步，</font></font></font><br style="word-wrap: break-word;" />
+	<br style="word-wrap: break-word;" />
+	<font face="微软雅黑" style="word-wrap: break-word; font-size: 14px;"><font size="4" style="word-wrap: break-word;"><font style="word-wrap: break-word;">第三步： 你将看到以下页面。按照图示，填写相应的内容即可。<br />
+	<br />
+	<img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2192A0K9.jpg" /><br />
+	<br />
+	<img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2192924635.jpg" style="width: 700px; height: 102px;" /><br />
+	<br />
+	<span style="color: rgb(85, 85, 85);">（</span><span style="word-wrap: break-word; font-weight: 700; color: rgb(85, 85, 85);"><font color="red" style="word-wrap: break-word;">注意：默认数据包那个地方一定不能勾上，否则安装不成功</font></span><span style="color: rgb(85, 85, 85);">）</span><br style="word-wrap: break-word; color: rgb(85, 85, 85);" />
+	<font color="#000000" style="word-wrap: break-word;">以上填写好了就可以，其他地方，不修改，全默认。</font><font style="word-wrap: break-word;">继续。<br />
+	<br />
+	<img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2193031959.png" /><br />
+	<br />
+	<span style="color: rgb(85, 85, 85);">第四步：点击&ldquo;</span><span style="color:#ff0000;">登录进入后台</span><span style="color: rgb(85, 85, 85);">&rdquo; &nbsp;或者输入</span><span style="color:#ffffff;"><span style="background-color:#ff0000;">http://您的域名/dede/ </span></span><span style="color: rgb(85, 85, 85);"><span style="background-color:#ff0000;">&nbsp;</span> 为了安全起见，dede这个文件夹的名字可以改掉，这个文件夹就是你后台登陆的网址</span><br />
+	<br style="word-wrap: break-word; color: rgb(85, 85, 85);" />
+	<font style="word-wrap: break-word;">按照图片提示步骤。进入<font style="word-wrap: break-word;"><span style="word-wrap: break-word; font-weight: 700;">系统数据库恢复页面<br />
+	<br />
+	<img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2193504918.jpg" /><br />
+	<br />
+	<span style="color: rgb(85, 85, 85);">点了数据还原后。你将看到的是我们程序备份的数据库。<br />
+	<br />
+	<img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2193IU23.jpg" style="width: 700px; height: 209px;" /></span><br />
+	<br />
+	<span style="color: rgb(85, 85, 85);">当数据库恢复完成以后，你将看到以下提示：<br />
+	<br />
+	<img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2193956130.png" style="width: 801px; height: 294px;" /></span><br />
+	<br />
+	数据还原到此就还原了，现在后台登陆的账号密码都变成<span style="color:#ffffff;"><span style="background-color:#ff0000;">admin</span></span>了，不再是你安装时候所填写的了<br />
+	<span style="color:#a9a9a9;"><span style="font-size:14px;">解释：因为源码路在测试的时候用的都是admin，所以数据库备份后的账号密码都是admin，当你进行数据库还原后，账号和密码就都恢复到了admin，不再是你安装时候填写的账号和密码。所以数据库后还原后，大家需要修改密码。如有疑问，请联系QQ：249411513</span></span><br />
+	<br />
+	所以大家还原数据后，要记得把密码修改下，<br />
+	<br />
+	<span style="color: rgb(85, 85, 85);">我们来继续下一步（</span><font color="red" style="word-wrap: break-word;"><span style="word-wrap: break-word;">设置网站系统参数</span></font><span style="color: rgb(85, 85, 85);">）操作：</span><span style="font-size:22px;"><span style="color:#ffffff;"><span style="background-color:#008080;">这是最关键的一步</span></span></span><br />
+	<span style="color:#ffffff;"><span style="background-color:#ff8c00;">一定要修改站点根网址，如果你是本地测试或者临时域名，也要修改，一定要保持这里和浏览器上的地址栏域名一致。</span></span><br />
+	<br />
+	<span style="color: rgb(85, 85, 85);"><img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2194502450.jpg" style="width: 700px; height: 342px;" /></span><br />
+	<br />
+	<span style="color: rgb(85, 85, 85);">到这里网站的设置就完成了。最后步骤。我们来</span><font color="red" style="word-wrap: break-word;"><span style="word-wrap: break-word;">生成整个站点的html页面</span></font><span style="color: rgb(85, 85, 85);">。<br />
+	先更新缓存，再生成全部<br />
+	<br />
+	<img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P219515U28.jpg" style="width: 700px; height: 285px;" /></span><br />
+	<br />
+	<span style="color:#ff0000;">因为是首次更新，所以要更新所有！</span><br />
+	<br />
+	<span style="color: rgb(85, 85, 85);"><img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P219523LA.png" style="width: 956px; height: 289px;" /></span><br />
+	<br />
+	<span style="color: rgb(0, 0, 0);">附加内容：说明一下</span><span style="color:#ff0000;">广告设置</span><span style="color: rgb(0, 0, 0);">问题和</span><span style="color:#ff0000;">友情链接</span><span style="color: rgb(0, 0, 0);">管理。</span><br />
+	<br />
+	<span style="color: rgb(85, 85, 85);"><img alt="" src="http://www.ymroad.com/uploads/allimg/140802/1-140P2195459A2.png" style="width: 602px; height: 365px;" /></span><br />
+	<br />
+	<span style="word-wrap: break-word; color: rgb(0, 0, 255);">以上步骤每个步骤都非常重要，都不漏。漏一步那你将安装不成功。 </span></span></font></font></font></font></font></font></font></font></font></font></font></div>
+<div>
+	<span style="font-size:16px;"><span style="color:#ff0000;"><font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px; line-height: 24px;"><font style="word-wrap: break-word;"><font style="word-wrap: break-word;"><font face="微软雅黑" style="word-wrap: break-word; color: rgb(85, 85, 85); font-size: 14px;"><font style="word-wrap: break-word;"><font face="微软雅黑" style="word-wrap: break-word; font-size: 14px;"><font style="word-wrap: break-word;"><font style="word-wrap: break-word;"><font style="word-wrap: break-word;"><font style="word-wrap: break-word;"><font style="word-wrap: break-word;"><span style="word-wrap: break-word; font-weight: 700;"><span style="word-wrap: break-word;">如果还有不明白的，情看视频版教程：</span></span></font></font></font></font></font></font></font></font></font></font></font></span><a href="http://www.ymroad.com/dedecmsjc/156.html"><span style="color:#ff0000;">http://www.ymroad.com/dedecmsjc/156.html</span></a></span><br />
+	&nbsp;</div>
+<div>
+	<br />
+	&nbsp;</div>
+
+            </div>
+            <div class="blank5"></div>
+            <div class="blank5"></div>
+            <div class="art_bottom"  >
+              <div style="float:left">上一篇：<a href='/php/8.html'>织梦DedeCMS如何去掉首页域名后面的index.html</a> </div>
+              <div style="float:right">下一篇：<a href='/php/30.html'>织梦文章页获取获取栏目id</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blank5"></div>
+    <div class="jogger"> </div>
+    <div class="blank5"></div>
+    <div class="blank5"></div>
+  </div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="blank"></div>
+<div class="footer_box">
+<div class="block">
+  <div class="box">
+    <div class="helpTitBg  ">
+      <dl class="dl1">
+        <dt><span></span>Web技术</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/dedecmsjc/" title="织梦教程">TMD9教程</a></dd>
+        <dd><a href="/discuzjc/" title="Discuz教程">Discuz教程</a></dd>
+        <dd><a href="/wordpressjc/" title="wordpress教程">wordpress教程</a></dd>
+        <dd><a href="/ecshopjc/" title="ecshop教程">ecshop教程</a></dd>
+      </dl>
+      <dl class="dl2">
+        <dt><span></span>站长学院</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/ems/" title="网站seo">网站seo</a></dd>
+        <dd><a href="/jianzhan/" title="建站资讯">建站资讯</a></dd>
+      </dl>
+      <dl class="dl3">
+        <dt><span></span>常见问题</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/work/vip.html" title="如何加入VIP">如何加入VIP</a></dd>
+      </dl>
+      <dl class="dl4">
+        <dt><span></span>服务支持</dt>
+        <div style=" clear:both"></div>
+        <dd>QQ：249411513</dd>
+        <dd>E-mail：249411513@qq.com</dd>
+        <dd>Web：Www.YmRoad.Com</dd>
+      </dl>
+     <img width="100" height="103" alt="" src="/style/images/footer_img.gif"></div>
+  </div>
+</div>
+
+<div id="footer">
+<div class="text">
+  Copyright 2015-2015 All Rights Reserved Theme by 源码路www.ymroad.com
+  <br />
+  <a href="http://www.ymroad.com/" target="_blank" rel="nofollow">浙ICP备11047180号-6</a>
+  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=249411513&site=qq&menu=yes">
+    <img border="0" src="http://wpa.qq.com/pa?p=2:249411513:51" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+  </a>
+  <br />
+  <a href="http://www.ymroad.com" target="_blank">站长资源</a>
+  <a href="/sitemap.xml" target="_blank">网站地图</a>
+</div>
+</div>
+</div>
+<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=1256403958&web_id=12539238" language="JavaScript"></script></div>
+
+<script>
+$(function(){
+	$("#aFloatTools_Hide").click(function(){
+	
+		$('#divFloatToolsView').animate({
+		width: 'hide', opacity: 'hide'
+		}, 
+		'normal',
+		function(){
+			 $('#divFloatToolsView').hide();
+		})
+		$('#aFloatTools_Show').attr('style','display:block');
+		$('#aFloatTools_Hide').attr('style','display:none');
+	})
+	$("#aFloatTools_Show").click(function(){
+	
+		$('#divFloatToolsView').animate({
+			width: 'show', opacity: 'show'
+			},
+			'normal',
+			function(){ 
+				$('#divFloatToolsView').show();
+		})
+		$('#aFloatTools_Show').attr('style','display:none');
+		$('#aFloatTools_Hide').attr('style','display:block');
+	})
+	
+})
+</script>
+<!-- <div id="floatTools" class="float0831">
+  <div class="floatL"> <a id="aFloatTools_Show" class="btnOpen"  rel="nofollow"  style="DISPLAY: none" title="查看在线客服" href="javascript:void(0);">展开</a> <a id="aFloatTools_Hide" class="btnCtn"  rel="nofollow"   title="关闭在线客服" href="javascript:void(0);">收缩</a> </div>
+  <div id="divFloatToolsView" class="floatR" style="display:blcok">
+    <div class="tp"></div>
+    <div class="cn">
+      <ul>
+        <li class="top">
+          <h3 class="titZx"></h3>
+        </li>
+        <li><a class="icoTc" title="加入VIP" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=23&site=qq&menu=yes">加入VIP</a> </li>
+        <li><a class="icoTc" title="仿站咨询" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=942389&site=qq&menu=yes">仿站咨询</a> </li>
+        <li><a class="icoTc" title="织梦后台定制" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=94230489&site=qq&menu=yes">织梦后台定制</a> </li>
+      </ul>
+      
+    </div>
+  </div>
+</div> -->
+
+<script language="javascript"> 
+(function(){
+        var res = GetRequest();
+        var par = res['index'];
+        if(par!='gfan'){
+                var ua=navigator.userAgent.toLowerCase();
+                var contains=function (a, b){
+                        if(a.indexOf(b)!=-1){return true;}
+                };
+//将下面的http://m.baidu.com改成你的wap手机版地址        
+                var toMobileVertion = function(){
+                        window.location.href = 'http://www.ymroad.com/m/'
+                }
+
+                if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+                if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+        ||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+        }
+})();
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs.split("=")[0]]=unescape(strs.split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+</script>
+</body>
+</html>

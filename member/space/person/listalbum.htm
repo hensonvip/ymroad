@@ -1,0 +1,23 @@
+ {dede:include file='head.htm'/}
+<div class="layout-body">
+<div class="w960  clf">
+  <div class="mb_list">
+    <ul>
+      {dede:datalist titlelen='9'}
+      <li><a class="ih3" href="{dede:field.arcurl/}" target="_blank">{dede:field.title/}</a> <a href="{dede:field.arcurl/}" target="_blank" class="mba"><img src="{dede:field.litpic/}" alt="{dede:if field.mtypename=='' }"><span></span></a>
+        <div class="cover" style="display: none;">
+          <div class="cov_pbg"></div>
+          <div class="cov_tbg"></div>
+          <div class="cov_p">简介:<br>
+           {dede:field.description /}</div>
+          <div class="cov_t">时间:{dede:field.pubdate function="MyDate('Y-m-d h:i',@me)"/}&nbsp;&nbsp;点击:{dede:field.click/}<a href="{dede:field.arcurl/}" target="_blank" class="fr">查看详细&gt;&gt;</a></div>
+        </div>
+      </li>
+      {/dede:datalist}
+    </ul>
+  </div>
+  <div id="pl_page">
+    <div class="pagelistbox">{dede:pagelist/}</div>
+  </div>
+</div>
+{dede:include file='foot.htm'/} 

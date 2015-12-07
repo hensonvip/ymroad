@@ -1,0 +1,737 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>发布<?php echo $cInfos['typename']; ?> - 会员中心 - <?php echo $cfg_webname; ?></title>
+ <script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+
+
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" language='javascript' src="templets/js/main.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script type="text/javascript" src="templets/js/checkSubmit.js"></script>
+<script type="text/javascript">
+
+var startNum = 2;
+function MakeUpload()
+{
+	var upfield = document.getElementById("uploadfield");
+	var morelinkobj = document.getElementById("morelink");
+	var endNum =  parseInt(document.addcontent.picnum.value) + startNum-1;
+	morelinkobj.style.display = "block";
+	if(endNum>12) endNum = 12;
+	for(startNum;startNum<=endNum;startNum++){
+		
+		upfield.innerHTML += "<dd><span class='dlleft'>软件地址"+startNum+"</span><span class='dlright'><input type='text' name='softurl"+startNum+"' value='http://' maxlength='100' class='intxt' style='width:250px'>服务器名称：<input type='text' name='servermsg"+startNum+"' class='intxt' style='width:150px'></span></dd>";
+		upfield.innerHTML += " ";
+		upfield.innerHTML += "\r\n";
+		
+	}
+}
+ function ShowHideAddr()
+{
+	document.getElementById('morelink').style.display = (document.getElementById('morelink').style.display=='block' ? 'none' : 'block');
+	document.getElementById('btsh3').value = (document.getElementById('morelink').style.display=='block' ? '隐藏地址' : '显示地址');
+}
+
+-->
+</script>
+ 
+</head>
+
+<body>
+
+ <?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main"> 
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">发布<?php echo $cInfos['typename']; ?></li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+     <div class="ucright">
+      <div class="listnav">
+        <ul class="navclass">
+          <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="article_edit.php" class="selected">发布<?php echo $cInfos['typename']; ?></a></li>
+        </ul>
+      </div>
+      <!--listnav end-->
+      <ul class="classnav">
+           <li><a href="article_edit.php">修改文章</a></li>
+           <li><a href="album_add.php">发布图集</a></li>
+        <li><a href="soft_add.php" id="buy"  class="selected">发布软件</a></li>
+    </ul>
+   
+    
+     
+    <div class="extend">
+        <form  name="addcontent" action="soft_add.php" method="post" enctype="multipart/form-data" onsubmit="return checkSubmit();">
+          <input type="hidden" name="dopost" value="save" />
+          <input type="hidden" name="channelid" value="<?php echo $channelid; ?>" />
+    <div class="uccontact">
+    
+    <span class="ltitle1">发布<?php echo $cInfos['typename']; ?></span>
+    <span class="ltbg"></span>   
+    
+    <dl class="uclist">
+    <dt><span class="tsinfo"><br />
+Hi，<b><?php echo $cfg_ml->M_UserName?></b>，请确认您拥有该的版权；带有 * 的项目是必填的哦。</span></dt>
+    
+    <dd>
+    <span class="dlleft"><?php echo $cInfos['titlename']; ?><b>*</b></span>
+    <span class="dlright"><input  name="title" type="text" id="title"  value="<?php echo $row['title']?>"  style="color: rgb(170, 170, 170);"  maxlength="100" class="linput"/></span>
+    </dd>
+    
+    <dd>
+    <span class="dlleft">标签TAG</span>
+    <span class="dlright"><input name="tags" type="text" id="tags" value="<?php echo $row['keywords']; ?>" maxlength="100" class="linput"/><cite>多个标签请用,隔开</cite></span>
+    </dd>
+    
+    <dd>
+    <span class="dlleft">文件类型</span>
+    <span class="dlright">
+    <div class="vocation">
+        <select name="filetype" id="filetype" class="select1">
+                    <option value=".exe" selected="selected">.exe</option>
+                    <option value=".zip">.zip</option>
+                    <option value=".rar">.rar</option>
+                    <option value=".iso">.iso</option>
+                    <option value=".gz">.gz</option>
+                    <option value="其它">其它</option>
+               </select>
+            
+     </div>
+    </span>
+    </dd>
+    
+    
+    <dd>
+    <span class="dlleft">界面语言</span>
+    <span class="dlright">
+    <div class="vocation">
+        <select name="language" id="language"  class="select1">
+                    <option value="简体中文" selected="selected">简体中文</option>
+                    <option value="英文软件">英文软件</option>
+                    <option value="繁体中文">繁体中文</option>
+                    <option value="其它类型">其它类型</option>
+               </select>
+      </div>
+    </span>
+    </dd>
+    
+    
+    <dd>
+    <span class="dlleft">软件类型</span>
+    <span class="dlright">
+    <div class="vocation">
+        <select name="softtype" id="softtype" class="select1">
+                <option value="国产软件" selected="selected">国产软件</option>
+                <option value="国外软件">国外软件</option>
+                <option value="汉化补丁">汉化补丁</option>
+               </select>
+      </div>
+    </span>
+    </dd>
+    
+    <dd>
+    <span class="dlleft">授权方式</span>
+    <span class="dlright">
+    <div class="vocation">
+        <select name="accredit" id="accredit" class="select1">
+                    <option value="共享软件" selected="selected">共享软件</option>
+                    <option value="免费软件">免费软件</option>
+                    <option value="开源软件">开源软件</option>
+                    <option value="商业软件">商业软件</option>
+                    <option value="破解软件">破解软件</option>
+                    <option value="游戏外挂">游戏外挂</option>
+          </select>
+      </div>
+    </span>
+    </dd>
+    
+     <dd>
+    <span class="dlleft">运行环境</span>
+    <span class="dlright"><input  name='os' value='Win2003,WinXP,Win2000,Win9X' maxlength="100" type="text"  class="linput"/> </span>
+    </dd>
+   
+    
+      <dd>
+    <span class="dlleft">软件等级</span>
+    <span class="dlright">
+    <div class="vocation">
+        <select name="softrank" id="softrank" class="select1">
+                <option value="1">一星</option>
+                <option value="2">二星</option>
+                <option value="3" selected="selected">三星 </option>
+                <option value="4">四星</option>
+                <option value="5">五星</option>
+          </select>
+      </div>
+    </span>
+    </dd>
+
+  <dd>
+    <span class="dlleft">官方网址</span>
+    <span class="dlright"><input  name="officialDemo" id="officialDemo"  maxlength="100" type="text"  class="linput"/> </span>
+    </dd>
+
+  <dd>
+    <span class="dlleft">程序演示</span>
+    <span class="dlright"><input name="officialUrl" id="officialUrl" value="http://"  maxlength="100" type="text"  class="linput"/> </span>
+    </dd>
+
+
+      <dd>
+    <span class="dlleft">软件大小</span>
+    <span class="dlright">
+    <div class="vocation">
+                  <input type="text" name="softsize" id="softsize"  maxlength="100" class="linput" style="width:95px; margin-right:10px"/> 
+         <select name="unit" id="unit"class="select1">
+                    <option value="MB" selected="selected">MB</option>
+                    <option value="KB">KB</option>
+                    <option value="GB">GB</option>
+          </select>
+      </div>
+    </span>
+    </dd>
+
+ 
+
+    <dd>
+    <span class="dlleft">栏目分类<b>*</b></span>
+    <span class="dlright">
+    <div class="vocation">
+                     <?php
+    			$typeOptions = GetOptionList(0,$channelid);
+    			echo "<select class='select1'  name='typeid' size='1'>\r\n";
+   				echo "<option value='0' selected>请选择栏目...</option>\r\n";
+   				echo $typeOptions;
+    			echo "</select>";
+			?>
+   
+     </div>
+    </span>
+    </dd>
+ <dd>
+    <span class="dlleft">需要金币</span>
+    <span class="dlright"><input  name="needmoney" type="text" id="needmoney"  maxlength="100" class="linput"/> </span>
+    </dd>
+    
+     <dd>
+    <span class="dlleft">内容简介<b>*</b><br />字数不超过200字</span>
+    <span class="dlright"><textarea name="description" id="description" cols="15" rows="10" class="ltextarea"><?php echo $row["description"]; ?></textarea></span>
+    </dd>
+
+    
+    <dd>
+    <span class="dlleft">文章封面<b>*</b></span>
+    <span class="dlright">
+   
+    <a href="javascript:void(0)" class="zfgo" id="up1" rel="upA" data-rel="" style="position:relative"> 
+    
+    <input  style="opacity:0; position:absolute; left:0; top:0; cursor:pointer; height:31px; width:103px" name="litpic" type="file" id="litpic" onchange="SeePicNew('divpicview',this);"  maxlength="100" class="intxt"/>
+      
+       选择图片</a>
+    <cite id="show1"></cite>
+    <cite>缩略图尺寸200*150像素</cite>
+    <input type="hidden" value=""  onchange="SeePicNew('divpicview',this);"  name="litpic" id="litpic" />
+    
+      
+    <div class="upview" id="upw1"></div> 
+    </span>
+    </dd>
+    
+ 
+       <?php if($row['litpic']!='')
+          { 
+          ?>
+           <dd>
+    <span class="dlleft">原来的缩略图<b>*</b></span>
+          <span class="dlright">  <img name="nlitpic"  id="nlitpic" src='<?php  echo $row['litpic'];  ?>' style="width: 200px; height:150px" /></span>
+          </dd>
+          
+             <?php
+          }
+     	  //自定义字段
+      	  	PrintAutoFieldsEdit($row['fieldset'],$addRow,'autofield');
+      	  ?>
+     <dd>
+    <span class="dlleft">作者</span>
+    <span class="dlright"><input type="text" name="writer" id="writer" value="<?php echo $cfg_ml->M_UserName?>"  maxlength="100" class="linput" style="width:219px"/></span>
+    </dd>
+ 
+     
+    <dd>
+    	<span class="dlleft">详细内容</span>
+    	<span class="dlright">   <?php GetEditor("body","",200,"Member"); ?>
+</span>
+    </dd>
+
+
+
+ <dd>
+    <span class="dlleft">本地地址</span>
+    <span class="dlright"><input  name="softurl1" type="text" id="softurl1"  maxlength="100" class="linput" style="width:219px; margin-right:10px;"/>
+      <button  name="sel1" type="button" id="sel1" onclick="SelectSoft('addcontent.softurl1')" class="zfgo">选取</button>
+        服务器名称：
+                <input name="servermsg1" type="text" id="servermsg1" value="本地下载" class="intxt" style="width:150px" /></span>
+    </dd>
+     <dd>
+    <span class="dlleft">其它地址</span>
+    <span class="dlright"><input name="picnum" type="text" id="picnum" value="5" size="8"  maxlength="100" class="linput" style="width:219px; margin-right:10px;"/>
+    <button name='kkkup' type='button' id='kkkup2' onclick="MakeUpload();" class="zfgo">增加地址</button>
+                <button type="button" name="Submit3" id="btsh3" onclick="ShowHideAddr();" class="zfgo">隐藏地址</button>
+                </span>
+    </dd>
+ 
+ 
+ 
+        
+                  <div id="morelink" style="display:none"> <?php echo "<span id='uploadfield' style='line-height: 32px;'></span>"; ?> </div>
+                  
+                  
+                  
+                  
+
+     <?php
+      if($safe_faq_send == '1'){
+      	$faqkey = array_rand($safefaqs);
+      ?>
+      	 <dd>
+      	<span class="dlleft">
+           验证问题<b>*</b></span>
+        <span class="dlright">
+            <?php echo $safefaqs[$faqkey]['question'];?>  (答案:<?php echo $safefaqs[$faqkey]['answer'];?>) <input name="safeanswer" type="text" id="safeanswer" size="25" style='width:200px;' class="intxt"/> 
+                <input type="hidden" name="faqkey" value="<?php echo $faqkey;?>" />
+         </span>
+      </dd>
+      <?php
+   		 }
+      	//游客强制加验证码，会员则判断后台开关
+        if(preg_match("/3/",$safe_gdopen)){
+      ?>
+           <dd>
+      	<span class="dlleft">验证码<b>*</b></span>
+        <span class="dlright"><input name="vdcode" type="text" id="vdcode" maxlength="100" class="linput" style='width:50px;text-transform:uppercase;' />
+            <img src="../include/vdimgck.php" alt="看不清？点击更换" align="absmiddle" style="cursor:pointer; margin:5px 0 0 5px" onclick="this.src=this.src+'?'" /></span>
+      </dd>
+      <?php }?>
+      
+   <?php
+       //自定义字段
+       PrintAutoFieldsAdd($cInfos['fieldset'],'autofield');
+      ?>
+      
+       
+    <dd>
+    <span class="dlleft">&nbsp;</span>
+    <span class="dlright"><input name="ntime" type="hidden" value="<?php echo $aidnum;?>" /><button  type="submit" class="zfgo">确认发布</button></span>
+    </dd>
+    
+    </dl>
+ 
+     </div><!--uccontact end-->
+    </form>
+    
+    </div><!--extend end-->
+    
+    
+    </div><!--urright end-->
+    
+    </div><!--ucbox end-->
+    
+ 
+</div><!--main end-->
+
+
+ <?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+</body>
+</html>
+
+
+<script>
+
+<!--
+//function inputAutoClear(ipt)
+//	{
+//	 	ipt.onfocus=function()
+//	 	{if(this.value==this.defaultValue){this.value='';}};
+//	 	ipt.onblur=function()
+//	 	{if(this.value==''){this.value=this.defaultValue;}};
+//	 	ipt.onfocus();
+//	} 
+//-->
+function checkSubmit()
+{
+
+	if(document.addcontent.title.value=="" || document.addcontent.title.value=="请输入标题"){
+		alert("标题不能为空！");
+		document.getElementById("title").style.color="#000";
+		document.addcontent.title.value="";
+		document.addcontent.title.focus();
+		return false;
+	}
+	
+	if(document.addcontent.typeid.value==0){
+		alert("分类必须选择！");
+		return false;
+	}
+	if(document.addcontent.typeid.options && document.addcontent.typeid.options[document.addcontent.typeid.selectedIndex].className!='option3')
+	{
+		alert("请选择正确的分类！");
+		return false;
+	}
+	if(document.addcontent.description.value==0){
+		alert("为你的作品简要说明吧！");
+		document.addcontent.description.focus();
+		return false;
+	}
+	if(document.addcontent.picA.value==0){
+		alert("要上传缩略图哦！");
+		return false;
+	}
+	if(document.addcontent.vdcode.value==""){
+		document.addcontent.vdcode.focus();
+		alert("验证码不能为空！");
+		return false;
+	}
+
+}
+function uyd(str){
+	if(document.getElementById(str)){
+		var nstr = document.getElementById(str);
+		var sstr = document.getElementById(nstr.rel);
+		
+		sstr.onmouseover = nstr.onmousemove = function(){
+			var oscrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
+			var onleft = parseInt(nstr.getBoundingClientRect().left+document.documentElement.scrollLeft)+'px';
+			var ontop = parseInt(nstr.getBoundingClientRect().top+oscrollTop)+'px';
+			sstr.style.display = 'block';
+			sstr.style.left=onleft;
+			sstr.style.top=ontop;
+			nstr.style.filter="alpha(opacity=0)";
+			nstr.style.opacity="0";
+		}
+		nstr.onmouseout=sstr.onmouseout = function(){
+			sstr.style.display = 'none';
+			nstr.style.filter="alpha(opacity=100)";
+			nstr.style.opacity="1";
+		}
+		//sstr.onmousemove = function(){
+//			sstr.style.display = 'block';
+//		}
+		//sstr.onmouseout = function(){
+//			sstr.style.display = 'none';
+//		}
+		//nstr.onmouseout = function(){
+//			sstr.style.display = 'none';
+//			//sstr.style.left = '-1000px';
+////			sstr.style.top = '-1000px';
+//		}
+	}
+}
+uyd("up1");
+uyd("up2");
+
+function randomString(len) {
+　　len = len || 32;
+　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+　　var maxPos = $chars.length;
+　　var pwd = '';
+　　for (i = 0; i < len; i++) {
+　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+　　}
+　　return pwd;
+}
+function uf(str){
+	//处理上传表单
+	var tjid = null;
+	if(str.getAttribute("data-rel")){
+		//二次上传
+		var tfd = str.parentNode;
+		tjid = tfd;
+		tfdd = str.parentNode.parentNode;
+	}else{
+		//首次上传
+		var nzf = randomString(10);
+		$(str).wrap("<form id='"+nzf+"' action='myupload.php?file="+str.name+"&tt=<?php echo $aidnum;?>' method='post' enctype='multipart/form-data'></form>");
+		tjid = $("#"+nzf);
+		str.setAttribute('data-rel','1');
+	}
+	
+	//处理状态显示
+	var tfdd = str.parentNode.parentNode;
+	//var fdspan = tfdd.getElementsByTagName("span");
+	if(str.getAttribute("data-sid")){
+		var sid = document.getElementById(str.getAttribute("data-sid"));
+		sid.innerHTML ='';
+	}
+	
+	
+	$(tjid).ajaxSubmit({
+	//$('#bcd').ajaxSubmit({	
+		dataType:  'json',
+		beforeSend: function() {
+			//showimg.empty();
+//			progress.show();
+//			var percentVal = '0%';
+//			bar.width(percentVal);
+//			percent.html(percentVal);
+			if(sid){
+				sid.innerHTML = '上传中......';
+			}
+		},
+		uploadProgress: function(event, position, total, percentComplete) {
+			var percentVal = percentComplete + '%';
+			//bar.width(percentVal);
+			if(sid){
+				sid.innerHTML =percentVal;
+			}
+		},
+		success: function(data) {
+			var nstr= '';
+			if(data.tis==0){nstr = '上传成功';}
+			if(data.tis==1){nstr = '上传的文件类型不被允许';}
+			if(data.tis==2){nstr = '上传的文件过大';}
+			if(data.status=='success'){
+				if(str.name == 'picA_U'){
+					document.getElementById("picA").value = data.pic;
+					document.getElementById("upw1").innerHTML = '<img src="'+data.pic+'" width="200" height="150" alt="缩略图" />';
+				}
+				if(str.name == 'picB_U'){
+					document.getElementById("picB").value = data.pic;
+					var nnzf = '<li>';
+						nnzf += '<div class="uprarname"><b>'+data.name+'</b>('+(data.size/1000).toFixed(2)+'KB)</div>';
+						nnzf += '<div class="upsuc">'+nstr+'</div>';
+						nnzf += '<div class="updel"><a href="javascript:void(0)" title="删除附件" onclick="dellpic(this)" rel="'+data.pic+'"><img src="/web/images/upimgclose.gif" alt="删除" /></a></div>';
+						nnzf += '</li> ';
+					document.getElementById("upw2").innerHTML = nnzf;
+				}
+			}
+			
+			if(sid){sid.innerHTML = nstr;}
+			//alert(data.name);
+		},
+		error:function(xhr){
+			if(sid){sid.innerHTML = '上传失败';}
+
+		}
+	});
+}
+</script>
+<style>
+div.fieldset {
+	border:  1px solid #afe14c;
+	margin: 10px 0;
+	padding: 20px 10px;
+}
+div.fieldset span.legend {
+	position: relative;
+	background-color: #FFF;
+	padding: 3px;
+	top: -30px;
+	font: 700 14px Arial, Helvetica, sans-serif;
+	color: #73b304;
+}
+
+div.flash {
+	width: 375px;
+	margin: 10px 5px;
+	border-color: #D9E4FF;
+
+	-moz-border-radius-topleft : 5px;
+	-webkit-border-top-left-radius : 5px;
+    -moz-border-radius-topright : 5px;
+    -webkit-border-top-right-radius : 5px;
+    -moz-border-radius-bottomleft : 5px;
+    -webkit-border-bottom-left-radius : 5px;
+    -moz-border-radius-bottomright : 5px;
+    -webkit-border-bottom-right-radius : 5px;
+
+}
+.progressWrapper {
+	width: 357px;
+	overflow: hidden;
+}
+
+.progressContainer {
+	margin: 5px;
+	padding: 4px;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	overflow: hidden;
+}
+/* Message */
+.message {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+/* Error */
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+/* Current */
+.green {
+	border: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+}
+
+/* Complete */
+.blue {
+	border: solid 1px #CEE2F2;
+	background-color: #F0F5FF;
+}
+
+.progressName {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 323px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus {
+	margin-top: 2px;
+	width: 337px;
+	font-size: 7pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(../images/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel:hover {
+	background-position: 0px 0px;
+}
+</style>
+<!--<script type="text/javascript" src="/web/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="/web/js/swfupload.swfobject.js"></script>
+<script type="text/javascript" src="/web/js/swfupload.queue.js"></script>
+<script type="text/javascript" src="/web/js/fileprogress.js"></script>
+<script type="text/javascript" src="/web/js/handlers.js"></script>-->
+<script type="text/javascript">
+//var swfu;
+//
+//SWFUpload.onload = function () {
+//	var settings = {
+//		flash_url : "/web/swfupload/swfupload.swf",
+//		upload_url: "myupload.php?tt=<?php echo $aidnum;?>",
+//		post_params: {
+//			"PHPSESSID" : "NONE",
+//			"HELLO-WORLD" : "Here I Am",
+//			".what" : "OKAY"
+//		},
+//		file_size_limit : "100 MB",
+//		file_types : "*.jpg;*.gif;*.png;*.jpeg;",
+//		file_types_description : "All Files",
+//		file_upload_limit : 100,
+//		file_queue_limit : 0,
+//		custom_settings : {
+//			progressTarget : "fsUploadProgress",
+//			cancelButtonId : "btnCancel"
+//		},
+//		debug: false,
+
+//
+//		// Button Settings
+//		button_image_url : "/web/images/TestImageNoText_65x29.png",
+//		button_placeholder_id : "spanButtonPlaceholder",
+//		button_width: 65,
+//		button_height: 29,
+//		button_text: '<span class="theFont">上传</span>',
+//		button_text_style: ".theFont { font-size: 16; color:#ffffff }",
+//		button_text_left_padding: 12,
+//		button_text_top_padding: 3,
+//
+//		// The event handler functions are defined in handlers.js
+//		swfupload_loaded_handler : swfUploadLoaded,
+//		file_queued_handler : fileQueued,
+//		file_queue_error_handler : fileQueueError,
+//		file_dialog_complete_handler : fileDialogComplete,
+//		upload_start_handler : uploadStart,
+//		upload_progress_handler : uploadProgress,
+//		upload_error_handler : uploadError,
+//		upload_success_handler : uploadSuccess,
+//		upload_complete_handler : uploadComplete,
+//		queue_complete_handler : queueComplete,	// Queue plugin event
+//		
+//		// SWFObject settings
+//		minimum_flash_version : "9.0.28",
+//		swfupload_pre_load_handler : swfUploadPreLoad,
+//		swfupload_load_failed_handler : swfUploadLoadFailed
+//	};
+//
+//	swfu = new SWFUpload(settings);
+//}
+
+
+function dellpic(str){
+	var pic = $(str).attr("rel");
+	$.post("upload.php?act=delimg&pic="+pic,function(msg){
+		if(msg==1){
+			var fd = str.parentNode.parentNode;
+			fd.innerHTML = '';
+			fd.style.display = 'none';
+		}else{
+			alert("图片或附件不存在！");
+		}
+	});
+}
+
+if(document.getElementById("zdy")){
+	var zdy = document.getElementById("zdy");
+	var zdyp = zdy.getElementsByTagName("p");
+	var zdyn = zdyp.length;
+	for(var i=0;i<zdyn;i++){
+		zdyp[i].innerHTML = '';
+	}
+}
+</script>

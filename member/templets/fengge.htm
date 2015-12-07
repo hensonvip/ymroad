@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>空间样式设定 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" language='javascript'src='templets/js/main.js'></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+</head>
+<body>
+<?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main"> 
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">分类管理</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+     <div class="ucright">
+      <div class="listnav">
+        <ul class="navclass">
+          <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="fg.php" class="selected">风格选择</a></li>
+        </ul>
+      </div>
+      <!--listnav end-->
+      <ul class="classnav">
+        <li><a href="fl.php">分类管理</a></li>
+         <li><a href="kj.php"><span>空间设置</span></a></li>
+          <li><a href="fg.php" class="selected">风格选择</a></li>
+  </ul>
+   
+   
+   <div class="extend" style="">
+     <div class="uccontact" style=""> 
+      <form action="fg.php" method="post" enctype="multipart/form-data" name="form1">
+          <input type="hidden" name="dopost" value="save" />
+           <table cellspacing="1" class="template">
+            <tbody>
+              <?php ListSkin(); ?>
+            </tbody>
+          </table>
+      </form>
+        </div>
+      </div>
+      <!--主操作区域 -->
+    </div>
+  </div>
+  </div>
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+ </body>
+</html>
+

@@ -1,0 +1,28 @@
+{dede:include file='head.htm'/}
+  <div class="layout-body">
+    <div class="w960  clf">
+{dede:include file='m_left.htm'/}
+      <div class="m_main">
+        <div class="inner">
+          <div class="hd">
+            <h3>空间公告</h3>
+          </div>
+          <div class="i_xx clf spacenews"> {dede:var.spacenews /} </div>
+        </div>
+        {dede:spacenewart row=10 titlelen=100 }
+        <div class="inner"> <a class="ckxx" href="{dede:field.arcurl/}" target="_blank">查看详细</a>
+          <div class="hd">
+            <h3><a href="{dede:field.arcurl/}">{dede:field.title/}</a></h3>
+          </div>
+          <div class="i_info">栏目:<a href="{dede:field.typeurl/}" class="lm" target="_blank">{dede:field.typename/}</a><em></em>时间:{dede:field.pubdate function="MyDate('Y-m-d h:i',@me)"/}<em></em>浏览:{dede:field.click/}</div>
+          <div class="i_xx clf"> <a href="{dede:field.arcurl/}" target="_blank"><img src="{dede:field.picname/}" width="240" height="150" class="litpic" alt="{dede:field.title/}"></a> {dede:field.description function="" /} </div>
+        </div>
+        {/dede:spacenewart}
+        <?php if($autoi==1){?>
+        asdasda
+        <?php }?>
+        <div class="inner more"><a href="index.php?uid={dede:var.userid_e /}&action=archives">更多内容&gt;&gt;</a></div>
+      </div>
+    </div>
+{dede:include file='foot.htm'/}
+

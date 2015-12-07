@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>消息管理 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+
+<script type="text/javascript">
+//获得选中文件的文件名
+function GetCheckfolderItem()
+{
+	var allSel='';
+	if(document.form1.deleteid.value) return document.form1.deleteid.value;
+	for(i=0;i<document.form1.deleteid.length;i++)
+	{
+		if(document.form1.deleteid[i].checked)
+		{
+			if(allSel=='')
+			allSel=document.form1.deleteid[i].value;
+			else
+			allSel=allSel+","+document.form1.deleteid[i].value;
+		}
+	}
+	return allSel;
+}
+	
+	function DoSubmit(myfolder)
+	{
+		var selid = GetCheckfolderItem();
+		if(selid=='') {
+			alert("你没选中任何信息！");
+			return false;
+		}
+		if(window.confirm("你确定要删除这些消息么？"))
+		{
+			location = "pm.php?dopost=del&ids="+selid+"&folder="+myfolder;
+		}
+	}
+</script>
+</head>
+<body>
+<?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main"> 
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">消息管理</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+     <div class="ucright">
+      <div class="listnav">
+   
+        <ul class="navclass">
+          <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="pm.php" class="selected">消息管理</a></li>
+        </ul>
+      </div>
+    <div class="ucrbox">
+       <!--listnav end-->
+      <ul class="classnav">
+             <li><a href="pm.php?dopost=send"><span>写新消息</span></a></li>
+            <li><a href="pm.php?folder=inbox"  <?php if($folder == "inbox" || empty($folder)) echo 'class="selected"'; ?>><span>收件箱</span></a></li>
+            <li><a href="pm.php?folder=outbox" <?php if($folder == "outbox") echo 'class="selected"'; ?>><span>发件箱</span></a></li>
+            <li><a href="pm.php?folder=track" <?php if($folder == "track") echo 'class="selected"'; ?>><span>已发出信息</span></a></li>
+   </ul>
+   
+    </div>
+  
+  
+  
+  <div class="ucjob">
+        <div class="jobtitle">   <span class="uctuiguang" style="padding-left: 31px;width: 40%;">标题</span> <span class="ujobdate">发布时间</span> <span class="ujobdates">状态</span> <span class="ujobedit"><?php
+          	if($folder == "inbox") echo "发件人";
+          	else echo "收件人";
+          	?></span> </div>
+      
+         <form action="pm.php" method="post" name="form1">
+        <input type='hidden' name='dopost' value='del' />
+        
+          <ul class="ujoblist">
+          {dede:datalist}
+          <li> 
+          
+           
+           <span class="uctuiguang" style="padding-left: 31px;width: 40%;"><?php
+           if($fields['hasview']==0) echo "<a href='pm.php?dopost=read&id={$fields['id']}'>{$fields['subject']}</a>";
+           else echo "<a href='pm.php?dopost=read&id={$fields['id']}'>{$fields['subject']}</a>";
+           ?></span>
+           
+           <span class="ujobdate"><i><?php
+          echo MyDate('y-m-d H:i:s',$fields['sendtime']);
+          ?></i>&nbsp;</span> <span class="ujobdates"><?php
+          $readmsg = ($fields['hasview']==0 ? "<span style='color:red'>未阅读</span>" : '已阅读');
+          echo $readmsg;
+          ?></span> <span class="ujobedit">
+          <cite>
+          <?php  if($folder == "inbox") {  ?>
+                <a href="pm.php?dopost=send&uid=<?php echo $fields['floginid']; ?>" title="回复TA"> <?php echo $fields['floginid']; ?> </a>
+                <?php  }else{  ?>
+                <a href="pm.php?dopost=send&uid=<?php echo $fields['tologinid']; ?>" title="回复TA"> <?php echo $fields['tologinid']; ?> </a>
+                <?php }  ?>
+            </cite>
+          </span> </li>
+          {/dede:datalist}
+        </ul>
+      </div>
+      <div class="pagebox">
+        <div class="page1" style="position: relative; left: 394px;">
+          <ul class="pagelist">
+            <span>{dede:pagelist listsize=5/}</span>
+          </ul>
+              </form>
+         </div>
+         
+        <!--page end-->    </div>
+  
+ </div></div></div> 
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+</body>
+</html>
+

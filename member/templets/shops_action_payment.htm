@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>下单购买 - {dede:var.carts.orders_id/}</title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+</head>
+<body class="buycarpage">
+
+ <?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main"> 
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">充值中心</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+
+
+<div class="ucright">
+  <div class="listnav">
+    <ul class="navclass">
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="buy.php" class="selected">充值中心</a></li>
+    </ul>
+  </div>
+  <!--listnav end-->
+  <ul class="classnav">
+    <li><a href="buy.php"  class="selected">会员升级</a></li>
+    <li><a href="operation.php">消费记录</a></li>
+  </ul>
+  
+  <div class="extend" style="">
+    <div class="uccontact" style="">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="dede_table">
+        <thead>
+          <tr>
+            <td colspan="6">确认订单并付款</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td width="180" class="td1">订单编号:</td>
+            <td><strong>{dede:var.carts.orders_id/}</strong></td>
+          </tr>
+          <tr>
+            <td width="180" class="td1">商品总数:</td>
+            <td><strong>{dede:var.carts.cart_count/}件</strong></td>
+          </tr>
+          <tr>
+            <td width="180" class="td1">商品名称:</td>
+            <td><strong>{dede:var.pay_name/}</strong></td>
+          </tr>
+          <tr>
+            <td width="180" class="td1">订单价格:</td>
+            <td><strong class="fc-f60" id="priceCount">{dede:var.carts.price_count/}</strong> 元</td>
+          </tr>
+          <tr>
+            <td width="180" class="td1">支付方式:</td>
+            <td><strong>支付宝</strong></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" class="btn"><div style="text-align:center">
+                {dede:var.button/}
+              </div></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      
+      <!--主操作区域 --> 
+    </div>
+  </div>
+</div>
+  <style>
+.dede_table tr td {
+height: 32px;
+line-height: 32px;
+border-bottom: 1px solid #EAEAEA;
+}
+.btn input {
+background-color: #F59900;
+height: 28px;
+border: 1px solid #FF5000;
+border-radius: 3px;
+padding: 0 10px;
+color: #FFF;
+margin: 5px;
+margin-left: 10px;
+cursor: pointer;
+}
+.btn input:hover {
+background-color: #ff9900;
+border: 1px solid #ff0000;
+}
+  </style>
+</body>
+</html>

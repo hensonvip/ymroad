@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>分享推广 - 会员中心 -<?php echo $cfg_webname; ?></title>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" language='javascript'src='templets/js/main.js'></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+</head>
+<body>
+<?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main">
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+       <li><a href="/member">会员中心</a></li>
+  <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">分享推广</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+     <div class="ucright">
+      <div class="listnav">
+        <ul class="navclass">
+          <li><a href="fx.php" class="selected">分享推广</a></li>
+        </ul>
+      </div>
+      <!--listnav end-->
+    
+      <div class="extend">
+        <div class="uccontact"> <span class="ltitle1">分享推广</span> <span class="ltbg"></span>
+        
+        <ul class="extfont">
+    <li>1、复制以下任意链接，通过论坛、QQ、网站等形式进行转发，如果你的朋友通过该链接访问站点；</li>
+    <li>3、由此下面任意链接访问网站，并成功注册会员，您将获得<cite>1酷币</cite>的奖励；</li>
+    <li>2、本站享有对本推广的解释权</li>    
+    </ul>
+     <ul class="extform">
+ <li><span>推广链接1</span><p><input name="" type="text"  class="extinput" value="http://www.dede58.com/member/reg_new.php?fromid=<?php echo $cfg_ml->M_ID;?>"/></p><a href="javascript:void(0)"  id="copy-buttonA" data-clipboard-text="http://www.dede58.com/member/reg_new.php?fromid=<?php echo $cfg_ml->M_ID;?>" >复制</a></li>
+    <li><span>推广链接2</span><p><input name="" type="text"  class="extinput" value="http://www.dede58.com/member/reg_new.php?fromuser=<?php echo $cfg_ml->M_LoginID;?>" /></p><a href="javascript:void(0)"  id="copy-buttonB" data-clipboard-text="http://www.dede58.com/member/reg_new.php?fromuser=<?php echo $cfg_ml->M_LoginID;?>" >复制</a></li>
+    
+    </ul>
+        </div>
+        <!--uccontact end--> 
+        
+      </div>
+      <!--extend end--> 
+      
+    </div>
+    <!--urright end--> 
+    
+  </div>
+  <!--ucbox end--> 
+  
+</div> 
+<!--main end-->
+ 
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+
+<script language="JavaScript" src="templets/js/ZeroClipboard.js"></script>
+<script>
+var client = new ZeroClipboard( document.getElementById("copy-buttonA") );
+client.on( "ready", function( readyEvent ) {
+  client.on( "aftercopy", function( event ) {
+    alert('推广地址复制成功');
+  } );
+} );
+
+var clientA = new ZeroClipboard( document.getElementById("copy-buttonB") );
+clientA.on( "ready", function( readyEvent ) {
+  clientA.on( "aftercopy", function( event ) {
+    alert('推广地址复制成功');
+  } );
+} );
+</script>
+</body>
+</html>
+

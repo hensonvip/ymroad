@@ -1,0 +1,49 @@
+<div class="t">
+<div class="tip">
+ <span>欢迎来访源码路，我们专注于<a href="http://www.adminbuy.cn/">织梦源码</a>分享、织梦模板、discuz模板、wordpress主题等网站模板，为广大站长提供网站模板以及Discuz插件等素材。</span>
+ <p>
+  <a href="http://www.adminbuy.cn/" title="模板王">模板王</a> <a href="http://www.adminbuy.cn/" title="织梦源码">织梦源码</a>
+ </p>
+</div>
+</div>
+<div class="head">
+ <div class="logo">
+  <span><a href="http://www.adminbuy.cn/"><img src="{dede:global.cfg_templets_skin/}/images/logo.png" alt="织梦源码" width="421" height="74"/></a></span>
+ </div>
+
+ <div class="search">
+  <form action="/plus/search.php" name="formsearch">
+  <input type="hidden" name="kwtype" value="0" />
+  <input type="text"  name="q" value="请输入关键词 如：织梦源码" class="s_w" onblur="if (this.value ==''){this.value=this.defaultValue}" onclick="if(this.value=='请输入关键词 如：织梦源码')this.value=''"/>
+  <input type="submit" name="submit" value="提 交" class='an' style="border:0"/>
+  </form>
+ </div>
+ <div class="wifi">
+	<a class="dl" href="/member/" target="_blank">登录</a>
+	<a class="zc" href="/member/reg.php" target="_blank">注册</a>
+ </div>
+</div>
+
+<div id="m">
+<div id="nav">
+<li><a href="/">首页</a></li>
+{dede:channelartlist row=12 typeid='top'}
+<li><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+    <ul>
+    {dede:channel type='son' noself='yes'}
+        <li><a href="[field:typelink/]">[field:typename/]</a></li>
+    {/dede:channel}
+    </ul>
+</li>
+
+{/dede:channelartlist}
+<li><a href="#" style='background:#44A016'>常见问题</a>
+  <ul>
+    <li><a href="/work/" target="_blank">常见问题</a></li>
+    <li><a href="/work/vip.html" target="_blank">如何加入VIP</a></li>
+  </ul>
+</li>
+<p><a href="http://fang.adminbuy.cn/" target="_blank">仿站业务</a></p>
+</div>
+</div>
+<script src='/plus/ad_js.php?aid=24' language='javascript'></script>

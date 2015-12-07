@@ -1,0 +1,167 @@
+<html><head>
+<meta charset="gb2312"> 
+<title>{dede:field.title/}_网站模板下载尽在源码路-</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> 
+<meta content="yes" name="apple-mobile-web-app-capable"> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style"> 
+<meta content="telephone=no" name="format-detection"> 
+<link rel="stylesheet" href="/style/wap/css/qz_show.css">
+<link rel="stylesheet" href="/style/wap/css/qz_home.css">
+</head>
+<body>
+
+
+<div id="main_body">
+	 <header class="s_header">
+		<nav>
+			<a href="/m/" class="bg"><span>首页</span></a>
+			<span id="more">导航</span>
+			<span style="font-size: 1.4rem">{dede:field.typename/}</span>
+		</nav>
+	</header>
+	
+	<div class="s_toplist" id="toplist" style="display:none">
+	<div>
+		<a href="list.php?tid=24">免费源码</a>
+        <a href="list.php?tid=27">VIP专区</a>
+        <a href="list.php?tid=15">各类模板</a>
+        <a href="list.php?tid=22">Discuz插件</a>
+	</div>
+	<div>
+		<a href="list.php?tid=4">织梦教程</a>
+        <a href="list.php?tid=5">Discuz教程</a>
+        <a href="list.php?tid=18">网站seo</a>
+        <a href="list.php?tid=19">建站资讯</a>
+	</div>
+	<span></span>
+</div>
+
+<section class="s_floor">
+<div class="pr">
+	<h2>{dede:field.title/}</h2>
+	<p class="s_p"><span>阅读：<span id="viewnum"><script src="/plus/count.php?view=yes&aid={dede:field.id/}&mid={dede:field.mid/}" type='text/javascript' language="javascript"></script></span></span><span>{dede:field.pubdate function='strftime("%Y-%m-%d",@me)'/}</span></p>
+</div>
+<p style="margin:0 auto; text-align:center"><img src="{dede:field.litpic/}" width="90%"></p>
+<div class="img topic_txt">
+{dede:field.body/}
+</div>
+
+
+
+<!-- Baidu Button BEGIN -->
+<div id="share_label" style="border-bottom: none">
+    <span>分享到 : </span>
+</div>
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+    <a class="bds_tsina" title="分享到新浪微博" href="#"></a>
+    <a class="bds_qzone" title="分享到QQ空间" href="#"></a>
+    <a class="bds_tqq" title="分享到腾讯微博" href="#"></a>
+    <a class="bds_douban" title="分享到豆瓣网" href="#"></a>
+    <a class="bds_renren" title="分享到人人网" href="#"></a>
+    <a class="shareCount" href="#" title="累计分享33次">33</a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&uid=603462" src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=384298"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+<br style="clear: both">
+</section>
+
+	
+<div class="module module-margin tuijian">
+	{dede:arclist titlelen='36' typeid='24' row='3' orderby='rand'}
+	<div class="topic">
+		<ul class="cont-list">
+			<li>
+				<span class="live-icon">[field:typename/]</span><a href="view.php?aid=[field:id/]">[field:title/]</a>
+			</li>
+		</ul>
+	</div>
+    {/dede:arclist}    
+</div>
+
+	<footer class="footer">
+	<div>
+		<p>
+			<a href="#">留言</a>
+			|
+			
+			<a href="#">登录</a>
+			
+			|<a href="#">客户端下载</a>
+		</p>
+	</div>
+</footer>
+
+</div>
+<script src="/style/wap/js/jquery-2.0.0.min.js"></script>
+
+<script src="/style/wap/js/touchslider_min.js"></script>
+<script type="text/javascript">
+$('a[name=index]').attr('href', '').attr('class', 'aactive');
+$('#more').click(function(){  
+	if($('#toplist').css('display')!='none')
+	{
+		$('#toplist').hide();
+	}
+	else
+	{
+		$('#toplist').show();
+	}
+});
+for(n=1;n<2;n++){
+	var page='pagenavi'+n;
+	var mslide='slider'+n;
+	var mtitle='emtitle'+n;
+	arrdiv = 'arrdiv' + n;
+	var as=document.getElementById(page).getElementsByTagName('a');
+	var tt=new TouchSlider({id:mslide,'auto':'-1',fx:'ease-out',direction:'left',speed:300,timeout:2000,'before':function(index){
+		var as=document.getElementById(this.page).getElementsByTagName('a');
+		as[this.p].className='';
+		as[index].className='active';
+		this.p=index;
+	}});
+	tt.page = page;
+	tt.p = 0;
+	for(var i=0;i<as.length;i++){
+		(function(){
+			var j=i;
+			as[j].tt = tt;
+			as[j].onclick=function(){
+				this.tt.slide(j);
+				return false;
+			}
+		})();
+	}
+}
+</script>
+<script type="text/javascript">
+var curr_page=1, nomore=false, islock=false;
+function load_more() {
+	if(nomore) {
+		return;
+	}
+	if(islock) {
+		return;
+	}
+	islock = true;
+	curr_page++;
+ 	$(".load_more").html('加载中...');
+    $.get('/cureimg/page/'+curr_page,function(data){
+    	islock = false;
+    	if($.trim(data).length > 0){
+			$('.list_box').append(data);
+			$(".load_more").html('查看更多');
+		}else{
+			$(".load_more").remove();
+			nomore=true;
+		}
+    });
+}
+$(".load_more").click(load_more);
+</script>
+</body>
+</html>

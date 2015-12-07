@@ -1,0 +1,36 @@
+<div class="m_left">
+        <div class="inner pd1">
+          <ul class="stats-list clf">
+            <li class="first"><strong>{dede:var.friend/}</strong><span>粉丝</span></li>
+            <li><strong>{dede:var.article/}</strong><span>分享</span></li>
+            <li><strong>{dede:var.stow/}</strong><span>收藏</span></li>
+          </ul>
+        </div>
+        <div class="inner mt12 p0">
+          <div class="hd">
+            <h3>个人信息</h3>
+          </div>
+          <div class="bd">
+            <ul class="detail-list">
+              <li><i class="i-nc"></i>昵称：<span>{dede:var.uname /}</span></li>
+              <li><i class="i-dj"></i>等级：<span>{dede:var.membername/}</span></li>
+              <li><i class="i-ip"></i>流量：<span>{dede:var.homecount/}次</span></li>
+              <li class="born"><a href="index.php?uid={dede:var.userid function="urlencode(@me)" /}&action=infos">查看详细资料</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="inner mt12 p0">
+          <div class="hd">
+            <h3>最近访客</h3>
+          </div>
+          <div class="bd">
+            <ul class="avatar-list clf">
+      {dede:newvisitor row=6}
+          <li><a href="{dede:field.url/}" title="{dede:field.uname/}的头像" target="_blank"><img src="{dede:field.face/}" alt="{dede:field.uname/}的头像">
+                <div class="a-name">{dede:field.uname/}</div>
+                </a></li>
+         {/dede:newvisitor}
+                          </ul>
+          </div>
+        </div>
+      </div>

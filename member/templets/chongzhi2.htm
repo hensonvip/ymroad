@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>点卡/会员服务购买 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+
+</head>
+<body>
+ <?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main"> 
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">充值中心</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+     <div class="ucright">
+      <div class="listnav">
+        <ul class="navclass">
+          <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="buy.php" class="selected">充值中心</a></li>
+        </ul>
+      </div>
+      <!--listnav end-->
+      <ul class="classnav">
+           <li><a href="buy.php"  class="selected">会员升级</a></li>
+           <li><a href="operation.php">消费记录</a></li>
+   </ul>
+
+   
+   <div class="extend" style="">
+     <div class="uccontact" style=""> 
+         <span class="ltitle1">充值中心</span>
+        <span class="ltbg"></span>
+        
+       <div id="mainCp">
+        <div class="appMsg">
+         </div>
+        <!--内容消息提示 -->
+        <?php
+          if($cfg_money_scores > 0) {
+          ?>
+        
+        <?php } ?>
+        
+      
+      <div class="postForm">
+        <h3 class="meTitle">会员升级</h3>
+            <form name="f1" action="buy_action.php" method="post">
+              <input type="hidden" name="product" value="member" />
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+                <thead>
+                <tr>
+                    <th colspan='5' style='text-align:left;padding-left:10px;height:40px;line-height:40px;'>会员升级:</th>
+                 </tr>
+                </thead>
+                <tr style='height:28px;background:#F9FEE9;'>
+                    <th width="10%">选择</th>
+                    <th >产品名称</th>
+                    <th width="12%">会员类型</th>
+                    <th width="12%">时限(天)</th>
+                    <th width="10%">价格</th>
+                 </tr>
+                <tbody>
+                  <tr align='center'>
+    <td><input type='radio' name='pid' value='4'></td>
+    <td><strong>月VIP</strong></td>
+    <td>VIP会员</td>
+    <td>30天</td>
+    <td>29.00元</td>
+</tr>
+<tr align='center'>
+    <td><input type='radio' name='pid' value='5'></td>
+    <td><strong>年VIP</strong></td>
+    <td>VIP会员</td>
+    <td>365天</td>
+    <td>69.00元</td>
+</tr>
+<tr align='center'>
+    <td><input type='radio' name='pid' value='6'></td>
+    <td><strong>终身VIP</strong></td>
+    <td>VIP会员</td>
+    <td>终身</td>
+    <td>169.00元</td>
+</tr>
+                </tbody>
+              </table>
+              <button class="zfgo" style="margin-top:20px;" type="submit">购买</button>
+            </form>
+          </div>  
+ </div>
+<!--主操作区域 -->
+    </div>
+  </div></div></div></div>
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+</body>
+</html>
+

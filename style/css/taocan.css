@@ -1,0 +1,178 @@
+﻿/*
+Template Name: ECSHOP Default11
+Template URI: http://www.ecshop.com/
+Description: 默认升级版.
+Version: 2.7.2
+Author: ECSHOP Team
+Author URI: http://www.ecshop.com/
+Logo filename: logo.gif
+Template Type: type_0
+*/
+
+
+/* ====================
+     公共样式
+==================== */ 
+/*套餐*/	
+.taocan ul a{ display:block; height:30px; line-height:30px; border-bottom:1px solid #efefef; padding-left:25px;}
+.taocan ul .cur{ background:#efefef; border-left:2px solid #ed1b24; border-right:2px solid #ed1b24; padding-left:23px;}
+
+/*套餐页面右侧部分*/	
+
+.taocan_box{ border:1px solid #ddd}
+.taocan_box .taocan_txt{ float:left; width:300px; padding:0 0 0 15px; font-weight:normal; text-align:left; color:#666666   }
+ 
+.taocan_box .taocan_txt p{ font-size:14px; line-height:28px;}
+
+.taocan_box  .price{font-size: 18px;font-family: Arial, Helvetica, sans-serif;color: #C00;}
+.taocan_box  h3{border-bottom:1px solid #ddd; padding-left:10px;}
+.taocan_box  h3 span{ color:#000000; background:url(img/biao8.gif)  0px 10px no-repeat; padding-left:15px; }
+.taocan_box  h3 b{font-weight:normal; float:left}
+
+
+
+
+ .liststyle{  border-top:none}
+.liststyle th,.liststyle td {vertical-align: middle;font-size: 13px;color: #333}
+.liststyle td {line-height: 36px;text-align: center}
+.liststyle th {padding: 5px 10px 5px 0}
+.liststyle thead th {padding: 10px 5px 0 19px;width: 337px;background: #fff;text-align: left}
+.liststyle thead td {padding: 20px 0 10px;text-align: right;width: 614px;background: #fff;color: #555}
+.liststyle .bg1 {background-color: #f0f5fa}
+.liststyle .bg2 {background-color: #faf3eb}
+.liststyle .bg3 {background-color: #fff0f0}
+.liststyle .span-1 {width: 204px}
+.liststyle .span-2 {width: 122px}
+.liststyle .span-3 {width: 129px}
+.liststyle .span-4 {width: 141px}
+.liststyle .span-5 {width: 195px}
+.liststyle .span-6 {width: 263px}
+.liststyle .span-7 {width: 178px}
+.liststyle .span-8 {width: 367px}
+.liststyle .span-9 {width: 160px}
+.liststyle .td2 {text-align: left;padding: 5px 10px;line-height: 18px;font-family: Verdana,Geneva,sans-serif}
+.liststyle .textright{ text-align:right; font-weight:normal}
+.bd a{ color:#014d95}
+.bd p{ height:45px; line-height:45px; padding:0 50px; color:#ff6600; font-size:14px;}
+
+/*空间域名*/	
+
+.gold-service{  height:40px; padding-bottom:5px; background:#F4F4F4 url(img/box_shadow.png) no-repeat center bottom;}
+.gold-service ul{ height:23px; border-bottom:1px solid #DDD; padding:8px 0 8px 45px;  background:  url(img/kongjian_b.gif) no-repeat 0 0;}
+.gold-service li{ line-height:23px; display:inline-block; *display:inline; *zoom:1; padding-left:35px; font-size:14px; width:140px; margin:0 28px; float:left }
+
+ 
+.gold-service01,.gold-service02,.gold-service03,.gold-service04,.gold-service i{ background:url(img/sprite_vhost.png) no-repeat;} 
+.gold-service01{ background-position: 0 5px;}
+.gold-service02{ background-position: 0 -30px;}
+.gold-service03{ background-position: 0 -65px;}
+.gold-service04{ background-position: 0 -100px;}
+.gold-service i{ display:inline-block; *display:inline; *zoom:1; font-size:0; overflow:hidden; line-height:0; width:1px; height:14px; margin:0 22px; background-position: 0 -360px; }
+
+
+.price_box{ float:left; padding:0 5px 0 50px;}
+.web_hui{ float:left;position:relative;   padding-top:10px   }
+.web_hui img{ position:relative; float:left; }
+
+.web_hui_in{ display:none}
+.web_hui_on {cursor:pointer}
+.web_hui_on .web_hui_in{ background:#fffad5; border:1px solid #f7dd98; color:#333; padding:15px; position:absolute; width:150px; top:32px; right:-20px; display:block; line-height:18px; text-align:left}
+.web_hui_on .web_hui_in b{ font-weight:normal; color:#c00}
+.web_hui_in ul{ position:relative}
+.web_hui_in ul img{ position:absolute; right:8px; top:-21px;}
+
+
+.yunstyle  th{ font-weight:normal; color:#000; border-bottom:2px solid #fff}
+.yunstyle  td{ font-weight:normal; color:#000; border-bottom:2px solid #fff}
+.yunstyle a{ color:#000000}
+.yun1 th{ background:#df7e78}
+.yun1 td{ background:#efa8a2}
+.yun2 th{ background:#e49a77}
+.yun2 td{ background:#eebca1}
+.yun3 th{ background:#e7b779}
+.yun3 td{ background:#efcda8}
+.yun4 th{ background:#eec970}
+.yun4 td{ background:#f1d69f}
+.yun5 th{ background:#e9b77c}
+.yun5 td{ background:#efcda8}
+.yun6 th{ background:#b9bf77}
+.yun6 td{ background:#d3d2a2}
+.yun7 th{ background:#879c75}
+.yun7 td{ background:#b5c0a0}
+
+
+
+
+ 
+.slideTxtBox{ text-align:left;  }
+
+.hd{ height:57px; background:url(img/bg_vhost.png) repeat-x; }
+.hd ul{ overflow:hidden;}
+.hd li{ line-height:50px;   width:319px; float:left; font-size:16px; font-weight:bold; color:#FFF; text-align:center; cursor:pointer; }
+
+
+.slideTxtBox .hd ul li.on div{ height:30px;    line-height:50px; height:57px; width:319px; }
+
+
+.hd li.on div{ height:57px; position:relative; background:url(img/sprite_vhost.png) no-repeat;border:none}
+.hd li.on div.on01{ background-position: 0 -530px;height: 57px;  }
+.hd li.on div.on02{ background-position: 0 -590px;height: 57px;}
+.hd li.on div.on03{ background-position: 0 -650px;height: 57px; padding-left:1px;}
+.hd li.hover{ background:#666;}
+.product-ico01{ width:20px; height:20px; display:inline-block; vertical-align:-3px; *vertical-align:3px; _vertical-align:-3px; margin-right:5px; background:url(img/ico_vhost_01.png) no-repeat; _background-image: none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ico_vhost_01.png', senabled='true', sizingMethod='scale');}
+.product-ico02{ width:20px; height:20px; display:inline-block; vertical-align:-3px; *vertical-align:3px; _vertical-align:-3px; margin-right:5px; background:url(img/ico_vhost_02.png) no-repeat; _background-image: none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ico_vhost_02.png', senabled='true', sizingMethod='scale');}
+.product-ico03{ width:20px; height:20px; display:inline-block; vertical-align:-3px; *vertical-align:3px; _vertical-align:-3px; margin-right:5px; background:url(img/ico_vhost_03.png) no-repeat; _background-image: none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ico_vhost_03.png', senabled='true', sizingMethod='scale');}
+.hd i{ font-size:0; overflow:hidden; line-height:0; width:2px; height:50px; float:left; background:url(../img/sprite_vhost.png) no-repeat 0 -400px;}
+.hd span{ display:inline-block; *zoom:1; *display:inline;}
+
+.br-product-nav{ border-right:1px solid #676767;  }
+.bl-product-nav{ border-left:1px solid #C7C7C7;}
+ 
+.slideTxtBox .bd ul{ padding:5px 0;zoom:1;  }
+.slideTxtBox .bd li{ height:24px; line-height:24px;   }
+.slideTxtBox .bd li .date{ float:right; color:#999;  }
+ .textcenter{ text-align:center}
+
+/*定制服务*/
+.dingzhi_box li{ float:left; width:400px; padding:20px }
+.dingzhi_box li .t{ font-size:14px; color:#333  }
+.dingzhi_box li img{ vertical-align:middle}
+.dingzhi_box .liucheng{ width:891px; height:207px; background:url(img/step.gif) no-repeat; margin:20px auto; text-align:left}
+.dingzhi_box .liucheng p{ display:block}
+.dingzhi_box .liucheng p a{ color:#69c}
+.dingzhi_box .liucheng p a:hover{ color:#c00}
+.dingzhi_box .liucheng p span{ float:left}
+.dingzhi_box .liucheng .p1{ padding-top:26px; height:82px;}
+.dingzhi_box .liucheng .p1 .span1{ width:410px;}
+.dingzhi_box .liucheng .p2 {height:77px;}
+.dingzhi_box .liucheng .p2 .span1{ width:450px; padding-left:65px;}
+.dingzhi_box .liucheng .p3 .span1{ width:590px;}
+.dingzhi_box .anli{ padding:10px 13px;}
+.dingzhi_box .anli a{ float:left; width:96px; text-align:center; margin:12px 10px;}
+.dingzhi_box .anli a img{ border:1px solid #ccc;}
+.dingzhi_box .anli a span{ color:#000000}
+.dingzhi_box .anli a:hover img{border:1px solid #c00;}
+.dingzhi_box .anli a:hover span{ color:#c00}
+
+/*二次开发*/
+.kaifa_box{ border:none}
+
+
+
+/*左侧服务流程*/
+.AreaL2 .liucheng { text-align:center; padding-bottom:10px}
+.AreaL2 .liucheng li{ position:relative; width:190px;  line-height:35px; margin:0 auto; background:url(img/liucheng.gif) no-repeat; text-align:center;}	
+.AreaL2 .liucheng li span{ position:absolute; left:8px; top:0px; color:#FFF; line-height:18px; font-weight:bold}
+ 
+.AreaL2 .liucheng .liucheng_biao1{ background:url(img/liucheng_biao1.gif) center 0 no-repeat; height:10px; margin:7px 0; _margin-bottom:2px;}
+
+/*左侧模板堂优势*/
+.left_youshi li{ padding:9px 8px; float:left}
+.left_youshi li span{ float:left; background:url(img/biao7.gif) no-repeat; height:14px; line-height:14px; color:#FFF; width:13px; font-weight:bold; padding-left:4px; margin-right:5px; margin-left:1px;  }
+.left_youshi li p{ float:left; width:160px; height:14px; line-height:14px;}
+
+/*左侧联系我们*/
+.left_lianxi ul{ height:191px; background:url(img/service.gif); position:relative}
+.left_lianxi ul .t{ padding:10px 0 0 9px;}
+.left_lianxi ul .b{ position:absolute; left:8px; top:110px;}
+

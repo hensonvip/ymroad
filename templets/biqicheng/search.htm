@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+<title>{dede:field.title/}_网站模板下载尽在</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/style/css/style.css">
+<script type="text/javascript" src="/style/js/index.js"></script>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script> 
+<script language="javascript" type="text/javascript"> 
+<!-- 
+function CheckLogin(){ 
+var taget_obj = document.getElementById('_userlogin'); 
+myajax = new DedeAjax(taget_obj,false,false,'','',''); 
+myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php"); 
+DedeXHTTP = null; 
+} 
+--> 
+</script>
+<!--[if IE 6]>
+<script src="/style/js/DD_belatedPNG_0.0.8a-min.vb4e86b02.js"></script>
+<script> DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+</head>
+<body>
+{dede:include filename="head2.htm"/}
+<div class="blank"></div>
+<div class="block clearfix">
+  <div class="box">
+    <div class="box_1">
+      <div class="ur_here">
+        <div style="float: left;">{dede:field.position/}</div>
+        <div class="b_box2"></div>
+      </div>
+    </div>
+    <div class="blank"></div>
+    <div class="AreaL2">
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>Web技术</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 {dede:channel type='son' typeid='3'}
+                 <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                 {/dede:channel}
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>站长学院</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 {dede:channel type='son' typeid='17'}
+                 <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                 {/dede:channel}
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="AreaR2">
+      <div class="box">
+        <div class="box_1">
+          <div class="wzbt">
+           	<ul class="liebiao">
+             {dede:list pagesize='30' titlelen='80'}
+              <li><span>[field:pubdate function='strftime("%Y-%m-%d",@me)'/]</span><a title="[field:title/]" href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+              {/dede:list}
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="blank5"></div>
+
+    <div class="blank5"></div>
+  </div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="blank"></div>
+{dede:include filename="foot.htm"/}
+</body>
+</html>

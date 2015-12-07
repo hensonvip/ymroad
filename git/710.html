@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+<title>wordpress教程：性能优化加速五大方法_网站模板下载尽在源码路-</title>
+<meta name="keywords" content="wordpress,教程,性能,优化,加速,五大,方法,Wo" />
+<meta name="description" content="WordPress是当今最流行的建站博客程序，功能强大，上手容易，各种主题和插件等应有尽有，有关Wordpress的相关文档也是多如牛毛，可以说Wordpress是我们建站的首选程序。当然Wordpress性能也是一个不断被提及的话题，不少人甚至认为WP已经快不起来了。 当Word" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/style/css/style.css">
+<script type="text/javascript" src="/style/js/index.js"></script>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script> 
+<script language="javascript" type="text/javascript"> 
+<!-- 
+function CheckLogin(){ 
+var taget_obj = document.getElementById('_userlogin'); 
+myajax = new DedeAjax(taget_obj,false,false,'','',''); 
+myajax.SendGet2("/member/ajax_loginsta.php"); 
+DedeXHTTP = null; 
+} 
+--> 
+</script>
+<!--[if IE 6]>
+<script src="/style/js/DD_belatedPNG_0.0.8a-min.vb4e86b02.js"></script>
+<script> DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+<script language="javascript" type="text/javascript" src="/include/ckeditor/plugins/syntaxhighlight/code.js" ></script>
+<!-- 织梦技术研究中心 http://www.dedejs.com -->
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shThemeDefault.css"/>
+</head>
+<body>
+<script type=text/javascript><!--//--><![CDATA[//><!--
+function menuFix() {
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+ for (var i=0; i<sfEls.length; i++) {
+  sfEls[i].onmouseover=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseDown=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseUp=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+"");
+  }
+ }
+}
+window.onload=menuFix;
+
+//--><!]]></script>
+<div id="topNav">
+  <div class="block clearfix">
+    <div class="topNav1">源码路专注于织梦源码分享、织梦模板、discuz模板、wordpress主题等网站模板，为广大站长提供网站模板以及Discuz插件等素材。</div>
+    <div class="f_r">
+      <div id="_userlogin">
+      <div class="userlogin">
+       <form name="userlogin" action="/member/index_do.php" method="POST">
+        <input type="hidden" name="fmdo" value="login" />
+        <input type="hidden" name="dopost" value="login" />
+        <input type="hidden" name="keeptime" value="604800" />
+        <div class="fb"><span>用户名:</span>
+         <input type="text" name="userid" size="10" class="ipt-txt" />
+        </div>
+        <div class="fb"><span>密码:</span>
+         <input type="password" name="pwd" size="10" class="ipt-txt" />
+        </div>
+        <div class="submit">
+         <button type="submit" class="btn-1">登录</button>
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" class="btn-1">注册</a> <!--<a href="/member/resetpassword.php">忘记密码?</a>--> </div>
+       </form>
+      </div>
+     </div>
+     <!-- /userlogin -->
+     <script language="javascript" type="text/javascript">CheckLogin();</script>
+    
+    </div>
+  </div>
+</div>
+<div class="header_bg">
+  <div class="block clearfix">
+    <h1><a title="织梦模板,模板王" href="/" name="top">织梦源码,模板王</a></h1>
+    <div style="float: right;">
+      <form id="searchForm" action="/plus/search.php" name="formsearch">
+        <input type="hidden" name="kwtype" value="0" />
+        <div class="search_box">
+          <input name="q" type="text" class="B_input" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+        </div>
+        <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
+      </form>
+     <a href="/work/vip.html" target="_blank"><img src="/images/join.jpg" alt="VIP" width="350" height="55"></a>
+    </div>
+  </div>
+</div>
+<div id="mainNav" class="clearfix">
+  <div class="shadow-x shadow-x1 pngfix"></div>
+  <div style="position: relative;" class="block">
+    <div class="meun_in">
+    <a  class="a1" href="/">首页</a>
+    <ul id="nav">
+    	<li><a href="/yuanma/">精品源码</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/vip/">VIP专区</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/sucai/">站长素材</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/web/">Web技术</a>
+            <ul>
+                
+                  <li><a href="/php/">PHP</a></li>
+                  
+                  <li><a href="/linux/">Linux</a></li>
+                  
+                  <li><a href="/mysql/">MySQL</a></li>
+                  
+                  <li><a href="/git/">Git</a></li>
+                  
+                  <li><a href="/sjms/">设计模式</a></li>
+                  
+                  <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                  
+                  <li><a href="/javascript/">JavaScript</a></li>
+                  
+                  <li><a href="/jquery/">jQuery</a></li>
+                  
+            </ul>
+        </li><li><a href="/seo/">站长学院</a>
+            <ul>
+                
+                  <li><a href="/seo/">网站seo</a></li>
+                  
+                  <li><a href="/jianzhan/">建站资讯</a></li>
+                  
+            </ul>
+        </li>
+    </ul>
+    
+     <div class="meun_r" id="nav">
+       <li>
+         <a href="#">加入VIP</a>
+         <ul>
+           <li>
+             <a href="/work/" target="_blank">模板疑问</a>
+           </li>
+           <li>
+             <a href="/work/vip.html" target="_blank">加入VIP</a>
+           </li>
+           <li>
+             <a href="/dingyue/" target="_blank">订阅我们</a>
+           </li>
+         </ul>
+       </li>
+     </div>
+        
+        
+    </div>
+     <div class="category_all" onmouseover="this.className='category_all category_all_on'" onmouseout="this.className='category_all'"><a class="tit" href="#">Web技术</a>
+      <div style="clear: both;"></div>
+      <div class="category_all_box">
+      <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c9"></i>
+            <h2><a class="dt_a1" href="/web/">Web技术</a></h2>
+          </dt>
+        </dl> 
+       
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c1"></i>
+            <h2><a class="dt_a1" href="/php/">PHP</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c2"></i>
+            <h2><a class="dt_a1" href="/linux/">Linux</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c3"></i>
+            <h2><a class="dt_a1" href="/mysql/">MySQL</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c4"></i>
+            <h2><a class="dt_a1" href="/git/">Git</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c5"></i>
+            <h2><a class="dt_a1" href="/sjms/">设计模式</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c6"></i>
+            <h2><a class="dt_a1" href="/html5css3/">HTML5+CSS3</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c7"></i>
+            <h2><a class="dt_a1" href="/javascript/">JavaScript</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c8"></i>
+            <h2><a class="dt_a1" href="/jquery/">jQuery</a></h2>
+          </dt>
+        </dl>
+        
+            
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blank"></div>
+<div class="block clearfix">
+  <div class="box">
+    <div class="box_1">
+      <div class="ur_here">
+        <div style="float: left;"><a href='http://127.0.0.1//'>网站模板</a> > <a href='/web/'>Web技术</a> > <a href='/git/'>Git</a> > </div>
+        <div class="b_box2"></div>
+      </div>
+    </div>
+    
+ <div class="blank"></div>
+<div class="bd_union2">
+    <div class="bd_union2_right">
+    <script type="text/javascript">
+    /*468*60 创建于 2015-07-28*/
+    var cpro_id = "u2233166";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  	<div class="bd_union2_left">
+    <script type="text/javascript">
+    /*640*60 创建于 2015-07-28*/
+    var cpro_id = "u2233163";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  </div>
+    <div class="blank"></div>
+
+    <div class="AreaL2">
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>Web技术</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/php/">PHP</a></li>
+                 
+                 <li><a href="/linux/">Linux</a></li>
+                 
+                 <li><a href="/mysql/">MySQL</a></li>
+                 
+                 <li><a href="/git/">Git</a></li>
+                 
+                 <li><a href="/sjms/">设计模式</a></li>
+                 
+                 <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                 
+                 <li><a href="/javascript/">JavaScript</a></li>
+                 
+                 <li><a href="/jquery/">jQuery</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>站长学院</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/seo/">网站seo</a></li>
+                 
+                 <li><a href="/jianzhan/">建站资讯</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+
+<div class="box article_z">
+<script type="text/javascript">
+/*200*200 创建于 2015-07-28*/
+var cpro_id = "u2233243";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+<div class="blank5"></div>
+
+    </div>
+    <div class="AreaR2">
+      <div class="box">
+        <div class="box_1">
+          <div class="wzbt">
+            <div class="tc">
+              <h4 class="art_tit">wordpress教程：性能优化加速五大方法</h4>
+              <font class="f3">www.ymroad.com / 2015-01-14</font> </div>
+            <div class="content">
+				<div>
+	WordPress是当今最流行的建站博客程序，功能强大，上手容易，各种主题和插件等应有尽有，有关Wordpress的相关文档也是多如牛毛，可以说Wordpress是我们建站的首选程序。当然Wordpress性能也是一个不断被提及的话题，不少人甚至认为WP已经&ldquo;快&rdquo;不起来了。<br />
+	&nbsp;</div>
+<div>
+	当Wordpress的流量一上来，网站页面多达上万级，这时Wordpress性能会遇到&ldquo;瓶颈&rdquo;，这时如果单纯从花大价钱购买更高配置的主机空间会导致服务器成本骤增，很不划算。倒不如从&ldquo;软件&rdquo;着手，通过优化服务器性能和页面加载速度能够达到更好的效果。<br />
+	&nbsp;</div>
+<div>
+	优化Wordpress性能，一般我们是从这几个方面来发力：服务器PHP脚本执行效率、MysqL数据库查询性能、Wordpress评论、图片、JS、CSS等静态文件加载速度。如果要把Wordpress性能比作是一个&ldquo;木桶&rdquo;，那么WP综合性能就取决那块&ldquo;短板&rdquo;的高度了。<br />
+	&nbsp;</div>
+<div>
+	仔细分析自己的Wordpress博客存在哪些可能影响性能因素，然后&ldquo;对症下药&rdquo;，补齐性能的&ldquo;短板&rdquo;，Wordpress就会有飞的感觉。这里应该澄清一个可能会被&ldquo;误导&rdquo;的概念：Wordpress并不是不能胜任大流量和高数据库查询压力，关键是要做好服务器性能优化，用Wordpress搭建的大型网站比比皆是。<br />
+	&nbsp;</div>
+<div>
+	本篇文章就来分类整理一下Wordpress加速的五个方法，如果你正在遭遇着大流量带来的Wordpress运行缓慢的状况，不妨参考本文对自己的Wordpress进行一次彻底的性能优化。<br />
+	&nbsp;</div>
+<div>
+	<strong>WordPress性能优化加速五大方法:</strong></div>
+<div>
+	<strong>WordPress性能优化方法一：选择稳定可靠的主机空间</strong></div>
+<div>
+	1、物理方面：优化Wordpress的性能前提条件就是有一个稳定安全、网络环境可靠的主机空间，一个经常宕机、机房断网、部分地区无法访问的主机空间还是趁早换一家吧，这样的主机空间即便再怎么优化也是&ldquo;白搭&rdquo;。</div>
+<div>
+	2、软件方面：选择Linux服务器作为Wordpress的运行环境。用Windows服务器来跑Wordpress这种情况多见于国内的空间商，之前部落博客就是放在Windows服务器导致的问题非常多，而且效率没有Linux高。</div>
+<div>
+	3、Web服务器：Nginx、Apache视情况而定。现在不少人认为Nginx相对于Apache有资源消耗少、处理静态页面吞吐量强的优势，但Apache也有着稳定、使用方便的优势，这两个Web引擎可以视个人情况而定。<br />
+	&nbsp;</div>
+<div>
+	<strong>Wordpress性能优化方法二：优化服务器性能提升工作效率</strong></div>
+<div>
+	1、高效率的HHvm：如果你愿意折腾，可以尽量选择HHvm。HHVM是一个强大的可以用于替代PHP的建站环境，实际测试它比PHP执行效率快过9倍，效果对比：配置Nginx前端Apache后端服务器LNMPA-与LNMP,HHVM性能比拼 。HHvm相关的使用教程：</div>
+<div>
+	1、HHvm Apache 2.4 Nginx建站环境搭建方法安装运行WordPress博客 2、Lighttpd与HHVM快速搭建方法-让小内存VPS主机体验极致PHP性能 3、HHVM安装使用教程-高效的PHP运行环境提升PHP性能9倍以上</div>
+<div>
+	2、Memcached缓存加速：Memcached是一个高性能的分布式内存对象缓存系统，通过在内存中缓存数据和对象来减少读取数据库的次数，从而提高动态、数据库驱动网站的速度。Memcached对于减少MysqL数据查询压力非常有帮助。</div>
+<div>
+	1、用Varnish和Memcached缓存给WordPress网站提速-内存级加速 2、WDCP,LNMP安装PHP缓存加速扩展eAccelerator,xcache和memcached 3、WP Super cache启用Memcached内存缓存加速及其效果分析</div>
+<div>
+	3、 服务器加速模块：安装使用服务器加速模块可以在一定的程度上加快服务器运行的效率，就好像给发动机加上了&ldquo;润滑油&rdquo;，硬件还是原来的硬件，但是速度快了不少。</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Wordpress性能优化方法三：使用缓存加快响应速度</strong></div>
+<div>
+	1、此处说的缓存是Web缓存，将需要频繁访问的Web页面和对象保存在硬盘或者内存上，当再次访问这些对象的时候加快了速度，它可以大大节省服务器资源。</div>
+<div>
+	2、Wordpress有很多的缓存插件，不同的插件会有不同的使用效果。</div>
+<div>
+	3、除了使用Wordpress缓存插件来达到缓存加速的效果外，我们还可以让Web服务器实现缓存，从理论上讲服务器缓存加速效果要好于Wordpress本身的缓存。</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Wordpress性能优化方法四：使用全站CDN和静态文件加速</strong></div>
+<div>
+	1、实现全站CDN加速，网站的静态程度高的效果会更好。</div>
+<div>
+	延伸阅读：</div>
+<div>
+	网站加速哪家强？四大免费CDN服务评测大PK</div>
+<div>
+	2、除了给全站做好CDN加速外，我们还可以让网站的JS、CSS、图片、附件等实现CDN加速，尤其适用于空间在国外没有取得BA号的网站。</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Wordpress性能优化方法五：去除掉导致网页加载速度变慢的障碍</strong></div>
+<div>
+	1、如果你的博客使用了Google自定义搜索，因为&ldquo;各种原因&rdquo;会导致网页加载不完整，但是你又不想使用百度站内搜索，那么解决办法就是：网站添加优化Google自定义搜索影响网站打开速度和证书错误。</div>
+<div>
+	2、Gravatar头像服务器不稳定也是影响Wordpress打开速度的重要因素。</div>
+<div>
+	3、图片太多的Wordpress博客除了建议使用上面的静态文件加速方法外，还可以使用图片延迟加载，让用户在有限的带宽中最少时间内看到自己想要看到的。</div>
+<div>
+	4、最后Wordpress的垃圾评论也是影响Wordpress性能一个障碍。</div>
+<div>
+	WordPress性能优化加速小结：<br />
+	&nbsp;</div>
+<div>
+	上面总结的Wordpress性能优化加速方法基本上是部落这几年来使用Wordpress过程的经验，目前来看的话只要服务器配置稍微好一些，带宽足一些，再加上自己有针对性地对服务器和Wordpress进行优化一些，基本上可以满足大流量的要求了。</div>
+
+            </div>
+            <div class="blank5"></div>
+            <div class="blank5"></div>
+            <div class="art_bottom"  >
+              <div style="float:left">上一篇：<a href='/git/671.html'>主题模板调用wordpress内置自带jquery库的代码方法</a> </div>
+              <div style="float:right">下一篇：<a href='/git/753.html'>WordPress教程：获取当前分类的父分类ID</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blank5"></div>
+    <div class="jogger"> </div>
+    <div class="blank5"></div>
+    <div class="blank5"></div>
+  </div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="blank"></div>
+<div class="footer_box">
+<div class="block">
+  <div class="box">
+    <div class="helpTitBg  ">
+      <dl class="dl1">
+        <dt><span></span>Web技术</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/dedecmsjc/" title="织梦教程">TMD9教程</a></dd>
+        <dd><a href="/discuzjc/" title="Discuz教程">Discuz教程</a></dd>
+        <dd><a href="/wordpressjc/" title="wordpress教程">wordpress教程</a></dd>
+        <dd><a href="/ecshopjc/" title="ecshop教程">ecshop教程</a></dd>
+      </dl>
+      <dl class="dl2">
+        <dt><span></span>站长学院</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/ems/" title="网站seo">网站seo</a></dd>
+        <dd><a href="/jianzhan/" title="建站资讯">建站资讯</a></dd>
+      </dl>
+      <dl class="dl3">
+        <dt><span></span>常见问题</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/work/vip.html" title="如何加入VIP">如何加入VIP</a></dd>
+      </dl>
+      <dl class="dl4">
+        <dt><span></span>服务支持</dt>
+        <div style=" clear:both"></div>
+        <dd>QQ：249411513</dd>
+        <dd>E-mail：249411513@qq.com</dd>
+        <dd>Web：Www.YmRoad.Com</dd>
+      </dl>
+     <img width="100" height="103" alt="" src="/style/images/footer_img.gif"></div>
+  </div>
+</div>
+
+<div id="footer">
+<div class="text">
+  Copyright 2015-2015 All Rights Reserved Theme by 源码路www.ymroad.com
+  <br />
+  <a href="http://www.ymroad.com/" target="_blank" rel="nofollow">浙ICP备11047180号-6</a>
+  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=249411513&site=qq&menu=yes">
+    <img border="0" src="http://wpa.qq.com/pa?p=2:249411513:51" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+  </a>
+  <br />
+  <a href="http://www.ymroad.com" target="_blank">站长资源</a>
+  <a href="/sitemap.xml" target="_blank">网站地图</a>
+</div>
+</div>
+</div>
+<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=1256403958&web_id=12539238" language="JavaScript"></script></div>
+
+<script>
+$(function(){
+	$("#aFloatTools_Hide").click(function(){
+	
+		$('#divFloatToolsView').animate({
+		width: 'hide', opacity: 'hide'
+		}, 
+		'normal',
+		function(){
+			 $('#divFloatToolsView').hide();
+		})
+		$('#aFloatTools_Show').attr('style','display:block');
+		$('#aFloatTools_Hide').attr('style','display:none');
+	})
+	$("#aFloatTools_Show").click(function(){
+	
+		$('#divFloatToolsView').animate({
+			width: 'show', opacity: 'show'
+			},
+			'normal',
+			function(){ 
+				$('#divFloatToolsView').show();
+		})
+		$('#aFloatTools_Show').attr('style','display:none');
+		$('#aFloatTools_Hide').attr('style','display:block');
+	})
+	
+})
+</script>
+<!-- <div id="floatTools" class="float0831">
+  <div class="floatL"> <a id="aFloatTools_Show" class="btnOpen"  rel="nofollow"  style="DISPLAY: none" title="查看在线客服" href="javascript:void(0);">展开</a> <a id="aFloatTools_Hide" class="btnCtn"  rel="nofollow"   title="关闭在线客服" href="javascript:void(0);">收缩</a> </div>
+  <div id="divFloatToolsView" class="floatR" style="display:blcok">
+    <div class="tp"></div>
+    <div class="cn">
+      <ul>
+        <li class="top">
+          <h3 class="titZx"></h3>
+        </li>
+        <li><a class="icoTc" title="加入VIP" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=23&site=qq&menu=yes">加入VIP</a> </li>
+        <li><a class="icoTc" title="仿站咨询" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=942389&site=qq&menu=yes">仿站咨询</a> </li>
+        <li><a class="icoTc" title="织梦后台定制" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=94230489&site=qq&menu=yes">织梦后台定制</a> </li>
+      </ul>
+      
+    </div>
+  </div>
+</div> -->
+
+<script language="javascript"> 
+(function(){
+        var res = GetRequest();
+        var par = res['index'];
+        if(par!='gfan'){
+                var ua=navigator.userAgent.toLowerCase();
+                var contains=function (a, b){
+                        if(a.indexOf(b)!=-1){return true;}
+                };
+//将下面的http://m.baidu.com改成你的wap手机版地址        
+                var toMobileVertion = function(){
+                        window.location.href = 'http://www.ymroad.com/m/'
+                }
+
+                if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+                if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+        ||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+        }
+})();
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs.split("=")[0]]=unescape(strs.split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+</script>
+</body>
+</html>

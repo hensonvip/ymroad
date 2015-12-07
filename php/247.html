@@ -1,0 +1,872 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+<title>织梦dedeCMS 程序目录详解以及数据表结构字段_网站模板下载尽在源码路-</title>
+<meta name="keywords" content="织梦,dedeCMS,程序,目录,详解,以及,数据表,结构," />
+<meta name="description" content="最近在群里经常有一些刚刚接触织梦的朋友问织梦二次开发的问题，主要是不熟悉织梦程序核心内容目录的介绍和数据表结构的字段，其实这些内容网上有很多，介绍的也很详细，只是现在的人都变得很懒，都是伸手族，今天给大家整理了一下，可能不全，但是也差不多" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/style/css/style.css">
+<script type="text/javascript" src="/style/js/index.js"></script>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script> 
+<script language="javascript" type="text/javascript"> 
+<!-- 
+function CheckLogin(){ 
+var taget_obj = document.getElementById('_userlogin'); 
+myajax = new DedeAjax(taget_obj,false,false,'','',''); 
+myajax.SendGet2("/member/ajax_loginsta.php"); 
+DedeXHTTP = null; 
+} 
+--> 
+</script>
+<!--[if IE 6]>
+<script src="/style/js/DD_belatedPNG_0.0.8a-min.vb4e86b02.js"></script>
+<script> DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+<script language="javascript" type="text/javascript" src="/include/ckeditor/plugins/syntaxhighlight/code.js" ></script>
+<!-- 织梦技术研究中心 http://www.dedejs.com -->
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/include/ckeditor/plugins/syntaxhighlight/styles/shThemeDefault.css"/>
+</head>
+<body>
+<script type=text/javascript><!--//--><![CDATA[//><!--
+function menuFix() {
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+ for (var i=0; i<sfEls.length; i++) {
+  sfEls[i].onmouseover=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseDown=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseUp=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+"");
+  }
+ }
+}
+window.onload=menuFix;
+
+//--><!]]></script>
+<div id="topNav">
+  <div class="block clearfix">
+    <div class="topNav1">源码路专注于织梦源码分享、织梦模板、discuz模板、wordpress主题等网站模板，为广大站长提供网站模板以及Discuz插件等素材。</div>
+    <div class="f_r">
+      <div id="_userlogin">
+      <div class="userlogin">
+       <form name="userlogin" action="/member/index_do.php" method="POST">
+        <input type="hidden" name="fmdo" value="login" />
+        <input type="hidden" name="dopost" value="login" />
+        <input type="hidden" name="keeptime" value="604800" />
+        <div class="fb"><span>用户名:</span>
+         <input type="text" name="userid" size="10" class="ipt-txt" />
+        </div>
+        <div class="fb"><span>密码:</span>
+         <input type="password" name="pwd" size="10" class="ipt-txt" />
+        </div>
+        <div class="submit">
+         <button type="submit" class="btn-1">登录</button>
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" class="btn-1">注册</a> <!--<a href="/member/resetpassword.php">忘记密码?</a>--> </div>
+       </form>
+      </div>
+     </div>
+     <!-- /userlogin -->
+     <script language="javascript" type="text/javascript">CheckLogin();</script>
+    
+    </div>
+  </div>
+</div>
+<div class="header_bg">
+  <div class="block clearfix">
+    <h1><a title="织梦模板,模板王" href="/" name="top">织梦源码,模板王</a></h1>
+    <div style="float: right;">
+      <form id="searchForm" action="/plus/search.php" name="formsearch">
+        <input type="hidden" name="kwtype" value="0" />
+        <div class="search_box">
+          <input name="q" type="text" class="B_input" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+        </div>
+        <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
+      </form>
+     <a href="/work/vip.html" target="_blank"><img src="/images/join.jpg" alt="VIP" width="350" height="55"></a>
+    </div>
+  </div>
+</div>
+<div id="mainNav" class="clearfix">
+  <div class="shadow-x shadow-x1 pngfix"></div>
+  <div style="position: relative;" class="block">
+    <div class="meun_in">
+    <a  class="a1" href="/">首页</a>
+    <ul id="nav">
+    	<li><a href="/yuanma/">精品源码</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/vip/">VIP专区</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/sucai/">站长素材</a>
+            <ul>
+                
+            </ul>
+        </li><li><a href="/web/">Web技术</a>
+            <ul>
+                
+                  <li><a href="/php/">PHP</a></li>
+                  
+                  <li><a href="/linux/">Linux</a></li>
+                  
+                  <li><a href="/mysql/">MySQL</a></li>
+                  
+                  <li><a href="/git/">Git</a></li>
+                  
+                  <li><a href="/sjms/">设计模式</a></li>
+                  
+                  <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                  
+                  <li><a href="/javascript/">JavaScript</a></li>
+                  
+                  <li><a href="/jquery/">jQuery</a></li>
+                  
+            </ul>
+        </li><li><a href="/seo/">站长学院</a>
+            <ul>
+                
+                  <li><a href="/seo/">网站seo</a></li>
+                  
+                  <li><a href="/jianzhan/">建站资讯</a></li>
+                  
+            </ul>
+        </li>
+    </ul>
+    
+     <div class="meun_r" id="nav">
+       <li>
+         <a href="#">加入VIP</a>
+         <ul>
+           <li>
+             <a href="/work/" target="_blank">模板疑问</a>
+           </li>
+           <li>
+             <a href="/work/vip.html" target="_blank">加入VIP</a>
+           </li>
+           <li>
+             <a href="/dingyue/" target="_blank">订阅我们</a>
+           </li>
+         </ul>
+       </li>
+     </div>
+        
+        
+    </div>
+     <div class="category_all" onmouseover="this.className='category_all category_all_on'" onmouseout="this.className='category_all'"><a class="tit" href="#">Web技术</a>
+      <div style="clear: both;"></div>
+      <div class="category_all_box">
+      <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c9"></i>
+            <h2><a class="dt_a1" href="/web/">Web技术</a></h2>
+          </dt>
+        </dl> 
+       
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c1"></i>
+            <h2><a class="dt_a1" href="/php/">PHP</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c2"></i>
+            <h2><a class="dt_a1" href="/linux/">Linux</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c3"></i>
+            <h2><a class="dt_a1" href="/mysql/">MySQL</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c4"></i>
+            <h2><a class="dt_a1" href="/git/">Git</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c5"></i>
+            <h2><a class="dt_a1" href="/sjms/">设计模式</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c6"></i>
+            <h2><a class="dt_a1" href="/html5css3/">HTML5+CSS3</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c7"></i>
+            <h2><a class="dt_a1" href="/javascript/">JavaScript</a></h2>
+          </dt>
+        </dl>
+        
+        <dl onmouseover="this.className='dl_on'" onmouseout="this.className=''">
+          <dt><i class="c8"></i>
+            <h2><a class="dt_a1" href="/jquery/">jQuery</a></h2>
+          </dt>
+        </dl>
+        
+            
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blank"></div>
+<div class="block clearfix">
+  <div class="box">
+    <div class="box_1">
+      <div class="ur_here">
+        <div style="float: left;"><a href='http://127.0.0.1//'>网站模板</a> > <a href='/web/'>Web技术</a> > <a href='/php/'>PHP</a> > </div>
+        <div class="b_box2"></div>
+      </div>
+    </div>
+    
+ <div class="blank"></div>
+<div class="bd_union2">
+    <div class="bd_union2_right">
+    <script type="text/javascript">
+    /*468*60 创建于 2015-07-28*/
+    var cpro_id = "u2233166";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  	<div class="bd_union2_left">
+    <script type="text/javascript">
+    /*640*60 创建于 2015-07-28*/
+    var cpro_id = "u2233163";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+  </div>
+    <div class="blank"></div>
+
+    <div class="AreaL2">
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>Web技术</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/php/">PHP</a></li>
+                 
+                 <li><a href="/linux/">Linux</a></li>
+                 
+                 <li><a href="/mysql/">MySQL</a></li>
+                 
+                 <li><a href="/git/">Git</a></li>
+                 
+                 <li><a href="/sjms/">设计模式</a></li>
+                 
+                 <li><a href="/html5css3/">HTML5+CSS3</a></li>
+                 
+                 <li><a href="/javascript/">JavaScript</a></li>
+                 
+                 <li><a href="/jquery/">jQuery</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+      <div class="box article_z">
+        <div class="box_1 article_z">
+          <h3 class="h3_3"><span>站长学院</span></h3>
+          <div class="left_art">
+            <div class="zhuobox">
+            	<ul class="lb">
+                 
+                 <li><a href="/seo/">网站seo</a></li>
+                 
+                 <li><a href="/jianzhan/">建站资讯</a></li>
+                 
+              	</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank5"></div>
+
+<div class="box article_z">
+<script type="text/javascript">
+/*200*200 创建于 2015-07-28*/
+var cpro_id = "u2233243";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+<div class="blank5"></div>
+
+    </div>
+    <div class="AreaR2">
+      <div class="box">
+        <div class="box_1">
+          <div class="wzbt">
+            <div class="tc">
+              <h4 class="art_tit">织梦dedeCMS 程序目录详解以及数据表结构字段</h4>
+              <font class="f3">www.ymroad.com / 2014-09-23</font> </div>
+            <div class="content">
+				<div>
+	最近在群里经常有一些刚刚接触织梦的朋友问织梦二次开发的问题，主要是不熟悉织梦程序核心内容目录的介绍和数据表结构的字段，其实这些内容网上有很多，介绍的也很详细，只是现在的人都变得很懒，都是伸手族，今天给大家整理了一下，可能不全，但是也差不多就这么多了，希望对大家有帮组，也希望大家都能够记住，毕竟都是经常用到的。</div>
+<div>
+	1、程序核心程序目录及简介</div>
+<div>
+	/include目录 程序核心目录</div>
+<div>
+	config_base.php 环境定义文件。用于检测系统环境，定义工作目录，保存数据库链接信息，引入常用函数等，建议不要修改。</div>
+<div>
+	config_hand.php 系统配置文件。定义系统常用的配置信息定义，可从后台管理直接生成该文件。</div>
+<div>
+	config_passport.php 通行证文件</div>
+<div>
+	config_rglobals.php 检测系统外部变量</div>
+<div>
+	config_rglobals_magic.php 同上</div>
+<div>
+	inc_archives_view.php 用于浏览文档或对文档生成HTML</div>
+<div>
+	inc_arclist_view.php 用于浏览频道列表或对内容列表生成HTML</div>
+<div>
+	inc_arcmember_view.php 用于浏览会员发布的文档</div>
+<div>
+	inc_arcpart_view.php 用于解析和创建全局性质的模板，如频道封面，主页，单个页面等</div>
+<div>
+	inc_arcsearch_view.php 用于文档搜索</div>
+<div>
+	inc_arcspec_view.php 用于浏览所有专题列表或对专题列表生成HTML</div>
+<div>
+	inc_channel_unit.php 用户解析特定频道的附加数据结构信息</div>
+<div>
+	inc_channel_unit_functions.php 系统共用函数集合</div>
+<div>
+	inc_downclass.php 防采集随机字符串函数</div>
+<div>
+	inc_freelist_view.php 用于对特定内容列表生成HTML</div>
+<div>
+	inc_functions.php 可供用户使用的函数集合</div>
+<div>
+	inc_imgbt.php GetTypeidSelMember</div>
+<div>
+	inc_memberlogin.php 用于用户登录及获得会员状态</div>
+<div>
+	inc_photograph.php 用于处理系统中的图片，例如水印，缩略图等</div>
+<div>
+	inc_photowatermark_config.php 图片处理参数定义</div>
+<div>
+	inc_rss_view.php 用于浏览频道RSS或对RSS生成静态文件</div>
+<div>
+	inc_separate_functions.php SpGetArcList函数，用于获得文档列表</div>
+<div>
+	inc_sitemap.php 用于生成网站地图</div>
+<div>
+	inc_type_tree.php 用于选择栏目的目录树</div>
+<div>
+	inc_type_tree_member.php 同上，会员使用</div>
+<div>
+	inc_typelink.php 用于显示文章的位置和栏目位置等</div>
+<div>
+	inc_typeunit_admin.php 用于频道管理时的一些复杂操作，主要用于后台</div>
+<div>
+	inc_typeunit_menu.php 同上</div>
+<div>
+	inc_userlogin.php 用于管理员登录</div>
+<div>
+	inc_vote.php 用于管理投票</div>
+<div>
+	jump.php 用于超链接跳转</div>
+<div>
+	pub_charset.php 共用字符处理函数，GB/UTF-8/Unicode/BIG5等互换</div>
+<div>
+	pub_collection.php 用于采集</div>
+<div>
+	pub_collection_functions.php 采集用函数</div>
+<div>
+	pub_datalist.php 后台管理用数据列表</div>
+<div>
+	pub_datalist_dm.php 同上，不使用模板</div>
+<div>
+	pub_db_mysql.php 用于操作数据库</div>
+<div>
+	pub_dedehtml2.php 用于采集中的HTML解析</div>
+<div>
+	pub_dedehtml.php HTML解析器</div>
+<div>
+	pub_dedetag.php 用于dede模板标签解析</div>
+<div>
+	pub_httpdown.php 用于下载http中的资源</div>
+<div>
+	pub_oxwindow.php 后台程序扩展</div>
+<div>
+	pub_splitword_www.php 织梦分词算法</div>
+<div>
+	validateimg.php 验证码</div>
+<div>
+	vdimgck.php 验证码</div>
+<div>
+	&nbsp;</div>
+<div>
+	/inc 共用函数目录</div>
+<div>
+	inc_fun_funAdmin.php 获取拼音码等函数</div>
+<div>
+	inc_fun_funString.php html代码处理等函数</div>
+<div>
+	inc_fun_SpGetArcList.php 获取文档列表SpGetArcList</div>
+<div>
+	对于菜鸟来说，对于菜鸟来说，config_base.php，这个文件，当你的程序出现问题，需要覆盖，当你的程序出现问题，需要覆盖。不要覆盖 config_base.php和config_hand.php文件，里面都是dede一些核心配置文件，对于高手来说，也许修改几个php页面已经达不到目的了，就需要了解dede的数据库结构，下面是部分关键数据表的结构和说明，不完全，还没有整理完全，过几天发布完整版本</div>
+<div>
+	&nbsp;</div>
+<div>
+	主要数据结构表</div>
+<div>
+	已经可以指导开发了</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_addonarticle 附加文章表</div>
+<div>
+	aid int(11) 文章编号</div>
+<div>
+	typeid int(11) 分类栏目编号</div>
+<div>
+	body mediumtext 文章内容</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_addonflash 附加Flash表</div>
+<div>
+	aid int(11) FLASH编号</div>
+<div>
+	typeid int(11) 分类栏目编号</div>
+<div>
+	filesize varchar(10) 文件大小</div>
+<div>
+	playtime varchar(10) 播放时长</div>
+<div>
+	flashtype varchar(10) 作品类型</div>
+<div>
+	flashrank smallint(6) 作品等级</div>
+<div>
+	width smallint(6) 影片宽度</div>
+<div>
+	height smallint(6) 影片高度</div>
+<div>
+	flashurl varchar(80) FLASH地址</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_addonimages 附加图集表</div>
+<div>
+	aid int(11) 图集编号</div>
+<div>
+	typeid int(11) 分类栏目编号</div>
+<div>
+	pagestyle smallint(6) 表现方式（1单页显示 2分多页显示 3多行多列展示）</div>
+<div>
+	maxwidth smallint(6) 大图限制宽度</div>
+<div>
+	imgurls text 图片集内容（标签存放）</div>
+<div>
+	row smallint(6) 多列式参数（行）</div>
+<div>
+	col smallint(6) 多列式参数（列）</div>
+<div>
+	isrm smallint(6) 是否下载远程图片</div>
+<div>
+	ddmaxwidth smallint(6) 小图片宽度限制</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_addonsoft 附加软件表</div>
+<div>
+	aid int(11) 软件编号</div>
+<div>
+	typeid int(11) 分类栏目编号</div>
+<div>
+	filetype varchar(10) 文件类型</div>
+<div>
+	language varchar(10) 界面语言</div>
+<div>
+	softtype varchar(10) 软件类型</div>
+<div>
+	accredit varchar(10) 授权方式</div>
+<div>
+	os varchar(30) 运行环境</div>
+<div>
+	softrank int(11) 软件等级</div>
+<div>
+	officialUrl varchar(30) 官方网址</div>
+<div>
+	officialDemo varchar(50) 程序演示地址</div>
+<div>
+	softsize varchar(10) 软件大小</div>
+<div>
+	softlinks text 软件下载链接列表</div>
+<div>
+	introduce text 软件介绍</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_addonspec 附加专题表</div>
+<div>
+	aid int(11) 专题编号</div>
+<div>
+	typeid int(11) 分类栏目编号</div>
+<div>
+	note text 专题内容（仅存放标签代码）</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_admin 管理员信息表</div>
+<div>
+	ID int(10) 自动编号</div>
+<div>
+	usertype int(10) 用户类型</div>
+<div>
+	userid varchar(30) 用户登录ID</div>
+<div>
+	pwd varchar(50) 用户密码</div>
+<div>
+	uname varchar(20) 用户笔名</div>
+<div>
+	tname varchar(30) 真实姓名</div>
+<div>
+	email varchar(30) 电子邮箱</div>
+<div>
+	typeid int(11) 负责频道（0表示全部）</div>
+<div>
+	logintime datetime 登录时间</div>
+<div>
+	loginip varchar(20) 登录IP</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_admintype 系统用户组管理表</div>
+<div>
+	rank smallint(6) 组级别编号</div>
+<div>
+	typename varchar(30) 组名称</div>
+<div>
+	system smallint(6) 是否为系统默认组</div>
+<div>
+	purviews text 权限列表</div>
+<div>
+	dede_arcatt 文档自定义属性表</div>
+<div>
+	att smallint(6) 编号</div>
+<div>
+	attname varchar(30) 属性名称</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_archives 文章表</div>
+<div>
+	ID int(11) 自动编号</div>
+<div>
+	typeid int(11) 所属主栏目编号</div>
+<div>
+	typeid2 int(11) 所属副栏目编号</div>
+<div>
+	sortrank int(11) 文章排序（置顶方法）</div>
+<div>
+	iscommend smallint(6) 是否推荐</div>
+<div>
+	ismake smallint(6) 是否生成静态</div>
+<div>
+	channel int(11) 文章所属模型</div>
+<div>
+	arcrank smallint(6) 阅读权限</div>
+<div>
+	click int(11) 点击次数</div>
+<div>
+	money smallint(6) 消费点数</div>
+<div>
+	title varchar(80) 标题</div>
+<div>
+	shorttitle varchar(36) 简略标题</div>
+<div>
+	color varchar(10) 标题颜色</div>
+<div>
+	writer varchar(30) 作者</div>
+<div>
+	source varchar(50) 来源</div>
+<div>
+	litpic varchar(100) 缩略图</div>
+<div>
+	pubdate int(11) 录入时间</div>
+<div>
+	senddate int(11) 发布时间</div>
+<div>
+	arcatt smallint(6) 自定属性（att）</div>
+<div>
+	adminID int(11) 发布管理员ID</div>
+<div>
+	memberID int(11) 发布会员ID</div>
+<div>
+	description varchar(250) 摘要</div>
+<div>
+	keywords varchar(60) 关键词</div>
+<div>
+	templet varchar(60) 文档模板</div>
+<div>
+	lastpost int(11) 最近评论时间</div>
+<div>
+	postnum int(11) 评论数目</div>
+<div>
+	redirecturl varchar(150) 跳转网址</div>
+<div>
+	mtype int(11) 用户自定义分类</div>
+<div>
+	userip varchar(20) 用户IP</div>
+<div>
+	locklikeid smallint(6) 是否锁定相关文章</div>
+<div>
+	likeid varchar(240) 相关文章ID</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_arcrank 阅读权限表</div>
+<div>
+	ID int(10) 自动编号</div>
+<div>
+	rank smallint(10) 权限等级</div>
+<div>
+	membername varchar(20) 等级名称</div>
+<div>
+	adminrank smallint(10) 管理等级</div>
+<div>
+	money int(11) 消费点数</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_arctype 栏目管理表</div>
+<div>
+	ID int(10) 栏目编号（自动编号）</div>
+<div>
+	reID int(10) 父栏目编号</div>
+<div>
+	topID int(10)</div>
+<div>
+	sortrank smallint(6) 排序编号</div>
+<div>
+	typename varchar(30) 栏目名称</div>
+<div>
+	typedir varchar(100) 栏目目录</div>
+<div>
+	isdefault smallint(6) 栏目列表选项（1链接到默认页 0链接到列表第一页 -1使用动态页）</div>
+<div>
+	defaultname varchar(20) 默认页的名称</div>
+<div>
+	issend smallint(6) 是否支持投稿</div>
+<div>
+	channeltype smallint(6) 频道类型</div>
+<div>
+	maxpage int(11) 保留</div>
+<div>
+	ispart smallint(6) 栏目属性</div>
+<div>
+	corank smallint(6) 浏览权限</div>
+<div>
+	tempindex varchar(60) 封面模板</div>
+<div>
+	templist varchar(60) 列表模板</div>
+<div>
+	temparticle varchar(60) 文章模板</div>
+<div>
+	tempone varchar(60) 单独页面模板</div>
+<div>
+	namerule varchar(50) 文章命名规则</div>
+<div>
+	namerule2 varchar(50) 列表命名规则</div>
+<div>
+	modname varchar(30) 模板名称</div>
+<div>
+	description varchar(200) 栏目介绍</div>
+<div>
+	keywords varchar(100) 关键词</div>
+<div>
+	moresite smallint(6) 多站点支持</div>
+<div>
+	siterefer smallint(6) 多站点站点根目录属性</div>
+<div>
+	sitepath varchar(60) 多站点站点根目录</div>
+<div>
+	siteurl varchar(60) 多站点绑定域名</div>
+<div>
+	ishidden smallint(6) 是否隐藏栏目</div>
+<div>
+	&nbsp;</div>
+<div>
+	dede_area 地区表</div>
+<div>
+	eid int(11) 地区编号</div>
+<div>
+	name varchar(20) 地区名称</div>
+<div>
+	rid int(11) 编号属性</div>
+
+            </div>
+            <div class="blank5"></div>
+            <div class="blank5"></div>
+            <div class="art_bottom"  >
+              <div style="float:left">上一篇：<a href='/php/246.html'>dede中统计栏目文章数的两种方法</a> </div>
+              <div style="float:right">下一篇：<a href='/php/338.html'>dede:channel currentstyle 失效问题，调用子级栏目后就无效</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blank5"></div>
+    <div class="jogger"> </div>
+    <div class="blank5"></div>
+    <div class="blank5"></div>
+  </div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="blank"></div>
+<div class="footer_box">
+<div class="block">
+  <div class="box">
+    <div class="helpTitBg  ">
+      <dl class="dl1">
+        <dt><span></span>Web技术</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/dedecmsjc/" title="织梦教程">TMD9教程</a></dd>
+        <dd><a href="/discuzjc/" title="Discuz教程">Discuz教程</a></dd>
+        <dd><a href="/wordpressjc/" title="wordpress教程">wordpress教程</a></dd>
+        <dd><a href="/ecshopjc/" title="ecshop教程">ecshop教程</a></dd>
+      </dl>
+      <dl class="dl2">
+        <dt><span></span>站长学院</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/ems/" title="网站seo">网站seo</a></dd>
+        <dd><a href="/jianzhan/" title="建站资讯">建站资讯</a></dd>
+      </dl>
+      <dl class="dl3">
+        <dt><span></span>常见问题</dt>
+        <div style=" clear:both"></div>
+        <dd><a href="/work/vip.html" title="如何加入VIP">如何加入VIP</a></dd>
+      </dl>
+      <dl class="dl4">
+        <dt><span></span>服务支持</dt>
+        <div style=" clear:both"></div>
+        <dd>QQ：249411513</dd>
+        <dd>E-mail：249411513@qq.com</dd>
+        <dd>Web：Www.YmRoad.Com</dd>
+      </dl>
+     <img width="100" height="103" alt="" src="/style/images/footer_img.gif"></div>
+  </div>
+</div>
+
+<div id="footer">
+<div class="text">
+  Copyright 2015-2015 All Rights Reserved Theme by 源码路www.ymroad.com
+  <br />
+  <a href="http://www.ymroad.com/" target="_blank" rel="nofollow">浙ICP备11047180号-6</a>
+  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=249411513&site=qq&menu=yes">
+    <img border="0" src="http://wpa.qq.com/pa?p=2:249411513:51" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+  </a>
+  <br />
+  <a href="http://www.ymroad.com" target="_blank">站长资源</a>
+  <a href="/sitemap.xml" target="_blank">网站地图</a>
+</div>
+</div>
+</div>
+<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=1256403958&web_id=12539238" language="JavaScript"></script></div>
+
+<script>
+$(function(){
+	$("#aFloatTools_Hide").click(function(){
+	
+		$('#divFloatToolsView').animate({
+		width: 'hide', opacity: 'hide'
+		}, 
+		'normal',
+		function(){
+			 $('#divFloatToolsView').hide();
+		})
+		$('#aFloatTools_Show').attr('style','display:block');
+		$('#aFloatTools_Hide').attr('style','display:none');
+	})
+	$("#aFloatTools_Show").click(function(){
+	
+		$('#divFloatToolsView').animate({
+			width: 'show', opacity: 'show'
+			},
+			'normal',
+			function(){ 
+				$('#divFloatToolsView').show();
+		})
+		$('#aFloatTools_Show').attr('style','display:none');
+		$('#aFloatTools_Hide').attr('style','display:block');
+	})
+	
+})
+</script>
+<!-- <div id="floatTools" class="float0831">
+  <div class="floatL"> <a id="aFloatTools_Show" class="btnOpen"  rel="nofollow"  style="DISPLAY: none" title="查看在线客服" href="javascript:void(0);">展开</a> <a id="aFloatTools_Hide" class="btnCtn"  rel="nofollow"   title="关闭在线客服" href="javascript:void(0);">收缩</a> </div>
+  <div id="divFloatToolsView" class="floatR" style="display:blcok">
+    <div class="tp"></div>
+    <div class="cn">
+      <ul>
+        <li class="top">
+          <h3 class="titZx"></h3>
+        </li>
+        <li><a class="icoTc" title="加入VIP" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=23&site=qq&menu=yes">加入VIP</a> </li>
+        <li><a class="icoTc" title="仿站咨询" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=942389&site=qq&menu=yes">仿站咨询</a> </li>
+        <li><a class="icoTc" title="织梦后台定制" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=94230489&site=qq&menu=yes">织梦后台定制</a> </li>
+      </ul>
+      
+    </div>
+  </div>
+</div> -->
+
+<script language="javascript"> 
+(function(){
+        var res = GetRequest();
+        var par = res['index'];
+        if(par!='gfan'){
+                var ua=navigator.userAgent.toLowerCase();
+                var contains=function (a, b){
+                        if(a.indexOf(b)!=-1){return true;}
+                };
+//将下面的http://m.baidu.com改成你的wap手机版地址        
+                var toMobileVertion = function(){
+                        window.location.href = 'http://www.ymroad.com/m/'
+                }
+
+                if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+                if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+        ||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+        }
+})();
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs.split("=")[0]]=unescape(strs.split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+</script>
+</body>
+</html>

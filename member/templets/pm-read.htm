@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>消息管理 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+
+<script type="text/javascript">
+//获得选中文件的文件名
+function GetCheckfolderItem()
+{
+	var allSel='';
+	if(document.form1.deleteid.value) return document.form1.deleteid.value;
+	for(i=0;i<document.form1.deleteid.length;i++)
+	{
+		if(document.form1.deleteid[i].checked)
+		{
+			if(allSel=='')
+			allSel=document.form1.deleteid[i].value;
+			else
+			allSel=allSel+","+document.form1.deleteid[i].value;
+		}
+	}
+	return allSel;
+}
+	
+	function DoSubmit(myfolder)
+	{
+		var selid = GetCheckfolderItem();
+		if(selid=='') {
+			alert("你没选中任何信息！");
+			return false;
+		}
+		if(window.confirm("你确定要删除这些消息么？"))
+		{
+			location = "pm.php?dopost=del&ids="+selid+"&folder="+myfolder;
+		}
+	}
+</script>
+</head>
+<body>
+<?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main"> 
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">消息管理</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+     <div class="ucright">
+      <div class="listnav">
+   
+        <ul class="navclass">
+          <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="pm.php" class="selected">消息管理</a></li>
+        </ul>
+      </div>
+    <div class="ucrbox">
+       <!--listnav end-->
+      <ul class="classnav">
+             <li><a href="pm.php?dopost=send"><span>写新消息</span></a></li>
+            <li><a href="pm.php?folder=inbox"  <?php if($folder == "inbox" || empty($folder)) echo 'class="selected"'; ?>><span>收件箱</span></a></li>
+            <li><a href="pm.php?folder=outbox" <?php if($folder == "outbox") echo 'class="selected"'; ?>><span>发件箱</span></a></li>
+            <li><a href="pm.php?folder=track" <?php if($folder == "track") echo 'class="selected"'; ?>><span>已发出信息</span></a></li>
+   </ul>
+   
+    </div>
+  
+  <dl class="ucmsg">
+            
+    <dd>
+       
+	<?php
+    $rowA = $dsql->GetOne("SELECT * FROM `#@__member_pms` WHERE id='$id' AND (fromid='{$cfg_ml->M_ID}' OR toid='{$cfg_ml->M_ID}')");
+    $rowB = $dsql->GetOne("SELECT userid,uname FROM `#@__member` WHERE mid='{$rowA['fromid']}'");
+    $rowC = $dsql->GetOne("SELECT userid,uname FROM `#@__member` WHERE mid='{$rowA['toid']}'");
+    ?>
+
+    <div class="ucmailbox">
+    
+    <span class="ltitle1">信息详细</span>
+    <span class="ltbg"></span>
+    <div class="ucmail">
+    	<div class="ucmailinfo" style="display:block; clear:both">
+        <span>发送人：</span> <i class="inputbtn" style="border:0; background:none; font-style:normal; padding:0"><?php echo $rowB['uname'];?>(id:<?php echo $rowB['userid'];?>)&nbsp;&nbsp;<a href="pm.php?dopost=send&uid=<?php echo $rowB['userid'];?>">回复</a></i>
+        </div>
+        <div class="ucmailinfo" style="display:block; clear:both">
+        <span>收信人：</span> <i class="inputbtn" style="border:0; background:none; font-style:normal; padding:0"><?php echo $rowC['uname'];?>(id:<?php echo $rowC['userid'];?>)&nbsp;&nbsp;<a href="pm.php?dopost=send&uid=<?php echo $rowC['userid'];?>">回复</a></i>
+        </div>
+        
+    	<div class="ucmailinfo" style="display:block; clear:both">
+        <span>标题：</span> <i class="inputbtn" style="border:0; background:none; font-style:normal; padding:0"><?php echo $rowA['subject']; ?></i>
+        </div>
+        
+        <div class="ucmailinfo">
+        <span>内容：</span><i class="ucmailarea" style="border:0; background:none; font-style:normal; padding:5px 0; height:auto"><?php echo text2html($rowA['message']); ?></i>
+        </div>
+    </div>
+    </div>
+    </dd>
+    </dl>
+
+  
+ </div></div></div> 
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+</body>
+</html>
+

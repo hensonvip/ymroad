@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>收藏夹 - 会员中心 -<?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/table_function.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script language="JavaScript" src="templets/images/jquery.js"></script>
+<script language="JavaScript" src="templets/images/jquery.lazyload.js"></script>
+<script language="JavaScript" src="templets/images/common.js"></script>
+<script type="text/javascript">
+	//获得选中文件的文件名
+	function GetCheckfolderItem()
+	{
+		var allSel='';
+		if(document.form1.deleteid.value) return document.form1.deleteid.value;
+		for(i=0;i<document.form1.deleteid.length;i++)
+		{
+			if(document.form1.deleteid[i].checked)
+			{
+				if(allSel=='')
+				allSel=document.form1.deleteid[i].value;
+				else
+				allSel=allSel+","+document.form1.deleteid[i].value;
+			}
+		}
+		return allSel;
+	}
+	
+	function DoSubmit()
+	{
+		var selid = GetCheckfolderItem();
+		if(selid=='') {
+			alert("你没选中任何信息！");
+			return false;
+		}
+		if(window.confirm("你确定要删除这些消息么？"))
+		{
+			location = "operation.php?dopost=del&ids="+selid;
+		}
+	}
+</script>
+</head>
+<body>
+<?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div class="main">
+  <div class="navbar"> <span class="notice"><a href="/member">位置</a></span>
+    <ul class="position">
+      <li><a href="/">首页</a></li>
+      <li><a href="/member">会员中心</a></li>
+      <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;">收藏夹</li>
+    </ul>
+  </div>
+  <!--navbar end-->
+  <div class="ucbox">
+    <?php include(DEDEMEMBER."/templets/left.htm"); ?>
+    <div class="ucright">
+      <div class="listnav">
+        <ul class="navclass">
+          <li style="background-image: none; background-position: initial initial; background-repeat: initial initial;"><a href="mystow.php" class="selected">收藏夹</a></li>
+        </ul>
+      </div>
+      <!--listnav end-->
+      <ul class="classnav">
+           <li><a href="mystow.php" class="selected">我的收藏</a></li>
+       </ul>
+      <div class="ucjob">
+        <div class="jobtitle"> <span class="ucity" style="width:400px">文章名</span> <span class="ujobdate">时间</span> <span class="ujobdates">操作</span>  </div>
+        <ul class="ujoblist">
+          {dede:datalist}
+          <li> <span class="ucity1" style="width:400px"><?php if($fields["stowname"]!='sys') {?>
+              <a href='/plus/view.php?aid={dede:field.aid/}' target='_blank'>{dede:field.title/}</a>
+              <?php }else{ ?>
+              <a href='archives_do.php?dopost=viewArchives&aid={dede:field.aid/}' target='_blank'>{dede:field.title/}</a>
+              <?php }?></span>
+             <span class="ujobdate"><?php echo MyDate('m-d H:i', $fields['addtime']); ?></span>
+               <span class="ujobdates"><cite> <a href='archives_do.php?dopost=delStow&type={dede:field.type/}&aid={dede:field.aid/}'>[删除]</a> </cite>&nbsp;</span>
+      
+           </li>
+          {/dede:datalist}
+         </ul>
+     
+      </div>
+      <div class="pagebox">
+        <div class="page1" style="position: relative; left: 394px;">
+          <ul class="pagelist">
+            <span>{dede:pagelist listsize=5/}</span>
+          </ul>
+        </div>
+        <!--page end--> 
+       </div>
+    </div>
+  </div>
+</div>
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+</body>
+</html>
+
